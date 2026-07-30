@@ -1,0 +1,7 @@
+﻿node_modules/
+.claude/settings.local.json
+
+# Hyperframes render output and caches
+videos/dist/
+videos/.hyperframes/
+*.mp4
