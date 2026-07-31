@@ -1,0 +1,56 @@
+<div class="card" data-card-id="card-04-lewybody">
+  <style>
+    .card[data-card-id="card-04-lewybody"] .root {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: var(--indigo);
+    }
+    .card[data-card-id="card-04-lewybody"] .icon-wrap {
+      width: 260px;
+      height: 210px;
+    }
+    .card[data-card-id="card-04-lewybody"] .icon-wrap svg {
+      width: 100%;
+      height: 100%;
+      color: var(--cyan);
+    }
+    .card[data-card-id="card-04-lewybody"] .mark {
+      stroke: var(--cyan);
+      stroke-width: 4;
+      fill: none;
+    }
+    .card[data-card-id="card-04-lewybody"] .name {
+      margin: 0;
+      font: 700 96px/1.1 "Inter", sans-serif;
+      color: var(--white);
+      text-align: center;
+    }
+    .card[data-card-id="card-04-lewybody"] .underline {
+      width: 0;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--cyan);
+    }
+  </style>
+
+  <div class="root">
+    <div id="card-04-icon" class="icon-wrap" data-anim="slide-in" data-anim-at="0.1" data-anim-duration="0.65" data-anim-from="top" data-anim-distance="60">
+      <svg viewBox="0 0 200 160">
+        <use href="#icon-brain-base"></use>
+        <circle class="mark" cx="66" cy="60" r="5.5"></circle>
+        <circle class="mark" cx="96" cy="44" r="5.5"></circle>
+        <circle class="mark" cx="118" cy="80" r="5.5"></circle>
+        <circle class="mark" cx="80" cy="102" r="5.5"></circle>
+      </svg>
+    </div>
+    <div class="text-group">
+      <h2 class="name" data-anim="fade-in" data-anim-at="0.55" data-anim-duration="0.5">Lewy Body Dementia</h2>
+      <div id="card-04-underline" class="underline" data-anim="grow-x" data-anim-at="0.95" data-anim-duration="0.5" data-anim-target-w="420" style="margin: 20px auto 0;"></div>
+    </div>
+  </div>
+</div>

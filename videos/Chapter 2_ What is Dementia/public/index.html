@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+
+      :root {
+        --indigo: #1a1a4d;
+        --cyan: #00e5ff;
+        --white: #f5f7ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .video-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-host {
+        position: absolute;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .card-host .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="chapter-2-what-is-dementia"
+      data-start="0"
+      data-duration="151.0000"
+      data-fps="25"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Shared line-art brain icon, referenced via <use> from every card so all six
+           moments stay visually one family (same base shape, distinct accent marks). -->
+      <svg width="0" height="0" style="position: absolute">
+        <defs>
+          <symbol id="icon-brain-base" viewBox="0 0 200 160">
+            <path
+              d="M40,120 C20,118 14,100 22,86 C10,78 12,60 26,52 C22,40 34,26 50,30 C56,16 74,10 90,18 C100,8 118,10 126,22 C142,20 156,32 152,48 C168,52 174,70 162,82 C170,94 162,110 148,112 C148,126 134,136 120,130 C116,142 100,146 90,138 C78,148 62,144 58,132 C46,136 34,130 40,120 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M140,112 C144,124 142,138 132,144 C126,148 118,146 116,140"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path d="M50,60 C60,52 70,58 78,50" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M70,80 C82,72 96,78 106,70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+            <path d="M96,100 C108,94 120,98 128,90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+          </symbol>
+        </defs>
+      </svg>
+
+      <!-- Layer 1: source video. Muted; audio plays via the separate #source-audio
+           track below so it is never cut, edited, or gapped regardless of the
+           visual layer. -->
+      <div class="video-wrapper" id="video-wrap">
+        <video
+          id="bg-video"
+          src="input-video.mp4"
+          muted
+          playsinline
+          data-start="0"
+          data-duration="151.0000"
+          data-track-index="1"
+        ></video>
+      </div>
+      <audio
+        id="source-audio"
+        src="input-video.mp4"
+        data-start="0"
+        data-duration="151.0000"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- Layer 2: card hosts. Fullscreen cards cover the whole canvas; split-screen
+           cards cover exactly one 960px half (the narrator's half is left fully
+           untouched — no card-host, no overlay, ever sits over her side). -->
+
+      <div
+        id="card-01-title-host"
+        class="card-host clip"
+        data-card-id="card-01-title"
+        data-start="0.0000"
+        data-duration="5.0000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-01-title">
+          <style>
+            .card[data-card-id="card-01-title"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-01-title"] .content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 28px;
+            }
+            .card[data-card-id="card-01-title"] .kicker {
+              margin: 0;
+              font: 700 42px/1 "Inter", sans-serif;
+              letter-spacing: 0.32em;
+              text-transform: uppercase;
+              color: var(--white);
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-01-title"] .title {
+              margin: 0;
+              font: 700 112px/1.1 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              max-width: 1400px;
+            }
+            .card[data-card-id="card-01-title"] .underline {
+              width: 0;
+              height: 7px;
+              border-radius: 4px;
+              background: var(--cyan);
+            }
+          </style>
+          <div class="root">
+            <div id="card-01-content" class="content">
+              <p class="kicker">Chapter 2</p>
+              <h1 class="title">What is Dementia?</h1>
+              <div id="card-01-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-02-alzheimers-host"
+        class="card-host clip"
+        data-card-id="card-02-alzheimers"
+        data-start="46.0800"
+        data-duration="18.5000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-02-alzheimers">
+          <style>
+            .card[data-card-id="card-02-alzheimers"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 40px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-02-alzheimers"] .icon-wrap {
+              width: 260px;
+              height: 210px;
+            }
+            .card[data-card-id="card-02-alzheimers"] .icon-wrap svg {
+              width: 100%;
+              height: 100%;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-02-alzheimers"] .mark {
+              stroke: var(--cyan);
+              stroke-width: 4;
+              fill: none;
+            }
+            .card[data-card-id="card-02-alzheimers"] .name {
+              margin: 0;
+              font: 700 96px/1.1 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+            }
+            .card[data-card-id="card-02-alzheimers"] .underline {
+              width: 0;
+              height: 6px;
+              border-radius: 3px;
+              background: var(--cyan);
+              margin: 20px auto 0;
+            }
+          </style>
+          <div class="root">
+            <div id="card-02-icon" class="icon-wrap">
+              <svg viewBox="0 0 200 160">
+                <use href="#icon-brain-base"></use>
+                <circle class="mark" cx="70" cy="70" r="11" stroke-dasharray="3 6" opacity="1"></circle>
+                <circle class="mark" cx="102" cy="96" r="9" stroke-dasharray="3 6" opacity="0.6"></circle>
+                <circle class="mark" cx="127" cy="64" r="7" stroke-dasharray="3 6" opacity="0.35"></circle>
+              </svg>
+            </div>
+            <div class="text-group">
+              <h2 id="card-02-name" class="name">Alzheimer's Disease</h2>
+              <div id="card-02-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-03-vascular-host"
+        class="card-host clip"
+        data-card-id="card-03-vascular"
+        data-start="64.5800"
+        data-duration="7.7000"
+        data-track-index="2"
+        style="left: 960px; top: 0; width: 960px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-03-vascular">
+          <style>
+            .card[data-card-id="card-03-vascular"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 32px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-03-vascular"] .icon-wrap {
+              width: 190px;
+              height: 154px;
+            }
+            .card[data-card-id="card-03-vascular"] .icon-wrap svg {
+              width: 100%;
+              height: 100%;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-03-vascular"] .mark {
+              stroke: var(--cyan);
+              stroke-width: 5;
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+            .card[data-card-id="card-03-vascular"] .name {
+              margin: 0;
+              font: 700 62px/1.15 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              max-width: 720px;
+            }
+            .card[data-card-id="card-03-vascular"] .underline {
+              width: 0;
+              height: 5px;
+              border-radius: 3px;
+              background: var(--cyan);
+              margin: 18px auto 0;
+            }
+          </style>
+          <div class="root">
+            <div id="card-03-group" class="content-group">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 200 160">
+                  <use href="#icon-brain-base"></use>
+                  <path class="mark" d="M58,42 L90,76 L72,86 L114,126"></path>
+                </svg>
+              </div>
+              <h2 class="name">Vascular Dementia</h2>
+              <div id="card-03-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-04-lewybody-host"
+        class="card-host clip"
+        data-card-id="card-04-lewybody"
+        data-start="72.2800"
+        data-duration="11.1400"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-04-lewybody">
+          <style>
+            .card[data-card-id="card-04-lewybody"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 40px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-04-lewybody"] .icon-wrap {
+              width: 260px;
+              height: 210px;
+            }
+            .card[data-card-id="card-04-lewybody"] .icon-wrap svg {
+              width: 100%;
+              height: 100%;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-04-lewybody"] .mark {
+              stroke: var(--cyan);
+              stroke-width: 4;
+              fill: none;
+            }
+            .card[data-card-id="card-04-lewybody"] .name {
+              margin: 0;
+              font: 700 96px/1.1 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+            }
+            .card[data-card-id="card-04-lewybody"] .underline {
+              width: 0;
+              height: 6px;
+              border-radius: 3px;
+              background: var(--cyan);
+              margin: 20px auto 0;
+            }
+          </style>
+          <div class="root">
+            <div id="card-04-icon" class="icon-wrap">
+              <svg viewBox="0 0 200 160">
+                <use href="#icon-brain-base"></use>
+                <circle class="mark" cx="66" cy="60" r="5.5"></circle>
+                <circle class="mark" cx="96" cy="44" r="5.5"></circle>
+                <circle class="mark" cx="118" cy="80" r="5.5"></circle>
+                <circle class="mark" cx="80" cy="102" r="5.5"></circle>
+              </svg>
+            </div>
+            <div class="text-group">
+              <h2 id="card-04-name" class="name">Lewy Body Dementia</h2>
+              <div id="card-04-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-05-frontotemporal-host"
+        class="card-host clip"
+        data-card-id="card-05-frontotemporal"
+        data-start="83.4200"
+        data-duration="10.0000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 960px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-05-frontotemporal">
+          <style>
+            .card[data-card-id="card-05-frontotemporal"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 32px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-05-frontotemporal"] .icon-wrap {
+              width: 190px;
+              height: 154px;
+            }
+            .card[data-card-id="card-05-frontotemporal"] .icon-wrap svg {
+              width: 100%;
+              height: 100%;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-05-frontotemporal"] .mark {
+              stroke: var(--cyan);
+              stroke-width: 4.5;
+              fill: none;
+              stroke-linecap: round;
+            }
+            .card[data-card-id="card-05-frontotemporal"] .name {
+              margin: 0;
+              font: 700 56px/1.15 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              max-width: 720px;
+            }
+            .card[data-card-id="card-05-frontotemporal"] .underline {
+              width: 0;
+              height: 5px;
+              border-radius: 3px;
+              background: var(--cyan);
+              margin: 18px auto 0;
+            }
+          </style>
+          <div class="root">
+            <div id="card-05-group" class="content-group">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 200 160">
+                  <use href="#icon-brain-base"></use>
+                  <path class="mark" d="M16,52 A58,58 0 0 1 54,16"></path>
+                </svg>
+              </div>
+              <h2 class="name">Frontotemporal Dementia</h2>
+              <div id="card-05-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-06-mixed-host"
+        class="card-host clip"
+        data-card-id="card-06-mixed"
+        data-start="93.4200"
+        data-duration="9.5800"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-06-mixed">
+          <style>
+            .card[data-card-id="card-06-mixed"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 40px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-06-mixed"] .icon-stack {
+              position: relative;
+              width: 300px;
+              height: 230px;
+            }
+            .card[data-card-id="card-06-mixed"] .icon-stack svg {
+              position: absolute;
+              width: 240px;
+              height: 194px;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-06-mixed"] .icon-a {
+              left: 6px;
+              top: 6px;
+            }
+            .card[data-card-id="card-06-mixed"] .icon-b {
+              right: 6px;
+              bottom: 6px;
+            }
+            .card[data-card-id="card-06-mixed"] .name {
+              margin: 0;
+              font: 700 96px/1.1 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+            }
+            .card[data-card-id="card-06-mixed"] .underline {
+              width: 0;
+              height: 6px;
+              border-radius: 3px;
+              background: var(--cyan);
+              margin: 20px auto 0;
+            }
+          </style>
+          <div class="root">
+            <div class="icon-stack">
+              <svg id="card-06-icon-a" class="icon-a" viewBox="0 0 200 160">
+                <use href="#icon-brain-base"></use>
+              </svg>
+              <svg id="card-06-icon-b" class="icon-b" viewBox="0 0 200 160">
+                <use href="#icon-brain-base"></use>
+              </svg>
+            </div>
+            <div class="text-group">
+              <h2 id="card-06-name" class="name">Mixed Dementia</h2>
+              <div id="card-06-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const FPS = 25;
+          const q = (t) => Math.round(t * FPS) / FPS;
+          const EASE = "power2.out";
+          const EASE_IO = "power2.inOut";
+
+          const tl = window.gsap.timeline({ paused: true });
+
+          function enter(cardId, t, dur) {
+            tl.set('.card-host[data-card-id="' + cardId + '"]', { visibility: "visible" }, q(t));
+            tl.fromTo(
+              '.card-host[data-card-id="' + cardId + '"]',
+              { opacity: 0 },
+              { opacity: 1, duration: dur, ease: EASE },
+              q(t),
+            );
+          }
+          function exit(cardId, t, dur) {
+            tl.to(
+              '.card-host[data-card-id="' + cardId + '"]',
+              { opacity: 0, duration: dur, ease: "power2.in" },
+              q(t - dur),
+            );
+            tl.set('.card-host[data-card-id="' + cardId + '"]', { visibility: "hidden" }, q(t));
+          }
+          function growX(sel, t, dur, targetW) {
+            tl.fromTo(sel, { width: 0 }, { width: targetW, duration: dur, ease: EASE }, q(t));
+          }
+          function fadeIn(sel, t, dur, extraFrom, extraTo) {
+            tl.fromTo(
+              sel,
+              Object.assign({ opacity: 0 }, extraFrom || {}),
+              Object.assign({ opacity: 1, duration: dur, ease: EASE }, extraTo || {}),
+              q(t),
+            );
+          }
+
+          // The source video sits permanently full-screen and fully visible
+          // (never tweened — GSAP-animating left/top/width/height on a layout
+          // box snaps to integer device pixels and stutters under seek-by-frame
+          // capture). Instead, every "hide the narrator" or "split-screen" moment
+          // is achieved purely by an opaque indigo card-host covering the portion
+          // of the canvas that should not show her — the video underneath is
+          // simply never drawn there. Her visible portion is therefore always
+          // literally untouched pixels from the source, never cropped/moved.
+
+          // ============================================================
+          // 0.00 -> 5.00  Title card (video fully covered by the opaque card; audio already playing)
+          // ============================================================
+          enter("card-01-title", 0.0, 0.5);
+          // fade-up + slight scale-in (1.05 -> 1.0), no bounce
+          tl.fromTo(
+            "#card-01-content",
+            { opacity: 0, y: 26, scale: 1.05 },
+            { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: EASE },
+            q(0.15),
+          );
+          growX("#card-01-underline", 1.05, 0.6, 560);
+          exit("card-01-title", 5.0, 0.4);
+
+          // ============================================================
+          // 5.00 -> 46.08  Narrator full-screen, untouched (opening)
+          // (no card-host active — video shows through everywhere)
+          // ============================================================
+
+          // ============================================================
+          // 46.08 -> 64.58  Alzheimer's — full-screen graphic (icon scales from centre)
+          // ============================================================
+          enter("card-02-alzheimers", 46.08, 0.4);
+          fadeIn("#card-02-icon", 46.18, 0.7, { scale: 0.6 }, { scale: 1 });
+          fadeIn("#card-02-name", 46.63, 0.5);
+          growX("#card-02-underline", 47.03, 0.5, 420);
+          exit("card-02-alzheimers", 64.58, 0.4);
+
+          // ============================================================
+          // 64.58 -> 72.28  Vascular — split-screen, narrator LEFT / graphic RIGHT
+          // (card-03's host is positioned over the right half only — see its
+          // style="left:960px;width:960px" below — so her left half is untouched)
+          // ============================================================
+          enter("card-03-vascular", 64.58, 0.4);
+          // slide in from the outer (right) edge, ease-out only
+          fadeIn("#card-03-group", 64.68, 0.65, { x: 70 }, { x: 0 });
+          growX("#card-03-underline", 65.23, 0.45, 300);
+          exit("card-03-vascular", 72.28, 0.4);
+
+          // ============================================================
+          // 72.28 -> 83.42  Lewy Body — full-screen graphic (icon drops from top)
+          // ============================================================
+          enter("card-04-lewybody", 72.28, 0.4);
+          fadeIn("#card-04-icon", 72.38, 0.65, { y: -60 }, { y: 0 });
+          fadeIn("#card-04-name", 72.93, 0.5);
+          growX("#card-04-underline", 73.33, 0.5, 420);
+          exit("card-04-lewybody", 83.42, 0.4);
+
+          // ============================================================
+          // 83.42 -> 93.42  Frontotemporal — split-screen, narrator RIGHT / graphic LEFT
+          // (card-05's host covers the left half only — style="left:0;width:960px" —
+          // so her right half is untouched)
+          // ============================================================
+          enter("card-05-frontotemporal", 83.42, 0.4);
+          // slide in from the outer (left) edge, ease-out only
+          fadeIn("#card-05-group", 83.52, 0.65, { x: -70 }, { x: 0 });
+          growX("#card-05-underline", 84.07, 0.45, 340);
+          exit("card-05-frontotemporal", 93.42, 0.4);
+
+          // ============================================================
+          // 93.42 -> 103.00  Mixed — full-screen graphic, two icons crossfade/overlap
+          // ============================================================
+          enter("card-06-mixed", 93.42, 0.4);
+          fadeIn("#card-06-icon-a", 93.52, 0.7, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-06-icon-b", 93.87, 0.7, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-06-name", 94.27, 0.5);
+          growX("#card-06-underline", 94.62, 0.5, 360);
+          exit("card-06-mixed", 103.0, 0.4);
+
+          // ============================================================
+          // 103.00 -> 151.00  Narrator full-screen, untouched (advice + wrap-up tail)
+          // (no card-host active — video shows through everywhere)
+          // ============================================================
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["chapter-2-what-is-dementia"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

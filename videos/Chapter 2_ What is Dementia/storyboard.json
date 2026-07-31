@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 3,
+  "composition": {
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": 151.0,
+    "layout": "landscape",
+    "themeId": "custom-indigo",
+    "seed": 2
+  },
+  "videoTrack": {
+    "sourcePath": "input-video.mp4",
+    "startSec": 0,
+    "endSec": 151.0,
+    "bounds": { "x": 0, "y": 0, "width": 1920, "height": 1080 }
+  },
+  "subtitles": { "enabled": false },
+  "notes": "Brief originally specified 6 dementia types incl. Early-Onset/Late-Onset with an exact opening/closing quote. Actual transcript (Whisper, word-level) only names 5 types (Alzheimer's, Vascular, Lewy Body, Frontotemporal, Mixed) and has ~57s of additional caregiving-advice content after Mixed Dementia that the brief didn't cover. User confirmed (2026-07-31): build exactly the 5 types spoken, alternate full-screen/split-screen across them, and treat everything else (intro + tail) as untouched full-screen narrator. All cut points below are the actual word-level timestamps where each name begins.",
+  "cards": [
+    {
+      "id": "card-01-title",
+      "intent": "Opening title card — fullscreen indigo, 'Chapter 2' + 'What is Dementia?' with drawing cyan underline, fade-up + slight scale-in. Plays before/under the start of her voiceover (audio starts at 0.0s with no lead-in silence to hold for, so this is a pure visual cutaway); cuts to her the instant she says the word 'Dementia' for the first time.",
+      "startSec": 0.0,
+      "endSec": 5.0,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "kicker": "Chapter 2", "title": "What is Dementia?" }
+    },
+    {
+      "id": "card-02-alzheimers",
+      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says 'Alzheimer's disease is the most common form...'. Icon entry: scale from centre.",
+      "startSec": 46.08,
+      "endSec": 64.58,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "title": "Alzheimer's Disease" }
+    },
+    {
+      "id": "card-03-vascular",
+      "intent": "Split-screen. Narrator LEFT half untouched; graphic RIGHT half, icon+name slide in from right edge. Cuts in exactly as she says 'Vascular dementia is the second most common type...'.",
+      "startSec": 64.58,
+      "endSec": 72.28,
+      "accentIndex": 0,
+      "zone": "side-panel",
+      "contentHints": { "title": "Vascular Dementia", "narratorSide": "left", "graphicSide": "right" }
+    },
+    {
+      "id": "card-04-lewybody",
+      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says 'Then there's Lewy body dementia...'. Icon entry: drop from top.",
+      "startSec": 72.28,
+      "endSec": 83.42,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "title": "Lewy Body Dementia" }
+    },
+    {
+      "id": "card-05-frontotemporal",
+      "intent": "Split-screen. Narrator RIGHT half untouched; graphic LEFT half, icon+name slide in from left edge (side alternated from card-03). Cuts in exactly as she says 'Frontotemporal dementia often appears at a younger age...'.",
+      "startSec": 83.42,
+      "endSec": 93.42,
+      "accentIndex": 0,
+      "zone": "side-panel",
+      "contentHints": { "title": "Frontotemporal Dementia", "narratorSide": "right", "graphicSide": "left" }
+    },
+    {
+      "id": "card-06-mixed",
+      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says '...many people have mixed dementia...'. Two brain icons overlap/crossfade at centre.",
+      "startSec": 93.42,
+      "endSec": 103.0,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "title": "Mixed Dementia" }
+    }
+  ]
+}

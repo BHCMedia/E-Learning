@@ -1,0 +1,1842 @@
+[
+  {
+    "text": "Before",
+    "start": 0,
+    "end": 0.36
+  },
+  {
+    "text": "we",
+    "start": 0.36,
+    "end": 0.54
+  },
+  {
+    "text": "dive",
+    "start": 0.54,
+    "end": 0.7
+  },
+  {
+    "text": "into",
+    "start": 0.7,
+    "end": 0.92
+  },
+  {
+    "text": "the",
+    "start": 0.92,
+    "end": 1.1
+  },
+  {
+    "text": "details,",
+    "start": 1.1,
+    "end": 1.94
+  },
+  {
+    "text": "it's",
+    "start": 1.94,
+    "end": 2.08
+  },
+  {
+    "text": "vital",
+    "start": 2.08,
+    "end": 2.34
+  },
+  {
+    "text": "to",
+    "start": 2.34,
+    "end": 2.66
+  },
+  {
+    "text": "understand",
+    "start": 2.66,
+    "end": 3.1
+  },
+  {
+    "text": "one",
+    "start": 3.1,
+    "end": 3.48
+  },
+  {
+    "text": "core",
+    "start": 3.48,
+    "end": 3.78
+  },
+  {
+    "text": "fact.",
+    "start": 3.78,
+    "end": 4.9
+  },
+  {
+    "text": "Dementia",
+    "start": 5,
+    "end": 5.44
+  },
+  {
+    "text": "is",
+    "start": 5.44,
+    "end": 5.72
+  },
+  {
+    "text": "not",
+    "start": 5.72,
+    "end": 5.94
+  },
+  {
+    "text": "a",
+    "start": 5.94,
+    "end": 6.12
+  },
+  {
+    "text": "single",
+    "start": 6.12,
+    "end": 6.34
+  },
+  {
+    "text": "condition.",
+    "start": 6.34,
+    "end": 7.44
+  },
+  {
+    "text": "It's",
+    "start": 7.44,
+    "end": 7.68
+  },
+  {
+    "text": "much",
+    "start": 7.68,
+    "end": 7.86
+  },
+  {
+    "text": "broader",
+    "start": 7.86,
+    "end": 8.16
+  },
+  {
+    "text": "than",
+    "start": 8.16,
+    "end": 8.48
+  },
+  {
+    "text": "most",
+    "start": 8.48,
+    "end": 8.72
+  },
+  {
+    "text": "people",
+    "start": 8.72,
+    "end": 9.04
+  },
+  {
+    "text": "realize.",
+    "start": 9.04,
+    "end": 10.32
+  },
+  {
+    "text": "Dementia",
+    "start": 10.36,
+    "end": 10.88
+  },
+  {
+    "text": "is",
+    "start": 10.88,
+    "end": 11.04
+  },
+  {
+    "text": "an",
+    "start": 11.04,
+    "end": 11.22
+  },
+  {
+    "text": "umbrella",
+    "start": 11.22,
+    "end": 11.52
+  },
+  {
+    "text": "term",
+    "start": 11.52,
+    "end": 12
+  },
+  {
+    "text": "used",
+    "start": 12,
+    "end": 12.5
+  },
+  {
+    "text": "to",
+    "start": 12.5,
+    "end": 12.7
+  },
+  {
+    "text": "describe",
+    "start": 12.7,
+    "end": 13.08
+  },
+  {
+    "text": "a",
+    "start": 13.08,
+    "end": 13.3
+  },
+  {
+    "text": "range",
+    "start": 13.3,
+    "end": 13.52
+  },
+  {
+    "text": "of",
+    "start": 13.52,
+    "end": 13.74
+  },
+  {
+    "text": "symptoms.",
+    "start": 13.74,
+    "end": 15.54
+  },
+  {
+    "text": "Associated",
+    "start": 15.54,
+    "end": 15.54
+  },
+  {
+    "text": "with",
+    "start": 15.54,
+    "end": 15.98
+  },
+  {
+    "text": "a",
+    "start": 15.98,
+    "end": 16.1
+  },
+  {
+    "text": "decline",
+    "start": 16.1,
+    "end": 16.48
+  },
+  {
+    "text": "in",
+    "start": 16.48,
+    "end": 16.72
+  },
+  {
+    "text": "memory",
+    "start": 16.72,
+    "end": 17.08
+  },
+  {
+    "text": "or",
+    "start": 17.08,
+    "end": 17.48
+  },
+  {
+    "text": "other",
+    "start": 17.48,
+    "end": 17.74
+  },
+  {
+    "text": "thinking",
+    "start": 17.74,
+    "end": 18.1
+  },
+  {
+    "text": "skills,",
+    "start": 18.1,
+    "end": 19.16
+  },
+  {
+    "text": "severe",
+    "start": 19.16,
+    "end": 19.26
+  },
+  {
+    "text": "enough",
+    "start": 19.26,
+    "end": 19.56
+  },
+  {
+    "text": "to",
+    "start": 19.56,
+    "end": 19.78
+  },
+  {
+    "text": "reduce",
+    "start": 19.8,
+    "end": 20.06
+  },
+  {
+    "text": "a",
+    "start": 20.06,
+    "end": 20.28
+  },
+  {
+    "text": "person's",
+    "start": 20.28,
+    "end": 20.68
+  },
+  {
+    "text": "ability",
+    "start": 20.68,
+    "end": 20.92
+  },
+  {
+    "text": "to",
+    "start": 20.92,
+    "end": 21.3
+  },
+  {
+    "text": "perform",
+    "start": 21.3,
+    "end": 21.68
+  },
+  {
+    "text": "everyday",
+    "start": 21.68,
+    "end": 22.06
+  },
+  {
+    "text": "activities.",
+    "start": 22.06,
+    "end": 23.34
+  },
+  {
+    "text": "It's",
+    "start": 23.34,
+    "end": 23.62
+  },
+  {
+    "text": "not",
+    "start": 23.62,
+    "end": 23.78
+  },
+  {
+    "text": "just",
+    "start": 23.78,
+    "end": 23.96
+  },
+  {
+    "text": "a",
+    "start": 23.96,
+    "end": 24.12
+  },
+  {
+    "text": "part",
+    "start": 24.12,
+    "end": 24.32
+  },
+  {
+    "text": "of",
+    "start": 24.32,
+    "end": 24.5
+  },
+  {
+    "text": "getting",
+    "start": 24.5,
+    "end": 24.66
+  },
+  {
+    "text": "older,",
+    "start": 24.68,
+    "end": 25.58
+  },
+  {
+    "text": "it's",
+    "start": 25.58,
+    "end": 25.78
+  },
+  {
+    "text": "caused",
+    "start": 25.78,
+    "end": 25.98
+  },
+  {
+    "text": "by",
+    "start": 25.98,
+    "end": 26.24
+  },
+  {
+    "text": "progressive",
+    "start": 26.24,
+    "end": 26.68
+  },
+  {
+    "text": "changes",
+    "start": 26.68,
+    "end": 27.24
+  },
+  {
+    "text": "and",
+    "start": 27.24,
+    "end": 27.56
+  },
+  {
+    "text": "damage",
+    "start": 27.64,
+    "end": 27.86
+  },
+  {
+    "text": "to",
+    "start": 27.86,
+    "end": 28.16
+  },
+  {
+    "text": "brain",
+    "start": 28.16,
+    "end": 28.38
+  },
+  {
+    "text": "cells.",
+    "start": 28.38,
+    "end": 30.02
+  },
+  {
+    "text": "Just",
+    "start": 30.02,
+    "end": 30.24
+  },
+  {
+    "text": "as",
+    "start": 30.24,
+    "end": 30.44
+  },
+  {
+    "text": "the",
+    "start": 30.44,
+    "end": 30.56
+  },
+  {
+    "text": "word",
+    "start": 30.56,
+    "end": 30.78
+  },
+  {
+    "text": "flower",
+    "start": 30.78,
+    "end": 31.18
+  },
+  {
+    "text": "describes",
+    "start": 31.18,
+    "end": 31.72
+  },
+  {
+    "text": "many",
+    "start": 31.72,
+    "end": 32.04
+  },
+  {
+    "text": "different",
+    "start": 32.04,
+    "end": 32.4
+  },
+  {
+    "text": "species,",
+    "start": 32.4,
+    "end": 33.74
+  },
+  {
+    "text": "dementia",
+    "start": 33.92,
+    "end": 33.92
+  },
+  {
+    "text": "is",
+    "start": 33.92,
+    "end": 34.62
+  },
+  {
+    "text": "the",
+    "start": 34.62,
+    "end": 34.78
+  },
+  {
+    "text": "category",
+    "start": 34.78,
+    "end": 35.14
+  },
+  {
+    "text": "for",
+    "start": 35.14,
+    "end": 35.4
+  },
+  {
+    "text": "several",
+    "start": 35.4,
+    "end": 35.78
+  },
+  {
+    "text": "different",
+    "start": 35.78,
+    "end": 36.14
+  },
+  {
+    "text": "brain",
+    "start": 36.14,
+    "end": 36.38
+  },
+  {
+    "text": "diseases.",
+    "start": 36.38,
+    "end": 37.54
+  },
+  {
+    "text": "While",
+    "start": 37.54,
+    "end": 37.72
+  },
+  {
+    "text": "they",
+    "start": 37.72,
+    "end": 37.88
+  },
+  {
+    "text": "all",
+    "start": 37.88,
+    "end": 38.12
+  },
+  {
+    "text": "affect",
+    "start": 38.12,
+    "end": 38.44
+  },
+  {
+    "text": "memory,",
+    "start": 38.44,
+    "end": 39.38
+  },
+  {
+    "text": "cognitive",
+    "start": 39.38,
+    "end": 39.72
+  },
+  {
+    "text": "abilities",
+    "start": 39.72,
+    "end": 40.4
+  },
+  {
+    "text": "and",
+    "start": 40.4,
+    "end": 40.68
+  },
+  {
+    "text": "behavior,",
+    "start": 40.68,
+    "end": 41.74
+  },
+  {
+    "text": "each",
+    "start": 41.74,
+    "end": 41.92
+  },
+  {
+    "text": "condition",
+    "start": 41.92,
+    "end": 42.3
+  },
+  {
+    "text": "has",
+    "start": 42.3,
+    "end": 42.6
+  },
+  {
+    "text": "its",
+    "start": 42.6,
+    "end": 42.78
+  },
+  {
+    "text": "own",
+    "start": 42.78,
+    "end": 42.98
+  },
+  {
+    "text": "unique",
+    "start": 42.98,
+    "end": 43.28
+  },
+  {
+    "text": "characteristics",
+    "start": 43.28,
+    "end": 43.88
+  },
+  {
+    "text": "and",
+    "start": 43.88,
+    "end": 44.2
+  },
+  {
+    "text": "progression.",
+    "start": 44.2,
+    "end": 46.08
+  },
+  {
+    "text": "Alzheimer's",
+    "start": 46.08,
+    "end": 46.7
+  },
+  {
+    "text": "disease",
+    "start": 46.7,
+    "end": 46.98
+  },
+  {
+    "text": "is",
+    "start": 46.98,
+    "end": 47.3
+  },
+  {
+    "text": "the",
+    "start": 47.28,
+    "end": 47.44
+  },
+  {
+    "text": "most",
+    "start": 47.44,
+    "end": 47.64
+  },
+  {
+    "text": "common",
+    "start": 47.64,
+    "end": 47.98
+  },
+  {
+    "text": "form,",
+    "start": 47.98,
+    "end": 48.88
+  },
+  {
+    "text": "accounting",
+    "start": 48.88,
+    "end": 49.18
+  },
+  {
+    "text": "for",
+    "start": 49.18,
+    "end": 49.5
+  },
+  {
+    "text": "60",
+    "start": 49.5,
+    "end": 49.88
+  },
+  {
+    "text": "to",
+    "start": 49.88,
+    "end": 50.02
+  },
+  {
+    "text": "80",
+    "start": 50.02,
+    "end": 50.3
+  },
+  {
+    "text": "%",
+    "start": 50.3,
+    "end": 50.66
+  },
+  {
+    "text": "of",
+    "start": 50.66,
+    "end": 50.86
+  },
+  {
+    "text": "all",
+    "start": 50.86,
+    "end": 51.06
+  },
+  {
+    "text": "cases.",
+    "start": 51.06,
+    "end": 52.16
+  },
+  {
+    "text": "It",
+    "start": 52.16,
+    "end": 52.26
+  },
+  {
+    "text": "primarily",
+    "start": 52.26,
+    "end": 52.64
+  },
+  {
+    "text": "targets",
+    "start": 52.64,
+    "end": 53.2
+  },
+  {
+    "text": "the",
+    "start": 53.2,
+    "end": 53.46
+  },
+  {
+    "text": "parts",
+    "start": 53.46,
+    "end": 53.68
+  },
+  {
+    "text": "of",
+    "start": 53.68,
+    "end": 53.86
+  },
+  {
+    "text": "the",
+    "start": 53.86,
+    "end": 54
+  },
+  {
+    "text": "brain",
+    "start": 54,
+    "end": 54.22
+  },
+  {
+    "text": "that",
+    "start": 54.22,
+    "end": 54.46
+  },
+  {
+    "text": "control",
+    "start": 54.46,
+    "end": 54.84
+  },
+  {
+    "text": "thought,",
+    "start": 54.84,
+    "end": 55.72
+  },
+  {
+    "text": "memory",
+    "start": 55.72,
+    "end": 55.92
+  },
+  {
+    "text": "and",
+    "start": 55.92,
+    "end": 56.36
+  },
+  {
+    "text": "language.",
+    "start": 56.36,
+    "end": 57.48
+  },
+  {
+    "text": "This",
+    "start": 57.5,
+    "end": 57.66
+  },
+  {
+    "text": "is",
+    "start": 57.66,
+    "end": 57.8
+  },
+  {
+    "text": "why",
+    "start": 57.8,
+    "end": 57.98
+  },
+  {
+    "text": "people",
+    "start": 57.98,
+    "end": 58.32
+  },
+  {
+    "text": "often",
+    "start": 58.32,
+    "end": 58.62
+  },
+  {
+    "text": "first",
+    "start": 58.62,
+    "end": 58.94
+  },
+  {
+    "text": "notice",
+    "start": 58.94,
+    "end": 59.26
+  },
+  {
+    "text": "a",
+    "start": 59.26,
+    "end": 59.44
+  },
+  {
+    "text": "struggle",
+    "start": 59.44,
+    "end": 59.7
+  },
+  {
+    "text": "with",
+    "start": 59.7,
+    "end": 59.96
+  },
+  {
+    "text": "remembering",
+    "start": 59.96,
+    "end": 60.34
+  },
+  {
+    "text": "recent",
+    "start": 60.34,
+    "end": 60.82
+  },
+  {
+    "text": "events,",
+    "start": 60.82,
+    "end": 61.7
+  },
+  {
+    "text": "names",
+    "start": 61.7,
+    "end": 61.98
+  },
+  {
+    "text": "or",
+    "start": 61.98,
+    "end": 62.28
+  },
+  {
+    "text": "conversations.",
+    "start": 62.28,
+    "end": 64.54
+  },
+  {
+    "text": "Vascular",
+    "start": 64.58,
+    "end": 65.06
+  },
+  {
+    "text": "dementia",
+    "start": 65.06,
+    "end": 65.44
+  },
+  {
+    "text": "is",
+    "start": 65.44,
+    "end": 65.78
+  },
+  {
+    "text": "the",
+    "start": 65.78,
+    "end": 65.96
+  },
+  {
+    "text": "second",
+    "start": 65.96,
+    "end": 66.22
+  },
+  {
+    "text": "most",
+    "start": 66.22,
+    "end": 66.46
+  },
+  {
+    "text": "common",
+    "start": 66.46,
+    "end": 66.82
+  },
+  {
+    "text": "type,",
+    "start": 66.82,
+    "end": 67.66
+  },
+  {
+    "text": "often",
+    "start": 67.68,
+    "end": 67.98
+  },
+  {
+    "text": "occurring",
+    "start": 67.98,
+    "end": 68.4
+  },
+  {
+    "text": "after",
+    "start": 68.4,
+    "end": 68.72
+  },
+  {
+    "text": "a",
+    "start": 68.72,
+    "end": 68.94
+  },
+  {
+    "text": "stroke",
+    "start": 68.94,
+    "end": 69.26
+  },
+  {
+    "text": "or",
+    "start": 69.48,
+    "end": 69.76
+  },
+  {
+    "text": "due",
+    "start": 69.76,
+    "end": 69.94
+  },
+  {
+    "text": "to",
+    "start": 69.94,
+    "end": 70.14
+  },
+  {
+    "text": "blocked",
+    "start": 70.14,
+    "end": 70.4
+  },
+  {
+    "text": "blood",
+    "start": 70.4,
+    "end": 70.72
+  },
+  {
+    "text": "vessels.",
+    "start": 70.72,
+    "end": 71.72
+  },
+  {
+    "text": "Then",
+    "start": 71.72,
+    "end": 71.94
+  },
+  {
+    "text": "there's",
+    "start": 71.94,
+    "end": 72.28
+  },
+  {
+    "text": "Lewy",
+    "start": 72.28,
+    "end": 72.56
+  },
+  {
+    "text": "body",
+    "start": 72.56,
+    "end": 72.74
+  },
+  {
+    "text": "dementia,",
+    "start": 72.74,
+    "end": 73.6
+  },
+  {
+    "text": "which",
+    "start": 73.72,
+    "end": 73.88
+  },
+  {
+    "text": "involves",
+    "start": 73.88,
+    "end": 74.26
+  },
+  {
+    "text": "protein",
+    "start": 74.26,
+    "end": 74.78
+  },
+  {
+    "text": "deposits",
+    "start": 74.78,
+    "end": 75.24
+  },
+  {
+    "text": "in",
+    "start": 75.24,
+    "end": 75.46
+  },
+  {
+    "text": "the",
+    "start": 75.46,
+    "end": 75.6
+  },
+  {
+    "text": "brain",
+    "start": 75.6,
+    "end": 75.88
+  },
+  {
+    "text": "and",
+    "start": 76.24,
+    "end": 76.38
+  },
+  {
+    "text": "can",
+    "start": 76.38,
+    "end": 76.56
+  },
+  {
+    "text": "lead",
+    "start": 76.56,
+    "end": 76.76
+  },
+  {
+    "text": "to",
+    "start": 76.76,
+    "end": 76.96
+  },
+  {
+    "text": "fluctuations",
+    "start": 76.96,
+    "end": 77.46
+  },
+  {
+    "text": "in",
+    "start": 77.46,
+    "end": 77.82
+  },
+  {
+    "text": "alertness.",
+    "start": 77.82,
+    "end": 79.12
+  },
+  {
+    "text": "And",
+    "start": 79.12,
+    "end": 79.28
+  },
+  {
+    "text": "even",
+    "start": 79.28,
+    "end": 79.54
+  },
+  {
+    "text": "physical",
+    "start": 79.54,
+    "end": 79.88
+  },
+  {
+    "text": "movement",
+    "start": 79.88,
+    "end": 80.36
+  },
+  {
+    "text": "challenges",
+    "start": 80.36,
+    "end": 80.86
+  },
+  {
+    "text": "similar",
+    "start": 81,
+    "end": 81.24
+  },
+  {
+    "text": "to",
+    "start": 81.24,
+    "end": 81.52
+  },
+  {
+    "text": "Parkinson's.",
+    "start": 81.52,
+    "end": 83.42
+  },
+  {
+    "text": "Frontotemporal",
+    "start": 83.42,
+    "end": 84.1
+  },
+  {
+    "text": "dementia",
+    "start": 84.12,
+    "end": 84.46
+  },
+  {
+    "text": "often",
+    "start": 84.46,
+    "end": 85.02
+  },
+  {
+    "text": "appears",
+    "start": 85.02,
+    "end": 85.4
+  },
+  {
+    "text": "at",
+    "start": 85.4,
+    "end": 85.7
+  },
+  {
+    "text": "a",
+    "start": 85.7,
+    "end": 85.84
+  },
+  {
+    "text": "younger",
+    "start": 85.84,
+    "end": 86.04
+  },
+  {
+    "text": "age",
+    "start": 86.04,
+    "end": 86.46
+  },
+  {
+    "text": "and",
+    "start": 86.46,
+    "end": 87.46
+  },
+  {
+    "text": "tends",
+    "start": 87.46,
+    "end": 87.68
+  },
+  {
+    "text": "to",
+    "start": 87.68,
+    "end": 87.9
+  },
+  {
+    "text": "affect",
+    "start": 87.9,
+    "end": 88.16
+  },
+  {
+    "text": "personality",
+    "start": 88.16,
+    "end": 88.72
+  },
+  {
+    "text": "and",
+    "start": 88.72,
+    "end": 89.2
+  },
+  {
+    "text": "language",
+    "start": 89.2,
+    "end": 89.58
+  },
+  {
+    "text": "more",
+    "start": 89.58,
+    "end": 89.92
+  },
+  {
+    "text": "than",
+    "start": 89.92,
+    "end": 90.14
+  },
+  {
+    "text": "memory.",
+    "start": 90.14,
+    "end": 91.44
+  },
+  {
+    "text": "And",
+    "start": 91.44,
+    "end": 91.56
+  },
+  {
+    "text": "surprisingly,",
+    "start": 91.56,
+    "end": 92.68
+  },
+  {
+    "text": "many",
+    "start": 92.68,
+    "end": 92.88
+  },
+  {
+    "text": "people",
+    "start": 92.88,
+    "end": 93.14
+  },
+  {
+    "text": "have",
+    "start": 93.14,
+    "end": 93.42
+  },
+  {
+    "text": "mixed",
+    "start": 93.42,
+    "end": 93.76
+  },
+  {
+    "text": "dementia,",
+    "start": 93.76,
+    "end": 94.92
+  },
+  {
+    "text": "where",
+    "start": 94.92,
+    "end": 95.38
+  },
+  {
+    "text": "symptoms",
+    "start": 95.38,
+    "end": 95.72
+  },
+  {
+    "text": "of",
+    "start": 95.72,
+    "end": 96.04
+  },
+  {
+    "text": "more",
+    "start": 96.04,
+    "end": 96.24
+  },
+  {
+    "text": "than",
+    "start": 96.24,
+    "end": 96.44
+  },
+  {
+    "text": "one",
+    "start": 96.44,
+    "end": 96.64
+  },
+  {
+    "text": "type",
+    "start": 96.64,
+    "end": 96.92
+  },
+  {
+    "text": "are",
+    "start": 96.92,
+    "end": 97.12
+  },
+  {
+    "text": "present",
+    "start": 97.12,
+    "end": 97.44
+  },
+  {
+    "text": "at",
+    "start": 97.44,
+    "end": 97.66
+  },
+  {
+    "text": "the",
+    "start": 97.66,
+    "end": 97.76
+  },
+  {
+    "text": "same",
+    "start": 97.84,
+    "end": 97.96
+  },
+  {
+    "text": "time,",
+    "start": 97.96,
+    "end": 98.58
+  },
+  {
+    "text": "making",
+    "start": 98.58,
+    "end": 98.86
+  },
+  {
+    "text": "their",
+    "start": 98.86,
+    "end": 99.1
+  },
+  {
+    "text": "journey",
+    "start": 99.1,
+    "end": 99.38
+  },
+  {
+    "text": "even",
+    "start": 99.38,
+    "end": 99.72
+  },
+  {
+    "text": "more",
+    "start": 99.72,
+    "end": 99.94
+  },
+  {
+    "text": "complex.",
+    "start": 99.94,
+    "end": 103
+  },
+  {
+    "text": "Perhaps",
+    "start": 103,
+    "end": 103.4
+  },
+  {
+    "text": "the",
+    "start": 103.4,
+    "end": 103.64
+  },
+  {
+    "text": "most",
+    "start": 103.64,
+    "end": 103.82
+  },
+  {
+    "text": "important",
+    "start": 103.82,
+    "end": 104.34
+  },
+  {
+    "text": "takeaway",
+    "start": 104.34,
+    "end": 104.6
+  },
+  {
+    "text": "for",
+    "start": 104.6,
+    "end": 105.06
+  },
+  {
+    "text": "you",
+    "start": 105.06,
+    "end": 105.3
+  },
+  {
+    "text": "as",
+    "start": 105.3,
+    "end": 105.48
+  },
+  {
+    "text": "a",
+    "start": 105.48,
+    "end": 105.64
+  },
+  {
+    "text": "caregiver",
+    "start": 105.64,
+    "end": 106.1
+  },
+  {
+    "text": "is",
+    "start": 106.1,
+    "end": 106.3
+  },
+  {
+    "text": "this.",
+    "start": 106.3,
+    "end": 107.28
+  },
+  {
+    "text": "No",
+    "start": 107.36,
+    "end": 107.58
+  },
+  {
+    "text": "two",
+    "start": 107.58,
+    "end": 107.84
+  },
+  {
+    "text": "people",
+    "start": 107.84,
+    "end": 108.18
+  },
+  {
+    "text": "will",
+    "start": 108.18,
+    "end": 108.42
+  },
+  {
+    "text": "experience",
+    "start": 108.42,
+    "end": 108.96
+  },
+  {
+    "text": "dementia",
+    "start": 108.96,
+    "end": 109.34
+  },
+  {
+    "text": "in",
+    "start": 109.34,
+    "end": 109.8
+  },
+  {
+    "text": "exactly",
+    "start": 109.8,
+    "end": 110.18
+  },
+  {
+    "text": "the",
+    "start": 110.18,
+    "end": 110.46
+  },
+  {
+    "text": "same",
+    "start": 110.46,
+    "end": 110.66
+  },
+  {
+    "text": "way.",
+    "start": 110.66,
+    "end": 111.48
+  },
+  {
+    "text": "The",
+    "start": 111.48,
+    "end": 111.66
+  },
+  {
+    "text": "term",
+    "start": 111.66,
+    "end": 111.88
+  },
+  {
+    "text": "refers",
+    "start": 111.88,
+    "end": 112.2
+  },
+  {
+    "text": "to",
+    "start": 112.2,
+    "end": 112.5
+  },
+  {
+    "text": "a",
+    "start": 112.5,
+    "end": 112.62
+  },
+  {
+    "text": "collection",
+    "start": 112.62,
+    "end": 112.88
+  },
+  {
+    "text": "of",
+    "start": 112.88,
+    "end": 113.26
+  },
+  {
+    "text": "progressive",
+    "start": 113.26,
+    "end": 113.68
+  },
+  {
+    "text": "diseases",
+    "start": 113.68,
+    "end": 114.2
+  },
+  {
+    "text": "that",
+    "start": 114.2,
+    "end": 114.82
+  },
+  {
+    "text": "present",
+    "start": 114.82,
+    "end": 115.22
+  },
+  {
+    "text": "differently",
+    "start": 115.22,
+    "end": 115.76
+  },
+  {
+    "text": "in",
+    "start": 115.76,
+    "end": 116.12
+  },
+  {
+    "text": "every",
+    "start": 116.12,
+    "end": 116.48
+  },
+  {
+    "text": "single",
+    "start": 116.6,
+    "end": 116.8
+  },
+  {
+    "text": "individual",
+    "start": 116.8,
+    "end": 117.46
+  },
+  {
+    "text": "based",
+    "start": 117.46,
+    "end": 118.14
+  },
+  {
+    "text": "on",
+    "start": 118.14,
+    "end": 118.42
+  },
+  {
+    "text": "their",
+    "start": 118.42,
+    "end": 118.56
+  },
+  {
+    "text": "unique",
+    "start": 118.56,
+    "end": 118.9
+  },
+  {
+    "text": "life",
+    "start": 118.9,
+    "end": 119.24
+  },
+  {
+    "text": "and",
+    "start": 119.24,
+    "end": 119.48
+  },
+  {
+    "text": "brain.",
+    "start": 119.48,
+    "end": 121.44
+  },
+  {
+    "text": "Providing",
+    "start": 121.44,
+    "end": 121.8
+  },
+  {
+    "text": "care",
+    "start": 121.8,
+    "end": 122.16
+  },
+  {
+    "text": "requires",
+    "start": 122.16,
+    "end": 122.66
+  },
+  {
+    "text": "compassion,",
+    "start": 122.66,
+    "end": 123.74
+  },
+  {
+    "text": "patience,",
+    "start": 123.78,
+    "end": 124.6
+  },
+  {
+    "text": "and",
+    "start": 124.6,
+    "end": 124.64
+  },
+  {
+    "text": "a",
+    "start": 124.64,
+    "end": 124.78
+  },
+  {
+    "text": "tailored",
+    "start": 124.78,
+    "end": 125.06
+  },
+  {
+    "text": "approach.",
+    "start": 125.06,
+    "end": 126.26
+  },
+  {
+    "text": "By",
+    "start": 126.26,
+    "end": 126.46
+  },
+  {
+    "text": "recognizing",
+    "start": 126.46,
+    "end": 126.94
+  },
+  {
+    "text": "that",
+    "start": 126.94,
+    "end": 127.34
+  },
+  {
+    "text": "each",
+    "start": 127.34,
+    "end": 127.58
+  },
+  {
+    "text": "client's",
+    "start": 127.58,
+    "end": 128.02
+  },
+  {
+    "text": "experience",
+    "start": 128.02,
+    "end": 128.38
+  },
+  {
+    "text": "is",
+    "start": 128.38,
+    "end": 128.78
+  },
+  {
+    "text": "unique,",
+    "start": 128.78,
+    "end": 129.8
+  },
+  {
+    "text": "you",
+    "start": 129.8,
+    "end": 130.08
+  },
+  {
+    "text": "can",
+    "start": 130.08,
+    "end": 130.26
+  },
+  {
+    "text": "move",
+    "start": 130.26,
+    "end": 130.46
+  },
+  {
+    "text": "beyond",
+    "start": 130.46,
+    "end": 130.82
+  },
+  {
+    "text": "a",
+    "start": 130.82,
+    "end": 131
+  },
+  {
+    "text": "standard",
+    "start": 131,
+    "end": 131.34
+  },
+  {
+    "text": "checklist",
+    "start": 131.8,
+    "end": 131.8
+  },
+  {
+    "text": "and",
+    "start": 131.8,
+    "end": 132.44
+  },
+  {
+    "text": "offer",
+    "start": 132.44,
+    "end": 132.7
+  },
+  {
+    "text": "truly",
+    "start": 132.7,
+    "end": 133.04
+  },
+  {
+    "text": "person",
+    "start": 133.04,
+    "end": 133.48
+  },
+  {
+    "text": "-centered",
+    "start": 133.48,
+    "end": 133.72
+  },
+  {
+    "text": "support",
+    "start": 133.72,
+    "end": 134.3
+  },
+  {
+    "text": "that",
+    "start": 134.3,
+    "end": 134.78
+  },
+  {
+    "text": "addresses",
+    "start": 134.78,
+    "end": 135.16
+  },
+  {
+    "text": "their",
+    "start": 135.16,
+    "end": 135.42
+  },
+  {
+    "text": "specific",
+    "start": 135.42,
+    "end": 135.88
+  },
+  {
+    "text": "triggers",
+    "start": 135.88,
+    "end": 136.32
+  },
+  {
+    "text": "and",
+    "start": 136.46,
+    "end": 136.58
+  },
+  {
+    "text": "needs.",
+    "start": 136.58,
+    "end": 138.32
+  },
+  {
+    "text": "To",
+    "start": 138.32,
+    "end": 138.5
+  },
+  {
+    "text": "wrap",
+    "start": 138.5,
+    "end": 138.68
+  },
+  {
+    "text": "up,",
+    "start": 138.68,
+    "end": 139.5
+  },
+  {
+    "text": "remember",
+    "start": 139.5,
+    "end": 139.84
+  },
+  {
+    "text": "that",
+    "start": 139.84,
+    "end": 140.1
+  },
+  {
+    "text": "dementia",
+    "start": 140.1,
+    "end": 140.4
+  },
+  {
+    "text": "is",
+    "start": 140.4,
+    "end": 140.76
+  },
+  {
+    "text": "an",
+    "start": 140.76,
+    "end": 140.92
+  },
+  {
+    "text": "umbrella",
+    "start": 140.92,
+    "end": 141.22
+  },
+  {
+    "text": "term",
+    "start": 141.22,
+    "end": 141.56
+  },
+  {
+    "text": "for",
+    "start": 141.56,
+    "end": 141.78
+  },
+  {
+    "text": "many",
+    "start": 141.78,
+    "end": 142.02
+  },
+  {
+    "text": "diseases.",
+    "start": 142.02,
+    "end": 143.18
+  },
+  {
+    "text": "Alzheimer's",
+    "start": 143.46,
+    "end": 143.74
+  },
+  {
+    "text": "is",
+    "start": 143.74,
+    "end": 143.86
+  },
+  {
+    "text": "only",
+    "start": 143.86,
+    "end": 144.12
+  },
+  {
+    "text": "one",
+    "start": 144.12,
+    "end": 144.32
+  },
+  {
+    "text": "of",
+    "start": 144.32,
+    "end": 144.48
+  },
+  {
+    "text": "them.",
+    "start": 144.48,
+    "end": 145.42
+  },
+  {
+    "text": "And",
+    "start": 145.42,
+    "end": 145.64
+  },
+  {
+    "text": "every",
+    "start": 145.64,
+    "end": 145.96
+  },
+  {
+    "text": "single",
+    "start": 145.96,
+    "end": 146.2
+  },
+  {
+    "text": "person",
+    "start": 146.2,
+    "end": 146.56
+  },
+  {
+    "text": "you",
+    "start": 146.56,
+    "end": 146.84
+  },
+  {
+    "text": "care",
+    "start": 146.84,
+    "end": 147.04
+  },
+  {
+    "text": "for",
+    "start": 147.04,
+    "end": 147.36
+  },
+  {
+    "text": "will",
+    "start": 147.36,
+    "end": 147.74
+  },
+  {
+    "text": "have",
+    "start": 147.74,
+    "end": 147.94
+  },
+  {
+    "text": "a",
+    "start": 147.94,
+    "end": 148.06
+  },
+  {
+    "text": "unique",
+    "start": 148.06,
+    "end": 148.36
+  },
+  {
+    "text": "journey",
+    "start": 148.36,
+    "end": 148.72
+  },
+  {
+    "text": "that",
+    "start": 148.72,
+    "end": 149.02
+  },
+  {
+    "text": "requires",
+    "start": 149.02,
+    "end": 149.44
+  },
+  {
+    "text": "your",
+    "start": 149.44,
+    "end": 149.76
+  },
+  {
+    "text": "unique",
+    "start": 150.04,
+    "end": 150.1
+  },
+  {
+    "text": "attention.",
+    "start": 150.1,
+    "end": 160.56
+  }
+]
