@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+
+      :root {
+        --indigo: #1a1a4d;
+        --cyan: #00e5ff;
+        --white: #f5f7ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--indigo);
+      }
+
+      .card-host {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--indigo);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .kicker {
+        margin: 0;
+        font: 700 34px/1 "Inter", sans-serif;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+      .big-title {
+        margin: 0;
+        font: 700 96px/1.15 "Inter", sans-serif;
+        color: var(--white);
+        text-align: center;
+        max-width: 1500px;
+      }
+      .sub-title {
+        margin: 0;
+        font: 700 72px/1.2 "Inter", sans-serif;
+        color: var(--white);
+        text-align: center;
+        max-width: 1500px;
+      }
+      .fact-line {
+        margin: 22px 0 0;
+        font: 400 40px/1.3 "Inter", sans-serif;
+        color: var(--cyan);
+        text-align: center;
+        max-width: 1200px;
+      }
+      .underline-bar {
+        width: 0;
+        height: 6px;
+        border-radius: 3px;
+        background: var(--cyan);
+      }
+      .icon {
+        color: var(--cyan);
+        display: block;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .label {
+        margin: 0;
+        font: 700 32px/1 "Inter", sans-serif;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .mark {
+        stroke: var(--cyan);
+        stroke-width: 4;
+        fill: none;
+      }
+      .icon-wrap {
+        position: relative;
+        display: inline-flex;
+      }
+      .icon-badge {
+        position: absolute;
+        right: -14px;
+        bottom: -10px;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: var(--indigo);
+        border: 3px solid var(--cyan);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .icon-badge svg {
+        width: 34px;
+        height: 34px;
+        color: var(--cyan);
+      }
+      .caption {
+        margin: 18px 0 0;
+        font: 400 34px/1.3 "Inter", sans-serif;
+        color: var(--cyan);
+        text-align: center;
+        max-width: 1100px;
+      }
+      .glass-video-wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .glass-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5) saturate(0.85);
+      }
+      .glass-panel {
+        position: relative;
+        padding: 56px 96px;
+        background: rgba(26, 26, 77, 0.55);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 229, 255, 0.4);
+        border-radius: 28px;
+      }
+      .content-gap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+      }
+      .blackout {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        background: #000;
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="dementia-motion-graphics"
+      data-start="0"
+      data-duration="151.0000"
+      data-fps="25"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Shared icon family — real MIT/ISC-licensed Lucide icons (lucide.dev),
+           not hand-drawn shapes. Every icon uses the same stroke language
+           (currentColor, stroke-width 2, round caps, no fill, 24x24 viewBox)
+           for a genuinely consistent family. -->
+      <svg width="0" height="0" style="position: absolute">
+        <defs>
+          <symbol id="icon-brain-base" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 18V5" />
+              <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+              <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+              <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+              <path d="M18 18a4 4 0 0 0 2-7.464" />
+              <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+              <path d="M6 18a4 4 0 0 1-2-7.464" />
+              <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-umbrella" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 13v7a2 2 0 0 0 4 0" />
+              <path d="M12 2v2" />
+              <path d="M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-clock" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-checklist" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 5h8" />
+              <path d="M13 12h8" />
+              <path d="M13 19h8" />
+              <path d="m3 17 2 2 4-4" />
+              <path d="m3 7 2 2 4-4" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-calendar" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v3" />
+              <path d="M16 2v3" />
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18" />
+              <path d="m14 13-4 4" />
+              <path d="m10 13 4 4" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-flower" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1" />
+              <circle cx="12" cy="8" r="2" />
+              <path d="M12 10v12" />
+              <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" />
+              <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-figure" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 0 0-16 0" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </symbol>
+
+          <symbol id="icon-hourglass" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 22h14" />
+              <path d="M5 2h14" />
+              <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+              <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-slider" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 5H3" />
+              <path d="M12 19H3" />
+              <path d="M14 3v4" />
+              <path d="M16 17v4" />
+              <path d="M21 12h-9" />
+              <path d="M21 19h-5" />
+              <path d="M21 5h-7" />
+              <path d="M8 10v4" />
+              <path d="M8 12H3" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-pulse" viewBox="0 0 24 24">
+            <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </symbol>
+
+          <symbol id="icon-spark" viewBox="0 0 24 24">
+            <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </symbol>
+
+          <symbol id="icon-thought" viewBox="0 0 24 24">
+            <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </symbol>
+        </defs>
+      </svg>
+
+      <!-- Voiceover — the same audio.mp3 reused verbatim from the sibling
+           talking-head-recut project, continuous and unedited. No video track;
+           this composition is 100% invented graphics. -->
+      <audio
+        id="voiceover"
+        src="audio.mp3"
+        data-start="0"
+        data-duration="151.0000"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- Background footage for Slides 1 and 2 — direct children of the
+           stage with no timed ancestor between them and #stage (a wrapper
+           div with its own data-start would make HyperFrames unable to
+           manage playback, and the video would freeze in the render). Each
+           spans only its own window and is muted; trimmed via
+           data-media-start to the matching real moment in the source. Her
+           voice still comes only from the single continuous #voiceover
+           track above. -->
+      <video
+        id="card-01-video"
+        src="input-video.mp4"
+        muted
+        playsinline
+        data-start="0.0000"
+        data-duration="4.9000"
+        data-media-start="0.0000"
+        data-track-index="1"
+        style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;visibility:visible;opacity:1;"
+      ></video>
+      <video
+        id="card-02-video"
+        class="glass-video-wrap clip"
+        src="input-video.mp4"
+        muted
+        playsinline
+        data-start="7.4400"
+        data-duration="2.9200"
+        data-media-start="7.4400"
+        data-track-index="1"
+        style="visibility:hidden;opacity:0;object-fit:cover;filter:brightness(0.5) saturate(0.85);"
+      ></video>
+
+      <!-- ================= SLIDE 1 : 0.00 -> 7.44 =================
+           0.00-4.90 is the real video (VO: "Before we dive into the
+           details, it's vital to understand one core fact.") laid in
+           above; the indigo title card only cuts in at 4.90, right as she
+           finishes that line. -->
+      <div id="card-01-host" class="card-host clip" data-card-id="card-01" data-start="4.9000" data-duration="2.5400" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div id="card-01-content" class="content-gap">
+            <h1 class="big-title">Dementia is not a single condition.</h1>
+            <div id="card-01-underline" class="underline-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 2 : 7.44 -> 10.36 =================
+           "Much broader than most people realize" has no natural single
+           icon — per the fallback pattern, this beat uses a frosted glass
+           text panel over the real source footage (laid in above, as a
+           non-nested layer) instead of a forced icon. -->
+      <div id="card-02-host" class="card-host clip" data-card-id="card-02" data-start="7.4400" data-duration="2.9200" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide" style="background:transparent;">
+          <div id="card-02-panel" class="glass-panel" style="opacity:0;">
+            <p class="big-title" style="font-size:64px;">Much broader than most people realize.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3's background footage — same non-nested pattern as Slides
+           1/2, but shown in actual (undimmed, unblurred) color per this
+           request; only the bottom quarter of the frame carries the
+           glass panel with the icon points. -->
+      <video
+        id="card-03-video"
+        src="input-video.mp4"
+        muted
+        playsinline
+        data-start="10.3600"
+        data-duration="12.9800"
+        data-media-start="10.3600"
+        data-track-index="1"
+        style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;visibility:hidden;opacity:0;"
+      ></video>
+
+      <!-- ================= SLIDE 3 : 10.36 -> 23.34 =================
+           Glass fallback, same treatment as Slide 2, but confined to the
+           bottom 1/4 of the frame (270px) so the rest of the frame keeps
+           showing the real footage in its actual color. -->
+      <div id="card-03-host" class="card-host clip" data-card-id="card-03" data-start="10.3600" data-duration="12.9800" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide" style="background:transparent;justify-content:flex-end;">
+          <div
+            id="card-03-panel"
+            class="glass-panel"
+            style="opacity:0;position:absolute;left:0;bottom:0;width:1920px;height:270px;border-radius:0;border-width:1px 0 0 0;padding:0 100px;display:flex;align-items:center;justify-content:center;gap:90px;box-sizing:border-box;"
+          >
+            <svg id="card-03-umbrella" class="icon" viewBox="0 0 24 24" style="width:110px;height:110px;flex:none;">
+              <use href="#icon-umbrella"></use>
+            </svg>
+            <div class="row" style="gap:80px;">
+              <div id="card-03-col-brain" class="col" style="opacity:0;gap:8px;">
+                <svg class="icon" viewBox="0 0 24 24" style="width:64px;height:64px;"><use href="#icon-brain-base"></use></svg>
+                <span class="label" style="font-size:22px;">Memory</span>
+              </div>
+              <div id="card-03-col-clock" class="col" style="opacity:0;gap:8px;">
+                <svg class="icon" viewBox="0 0 24 24" style="width:64px;height:64px;"><use href="#icon-clock"></use></svg>
+                <span class="label" style="font-size:22px;">Thinking</span>
+              </div>
+              <div id="card-03-col-checklist" class="col" style="opacity:0;gap:8px;">
+                <svg class="icon" viewBox="0 0 24 24" style="width:64px;height:64px;"><use href="#icon-checklist"></use></svg>
+                <span class="label" style="font-size:22px;">Daily Tasks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 4 : 23.34 -> 30.02 ================= -->
+      <div id="card-04-host" class="card-host clip" data-card-id="card-04" data-start="23.3400" data-duration="6.6800" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="row" style="gap:160px;">
+            <div class="col">
+              <svg id="card-04-calendar" class="icon" viewBox="0 0 24 24" style="width:180px;height:180px;"><use href="#icon-calendar"></use></svg>
+              <span class="label">Not Just Aging</span>
+            </div>
+            <div class="col">
+              <div class="icon-wrap">
+                <svg class="icon" viewBox="0 0 24 24" style="width:180px;height:180px;"><use href="#icon-brain-base"></use></svg>
+                <div id="card-04-badge" class="icon-badge" style="opacity:0;">
+                  <svg viewBox="0 0 24 24"><use href="#icon-spark"></use></svg>
+                </div>
+              </div>
+              <span class="label">Cell Damage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 5 : 30.02 -> 37.54 ================= -->
+      <div id="card-05-host" class="card-host clip" data-card-id="card-05" data-start="30.0200" data-duration="7.5200" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div style="position:relative;width:220px;height:220px;">
+            <svg id="card-05-flower" class="icon" viewBox="0 0 24 24" style="position:absolute;left:0;top:0;width:220px;height:220px;"><use href="#icon-flower"></use></svg>
+            <svg id="card-05-brain" class="icon" viewBox="0 0 24 24" style="position:absolute;left:0;top:0;width:220px;height:220px;opacity:0;"><use href="#icon-brain-base"></use></svg>
+          </div>
+          <p id="card-05-caption" class="caption" style="opacity:0;">One word, many different diseases</p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 6 : 37.54 -> 46.08 ================= -->
+      <div id="card-06-host" class="card-host clip" data-card-id="card-06" data-start="37.5400" data-duration="8.5400" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="row">
+            <div id="card-06-col-0" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:140px;height:140px;"><use href="#icon-brain-base"></use></svg>
+              <span class="label">Memory</span>
+            </div>
+            <div id="card-06-col-1" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:140px;height:140px;"><use href="#icon-thought"></use></svg>
+              <span class="label">Cognition</span>
+            </div>
+            <div id="card-06-col-2" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:140px;height:140px;"><use href="#icon-figure"></use></svg>
+              <span class="label">Behaviour</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 7 : 46.08 -> 52.16 ================= -->
+      <div id="card-07-host" class="card-host clip" data-card-id="card-07" data-start="46.0800" data-duration="6.0800" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <h2 class="big-title" style="font-size:88px;">Alzheimer's Disease</h2>
+            <p id="card-07-stat" class="fact-line" style="font:700 120px/1 'Inter',sans-serif;color:var(--white);margin-top:20px;">0&ndash;0%</p>
+            <div id="card-07-underline" class="underline-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 8 : 52.16 -> 64.58 ================= -->
+      <div id="card-08-host" class="card-host clip" data-card-id="card-08" data-start="52.1600" data-duration="12.4200" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <svg class="icon" viewBox="0 0 24 24" style="width:300px;height:300px;"><use href="#icon-brain-base"></use></svg>
+            <div class="row" style="gap:90px;">
+              <div id="card-08-region-thought" style="opacity:0;">
+                <span class="label">Thought</span>
+              </div>
+              <div id="card-08-region-memory" style="opacity:0;">
+                <span class="label">Memory</span>
+              </div>
+              <div id="card-08-region-language" style="opacity:0;">
+                <span class="label">Language</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 9 : 64.58 -> 71.72 ================= -->
+      <div id="card-09-host" class="card-host clip" data-card-id="card-09" data-start="64.5800" data-duration="7.1400" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <div class="icon-wrap">
+              <svg class="icon" viewBox="0 0 24 24" style="width:220px;height:220px;"><use href="#icon-brain-base"></use></svg>
+              <div id="card-09-badge" class="icon-badge" style="opacity:0;">
+                <svg viewBox="0 0 24 24"><use href="#icon-pulse"></use></svg>
+              </div>
+            </div>
+            <h2 class="big-title" style="font-size:88px;">Vascular Dementia</h2>
+            <p class="caption">Often follows a stroke or blocked blood vessels</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 10 : 71.72 -> 83.42 ================= -->
+      <div id="card-10-host" class="card-host clip" data-card-id="card-10" data-start="71.7200" data-duration="11.7000" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <div style="position:relative;width:220px;height:220px;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:220px;height:220px;"><use href="#icon-brain-base"></use></svg>
+              <svg id="card-10-dot-0" viewBox="0 0 24 24" style="position:absolute;left:150px;top:6px;width:34px;height:34px;color:var(--cyan);opacity:0;"><use href="#icon-pulse"></use></svg>
+              <svg id="card-10-dot-1" viewBox="0 0 24 24" style="position:absolute;left:180px;top:70px;width:30px;height:30px;color:var(--cyan);opacity:0;"><use href="#icon-pulse"></use></svg>
+              <svg id="card-10-dot-2" viewBox="0 0 24 24" style="position:absolute;left:10px;top:150px;width:28px;height:28px;color:var(--cyan);opacity:0;"><use href="#icon-pulse"></use></svg>
+              <svg id="card-10-dot-3" viewBox="0 0 24 24" style="position:absolute;left:70px;top:180px;width:26px;height:26px;color:var(--cyan);opacity:0;"><use href="#icon-pulse"></use></svg>
+            </div>
+            <h2 class="big-title" style="font-size:88px;">Lewy Body Dementia</h2>
+            <p class="caption">Protein deposits cause fluctuating alertness</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 11 : 83.42 -> 91.44 ================= -->
+      <div id="card-11-host" class="card-host clip" data-card-id="card-11" data-start="83.4200" data-duration="8.0200" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="row" style="gap:40px;">
+            <svg class="icon" viewBox="0 0 24 24" style="width:200px;height:200px;"><use href="#icon-brain-base"></use></svg>
+            <svg id="card-11-figure" class="icon" viewBox="0 0 24 24" style="width:110px;height:110px;opacity:0;"><use href="#icon-figure"></use></svg>
+          </div>
+          <h2 class="big-title" style="font-size:88px;margin-top:36px;">Frontotemporal Dementia</h2>
+          <p class="caption">Affects personality &amp; language more than memory</p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 12 : 91.44 -> 103.00 ================= -->
+      <div id="card-12-host" class="card-host clip" data-card-id="card-12" data-start="91.4400" data-duration="11.5600" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <div style="position:relative;width:340px;height:280px;">
+              <svg id="card-12-icon-a" class="icon" viewBox="0 0 24 24" style="position:absolute;left:0;top:20px;width:200px;height:200px;">
+                <use href="#icon-brain-base"></use>
+              </svg>
+              <svg id="card-12-icon-b" class="icon" viewBox="0 0 24 24" style="position:absolute;left:70px;top:50px;width:200px;height:200px;">
+                <use href="#icon-brain-base"></use>
+              </svg>
+              <svg id="card-12-icon-c" class="icon" viewBox="0 0 24 24" style="position:absolute;left:35px;top:0;width:200px;height:200px;">
+                <use href="#icon-brain-base"></use>
+              </svg>
+            </div>
+            <h2 class="big-title" style="font-size:88px;">Mixed Dementia</h2>
+            <p class="caption">Symptoms of more than one type, together</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 13 : 103.00 -> 111.48 ================= -->
+      <div id="card-13-host" class="card-host clip" data-card-id="card-13" data-start="103.0000" data-duration="8.4800" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <h1 id="card-13-title" class="big-title" style="font-size:104px;">No two people experience dementia the same way.</h1>
+            <div id="card-13-underline" class="underline-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 14 : 111.48 -> 121.44 ================= -->
+      <div id="card-14-host" class="card-host clip" data-card-id="card-14" data-start="111.4800" data-duration="9.9600" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="row" style="gap:36px;">
+            <svg id="card-14-fig-0" class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;"><use href="#icon-figure"></use></svg>
+            <svg id="card-14-fig-1" class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;opacity:0.8;"><use href="#icon-figure"></use></svg>
+            <svg id="card-14-fig-2" class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;opacity:0.6;"><use href="#icon-figure"></use></svg>
+            <svg id="card-14-fig-3" class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;opacity:0.8;"><use href="#icon-figure"></use></svg>
+            <svg id="card-14-fig-4" class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;"><use href="#icon-figure"></use></svg>
+          </div>
+          <p id="card-14-caption" class="caption" style="opacity:0;">Every person's experience is different</p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 15 : 121.44 -> 126.26 ================= -->
+      <div id="card-15-host" class="card-host clip" data-card-id="card-15" data-start="121.4400" data-duration="4.8200" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <p class="kicker" style="margin-bottom:36px;">Providing Care Requires</p>
+          <div class="row">
+            <div id="card-15-item-0" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;"><use href="#icon-heart"></use></svg>
+              <span class="label">Compassion</span>
+            </div>
+            <div id="card-15-item-1" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;"><use href="#icon-hourglass"></use></svg>
+              <span class="label">Patience</span>
+            </div>
+            <div id="card-15-item-2" class="col" style="opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:120px;height:120px;"><use href="#icon-slider"></use></svg>
+              <span class="label">Tailored Approach</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 16 : 126.26 -> 138.32 ================= -->
+      <div id="card-16-host" class="card-host clip" data-card-id="card-16" data-start="126.2600" data-duration="12.0600" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div style="position:relative;width:220px;height:220px;">
+            <svg id="card-16-checklist" class="icon" viewBox="0 0 24 24" style="position:absolute;left:0;top:0;width:220px;height:220px;">
+              <use href="#icon-checklist"></use>
+              <path d="M2,22 L22,2" fill="none" stroke="var(--cyan)" stroke-width="1.6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"></path>
+            </svg>
+            <svg id="card-16-figure" class="icon" viewBox="0 0 24 24" style="position:absolute;left:0;top:0;width:220px;height:220px;opacity:0;">
+              <use href="#icon-figure"></use>
+              <circle id="card-16-figure-dot" cx="12" cy="9" r="1" fill="var(--cyan)" stroke="none" opacity="0"></circle>
+            </svg>
+          </div>
+          <p id="card-16-caption" class="caption" style="margin-top:24px;opacity:0;">Beyond the standard checklist</p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 17 : 138.32 -> 145.42 ================= -->
+      <div id="card-17-host" class="card-host clip" data-card-id="card-17" data-start="138.3200" data-duration="7.1000" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div class="content-gap">
+            <svg class="icon" viewBox="0 0 24 24" style="width:180px;height:180px;"><use href="#icon-umbrella"></use></svg>
+            <div id="card-17-recap" class="row" style="gap:34px;margin-top:6px;opacity:0;">
+              <svg class="icon" viewBox="0 0 24 24" style="width:96px;height:96px;"><use href="#icon-brain-base"></use></svg>
+              <svg class="icon" viewBox="0 0 24 24" style="width:96px;height:96px;"><use href="#icon-pulse"></use></svg>
+              <svg class="icon" viewBox="0 0 24 24" style="width:96px;height:96px;"><use href="#icon-brain-base"></use></svg>
+              <svg class="icon" viewBox="0 0 24 24" style="width:96px;height:96px;"><use href="#icon-figure"></use></svg>
+              <svg class="icon" viewBox="0 0 24 24" style="width:96px;height:96px;"><use href="#icon-brain-base"></use></svg>
+            </div>
+            <p id="card-17-caption" class="caption" style="opacity:0;">One term, five different diseases</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 18 : 145.42 -> 151.00 ================= -->
+      <div id="card-18-host" class="card-host clip" data-card-id="card-18" data-start="145.4200" data-duration="5.5800" data-track-index="2" style="visibility:hidden;opacity:0">
+        <div class="slide">
+          <div id="card-18-content" class="content-gap">
+            <h1 class="big-title">Every journey is unique.<br />So is your care.</h1>
+            <div id="card-18-underline" class="underline-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final fade to black, over the tail of Slide 18 -->
+      <div id="blackout-host" class="card-host clip" data-card-id="blackout" data-start="149.5000" data-duration="1.5000" data-track-index="3" style="visibility:hidden;opacity:0">
+        <div class="blackout" id="blackout-fill" style="position:relative;width:100%;height:100%;opacity:1;"></div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const FPS = 25;
+          const q = (t) => Math.round(t * FPS) / FPS;
+          const EASE = "power2.out";
+
+          const tl = window.gsap.timeline({ paused: true });
+
+          function enter(id, t, dur) {
+            tl.set("#" + id + "-host", { visibility: "visible" }, q(t));
+            tl.fromTo("#" + id + "-host", { opacity: 0 }, { opacity: 1, duration: dur, ease: EASE }, q(t));
+          }
+          function exit(id, t, dur) {
+            tl.to("#" + id + "-host", { opacity: 0, duration: dur, ease: "power2.in" }, q(t - dur));
+            tl.set("#" + id + "-host", { visibility: "hidden" }, q(t));
+          }
+          function fadeIn(sel, t, dur, from, to) {
+            tl.fromTo(sel, Object.assign({ opacity: 0 }, from || {}), Object.assign({ opacity: 1, duration: dur, ease: EASE }, to || {}), q(t));
+          }
+          function fadeOut(sel, t, dur, to) {
+            tl.to(sel, Object.assign({ opacity: 0, duration: dur, ease: "power2.in" }, to || {}), q(t));
+          }
+          function growX(sel, t, dur, w) {
+            tl.fromTo(sel, { width: 0 }, { width: w, duration: dur, ease: EASE }, q(t));
+          }
+          function drawLine(sel, t, dur) {
+            tl.fromTo(sel, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: dur, ease: EASE }, q(t));
+          }
+
+          // ============================================================
+          // SLIDE 1 : 0.00 -> 7.44
+          // 0.00-4.90 shows the real video while she says "Before we dive
+          // into the details, it's vital to understand one core fact."
+          // The indigo title card cuts in at 4.90, right as that line
+          // ends, then "Dementia is not a single condition." (5.00-7.44)
+          // is timed to the title fading in.
+          // ============================================================
+          tl.to("#card-01-video", { opacity: 0, duration: 0.3, ease: "power2.in" }, q(4.6));
+          tl.set("#card-01-video", { visibility: "hidden" }, q(4.9));
+          enter("card-01", 4.9, 0.4);
+          fadeIn("#card-01-content", 5.0, 0.9, { y: 24, scale: 1.05 }, { y: 0, scale: 1 });
+          growX("#card-01-underline", 5.75, 0.55, 480);
+          exit("card-01", 7.44, 0.35);
+
+          // ============================================================
+          // SLIDE 2 : 7.44 -> 10.36  glass panel over real footage (icon-less fallback)
+          // ============================================================
+          tl.set("#card-02-video", { visibility: "visible" }, q(7.44));
+          tl.fromTo("#card-02-video", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: EASE }, q(7.44));
+          enter("card-02", 7.44, 0.35);
+          fadeIn("#card-02-panel", 7.64, 0.6, { scale: 0.95 }, { scale: 1 });
+          exit("card-02", 10.36, 0.3);
+          tl.to("#card-02-video", { opacity: 0, duration: 0.3, ease: "power2.in" }, q(10.06));
+          tl.set("#card-02-video", { visibility: "hidden" }, q(10.36));
+
+          // ============================================================
+          // SLIDE 3 : 10.36 -> 23.34  glass panel (bottom quarter) over real footage
+          // ============================================================
+          tl.set("#card-03-video", { visibility: "visible" }, q(10.36));
+          tl.fromTo("#card-03-video", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: EASE }, q(10.36));
+          enter("card-03", 10.36, 0.4);
+          fadeIn("#card-03-panel", 10.56, 0.6, { y: 30 }, { y: 0 });
+          fadeIn("#card-03-umbrella", 10.86, 0.5, { scale: 0.7 }, { scale: 1 });
+          fadeIn("#card-03-col-brain", 11.46, 0.5, { y: 14 }, { y: 0 });
+          fadeIn("#card-03-col-clock", 11.76, 0.5, { y: 14 }, { y: 0 });
+          fadeIn("#card-03-col-checklist", 12.06, 0.5, { y: 14 }, { y: 0 });
+          exit("card-03", 23.34, 0.4);
+          tl.to("#card-03-video", { opacity: 0, duration: 0.3, ease: "power2.in" }, q(23.04));
+          tl.set("#card-03-video", { visibility: "hidden" }, q(23.34));
+
+          // ============================================================
+          // SLIDE 4 : 23.34 -> 30.02  calendar (left) / brain + damage badge (right)
+          // ============================================================
+          enter("card-04", 23.34, 0.4);
+          fadeIn("#card-04-host .col:first-child", 23.54, 0.5, { x: -30 }, { x: 0 });
+          fadeIn("#card-04-host .col:last-child", 23.74, 0.5, { x: 30 }, { x: 0 });
+          fadeIn("#card-04-badge", 25.2, 0.4, { scale: 0.6 }, { scale: 1 });
+          exit("card-04", 30.02, 0.4);
+
+          // ============================================================
+          // SLIDE 5 : 30.02 -> 37.54  flower "morphs" into brain (crossfade)
+          // ============================================================
+          enter("card-05", 30.02, 0.4);
+          fadeIn("#card-05-flower", 30.22, 0.6, { scale: 0.8 }, { scale: 1 });
+          fadeIn("#card-05-caption", 30.82, 0.5, { y: 10 }, { y: 0 });
+          fadeOut("#card-05-flower", 33.8, 0.7);
+          fadeIn("#card-05-brain", 33.8, 0.7, { scale: 0.9 }, { scale: 1 });
+          exit("card-05", 37.54, 0.4);
+
+          // ============================================================
+          // SLIDE 6 : 37.54 -> 46.08  brain / thought-bubble / figure trio
+          // ============================================================
+          enter("card-06", 37.54, 0.4);
+          fadeIn("#card-06-col-0", 37.74, 0.5, { y: 20 }, { y: 0 });
+          fadeIn("#card-06-col-1", 38.14, 0.5, { y: 20 }, { y: 0 });
+          fadeIn("#card-06-col-2", 38.54, 0.5, { y: 20 }, { y: 0 });
+          exit("card-06", 46.08, 0.4);
+
+          // ============================================================
+          // SLIDE 7 : 46.08 -> 52.16  Alzheimer's — 60-80% count-up
+          // ============================================================
+          enter("card-07", 46.08, 0.4);
+          fadeIn("#card-07-host h2", 46.28, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-07-underline", 51.0, 0.5, 320);
+          (function () {
+            var o = { lo: 0, hi: 0 };
+            tl.to(o, {
+              lo: 60, hi: 80, duration: 0.9, ease: "power2.out",
+              onUpdate: function () {
+                var el = document.getElementById("card-07-stat");
+                if (el) el.textContent = Math.round(o.lo) + "–" + Math.round(o.hi) + "%";
+              },
+            }, q(49.6));
+          })();
+          exit("card-07", 52.16, 0.4);
+
+          // ============================================================
+          // SLIDE 8 : 52.16 -> 64.58  brain regions: thought / memory / language
+          // (staggered on her actual word timing)
+          // ============================================================
+          enter("card-08", 52.16, 0.4);
+          fadeIn("#card-08-region-thought", 54.84, 0.4, { y: 20 }, { y: 0 }); // "thought,"
+          fadeIn("#card-08-region-memory", 55.72, 0.4, { y: 20 }, { y: 0 }); // "memory"
+          fadeIn("#card-08-region-language", 56.36, 0.4, { y: 20 }, { y: 0 }); // "language."
+          exit("card-08", 64.58, 0.4);
+
+          // ============================================================
+          // SLIDE 9 : 64.58 -> 71.72  Vascular Dementia
+          // ============================================================
+          enter("card-09", 64.58, 0.4);
+          fadeIn("#card-09-host .icon-wrap", 64.78, 0.6, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-09-badge", 65.18, 0.4, { scale: 0.6 }, { scale: 1 });
+          fadeIn("#card-09-host h2", 65.38, 0.5, { y: 16 }, { y: 0 });
+          fadeIn("#card-09-host .caption", 65.78, 0.5, { y: 10 }, { y: 0 });
+          exit("card-09", 71.72, 0.4);
+
+          // ============================================================
+          // SLIDE 10 : 71.72 -> 83.42  Lewy Body Dementia (particles + gentle pulse)
+          // ============================================================
+          enter("card-10", 71.72, 0.4);
+          fadeIn("#card-10-dot-0", 71.92, 0.3);
+          fadeIn("#card-10-dot-1", 72.22, 0.3);
+          fadeIn("#card-10-dot-2", 72.52, 0.3);
+          fadeIn("#card-10-dot-3", 72.82, 0.3);
+          fadeIn("#card-10-host h2", 73.2, 0.5, { y: 16 }, { y: 0 });
+          fadeIn("#card-10-host .caption", 73.6, 0.5, { y: 10 }, { y: 0 });
+          tl.to("#card-10-dot-0, #card-10-dot-1, #card-10-dot-2, #card-10-dot-3",
+            { opacity: 0.4, duration: 1.1, ease: "power1.inOut", yoyo: true, repeat: 3 }, q(74.0));
+          exit("card-10", 83.42, 0.4);
+
+          // ============================================================
+          // SLIDE 11 : 83.42 -> 91.44  Frontotemporal Dementia
+          // ============================================================
+          enter("card-11", 83.42, 0.4);
+          fadeIn("#card-11-host svg.icon:first-child", 83.62, 0.6, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-11-figure", 84.5, 0.5, { x: 16 }, { x: 0 });
+          fadeIn("#card-11-host h2", 84.9, 0.5, { y: 16 }, { y: 0 });
+          fadeIn("#card-11-host .caption", 85.3, 0.5, { y: 10 }, { y: 0 });
+          exit("card-11", 91.44, 0.4);
+
+          // ============================================================
+          // SLIDE 12 : 91.44 -> 103.00  Mixed Dementia — 3 icons overlap/crossfade
+          // ============================================================
+          enter("card-12", 91.44, 0.4);
+          fadeIn("#card-12-icon-a", 91.64, 0.7, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-12-icon-b", 92.14, 0.7, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-12-icon-c", 92.64, 0.7, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-12-host h2", 93.24, 0.5, { y: 16 }, { y: 0 });
+          fadeIn("#card-12-host .caption", 93.64, 0.5, { y: 10 }, { y: 0 });
+          exit("card-12", 103.0, 0.4);
+
+          // ============================================================
+          // SLIDE 13 : 103.00 -> 111.48  key statement, no icon
+          // ============================================================
+          enter("card-13", 103.0, 0.4);
+          fadeIn("#card-13-title", 103.2, 0.7, { y: 20 }, { y: 0 });
+          growX("#card-13-underline", 104.1, 0.5, 340);
+          exit("card-13", 111.48, 0.4);
+
+          // ============================================================
+          // SLIDE 14 : 111.48 -> 121.44  row of figure icons, varied pattern
+          // ============================================================
+          enter("card-14", 111.48, 0.4);
+          fadeIn("#card-14-fig-0", 111.68, 0.4, { y: 16 }, { y: 0 });
+          fadeIn("#card-14-fig-1", 111.98, 0.4, { y: 16 }, { y: 0 });
+          fadeIn("#card-14-fig-2", 112.28, 0.4, { y: 16 }, { y: 0 });
+          fadeIn("#card-14-fig-3", 112.58, 0.4, { y: 16 }, { y: 0 });
+          fadeIn("#card-14-fig-4", 112.88, 0.4, { y: 16 }, { y: 0 });
+          fadeIn("#card-14-caption", 113.4, 0.5, { y: 10 }, { y: 0 });
+          exit("card-14", 121.44, 0.4);
+
+          // ============================================================
+          // SLIDE 15 : 121.44 -> 126.26  compassion / patience / tailored approach
+          // (staggered on her actual word timing, same as sibling project)
+          // ============================================================
+          enter("card-15", 121.44, 0.4);
+          fadeIn("#card-15-item-0", 122.66, 0.4, { y: 14 }, { y: 0 }); // "compassion,"
+          fadeIn("#card-15-item-1", 123.78, 0.4, { y: 14 }, { y: 0 }); // "patience,"
+          fadeIn("#card-15-item-2", 124.78, 0.4, { y: 14 }, { y: 0 }); // "a tailored approach"
+          exit("card-15", 126.26, 0.4);
+
+          // ============================================================
+          // SLIDE 16 : 126.26 -> 138.32  checklist strike -> figure w/ centre point
+          // ============================================================
+          enter("card-16", 126.26, 0.4);
+          drawLine("#card-16-checklist path:last-child", 127.0, 0.7);
+          fadeOut("#card-16-checklist", 129.5, 0.6);
+          fadeIn("#card-16-figure", 129.5, 0.6, { scale: 0.9 }, { scale: 1 });
+          fadeIn("#card-16-figure-dot", 130.4, 0.5);
+          fadeIn("#card-16-caption", 130.9, 0.5, { y: 10 }, { y: 0 });
+          exit("card-16", 138.32, 0.4);
+
+          // ============================================================
+          // SLIDE 17 : 138.32 -> 145.42  umbrella recap of all 5 types
+          // ============================================================
+          enter("card-17", 138.32, 0.4);
+          fadeIn("#card-17-host svg.icon:first-child", 138.52, 0.6, { scale: 0.85 }, { scale: 1 });
+          fadeIn("#card-17-recap", 139.4, 0.6, { y: 20 }, { y: 0 });
+          fadeIn("#card-17-caption", 140.2, 0.5, { y: 10 }, { y: 0 });
+          exit("card-17", 145.42, 0.4);
+
+          // ============================================================
+          // SLIDE 18 : 145.42 -> 151.00  closing card, then fade to black
+          // ============================================================
+          enter("card-18", 145.42, 0.4);
+          fadeIn("#card-18-content", 145.62, 0.8, { y: 22, scale: 1.04 }, { y: 0, scale: 1 });
+          growX("#card-18-underline", 146.5, 0.5, 460);
+
+          tl.set("#blackout-host", { visibility: "visible", opacity: 1 }, q(149.5));
+          tl.fromTo("#blackout-fill", { opacity: 0 }, { opacity: 1, duration: 1.5, ease: "power1.in" }, q(149.5));
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["dementia-motion-graphics"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

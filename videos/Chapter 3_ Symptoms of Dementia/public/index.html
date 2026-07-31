@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+
+      :root {
+        --indigo: #1a1a4d;
+        --cyan: #00e5ff;
+        --white: #f5f7ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .video-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-host {
+        position: absolute;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .card-host .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        background: var(--indigo);
+      }
+      .icon-wrap {
+        width: 260px;
+        height: 260px;
+        position: relative;
+        display: flex;
+      }
+      .icon-wrap svg {
+        width: 100%;
+        height: 100%;
+        color: var(--cyan);
+      }
+      .name {
+        margin: 0;
+        font: 700 96px/1.1 "Inter", sans-serif;
+        color: var(--white);
+        text-align: center;
+      }
+      .underline {
+        width: 0;
+        height: 6px;
+        border-radius: 3px;
+        background: var(--cyan);
+        margin: -16px auto 0;
+      }
+      .fact {
+        margin: 0;
+        font: 400 40px/1.3 "Inter", sans-serif;
+        color: var(--cyan);
+        text-align: center;
+        max-width: 1200px;
+      }
+      .icon-badge {
+        position: absolute;
+        right: -10px;
+        bottom: -6px;
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        background: var(--indigo);
+        border: 3px solid var(--cyan);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .icon-badge svg {
+        width: 44px;
+        height: 44px;
+        color: var(--cyan);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="chapter-3-symptoms-of-dementia"
+      data-start="0"
+      data-duration="103.7000"
+      data-fps="25"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Shared icon family — real MIT/ISC-licensed Lucide icons (lucide.dev),
+           same stroke language as the Chapter 2 compositions (currentColor,
+           stroke-width 1.5, round caps, no fill, 24x24 viewBox). -->
+      <svg width="0" height="0" style="position: absolute">
+        <defs>
+          <symbol id="icon-brain" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 18V5" />
+              <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4" />
+              <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5" />
+              <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77" />
+              <path d="M18 18a4 4 0 0 0 2-7.464" />
+              <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517" />
+              <path d="M6 18a4 4 0 0 1-2-7.464" />
+              <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-footprints" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z" />
+              <path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z" />
+              <path d="M16 17h4" />
+              <path d="M4 13h4" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-compass" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-frown" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M16 16s-1.5-2-4-2-4 2-4 2" />
+              <line x1="9" x2="9.01" y1="9" y2="9" />
+              <line x1="15" x2="15.01" y1="9" y2="9" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-shield-alert" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+              <path d="M12 8v4" />
+              <path d="M12 16h.01" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-wind" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12.8 19.6A2 2 0 1 0 14 16H2" />
+              <path d="M17.5 8a2.5 2.5 0 1 1 2 4H2" />
+              <path d="M9.8 4.4A2 2 0 1 1 11 8H2" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-heart-pulse" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+              <path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+            </g>
+          </symbol>
+
+          <symbol id="icon-map-pin" viewBox="0 0 24 24">
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" />
+            </g>
+          </symbol>
+        </defs>
+      </svg>
+
+      <!-- Layer 1: source video, always full-frame and untouched. Muted; the
+           real audio plays via the separate #source-audio track below so it
+           is never cut, edited, or gapped regardless of the visual layer. -->
+      <div class="video-wrapper" id="video-wrap">
+        <video
+          id="bg-video"
+          src="input-video.mp4"
+          muted
+          playsinline
+          data-start="0"
+          data-duration="103.7000"
+          data-track-index="1"
+        ></video>
+      </div>
+      <audio
+        id="source-audio"
+        src="input-video.mp4"
+        data-start="0"
+        data-duration="103.7000"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- Layer 2: full-screen graphic cutaways. Every card is opaque indigo
+           and covers the full canvas, so the narrator is completely hidden
+           whenever a card is active; wherever no card is active, her video
+           shows through untouched and full-frame. -->
+
+      <div
+        id="card-01-memory-host"
+        class="card-host clip"
+        data-card-id="card-01-memory"
+        data-start="2.7000"
+        data-duration="9.2200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-01-memory">
+          <div class="root">
+            <div id="card-01-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-brain"></use></svg></div>
+            <h2 id="card-01-name" class="name">Memory Loss</h2>
+            <div id="card-01-underline" class="underline"></div>
+            <p id="card-01-fact" class="fact">Difficulty forming new memories or retrieving information</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-02-coordination-host"
+        class="card-host clip"
+        data-card-id="card-02-coordination"
+        data-start="13.3800"
+        data-duration="8.7000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-02-coordination">
+          <div class="root">
+            <div id="card-02-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-footprints"></use></svg></div>
+            <h2 id="card-02-name" class="name" style="font-size: 80px;">Coordination &amp; Motor Function</h2>
+            <div id="card-02-underline" class="underline"></div>
+            <p id="card-02-fact" class="fact">Difficulties with walking, balance, or fine motor skills</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-03-confusion-host"
+        class="card-host clip"
+        data-card-id="card-03-confusion"
+        data-start="22.0800"
+        data-duration="15.2200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-03-confusion">
+          <div class="root">
+            <div id="card-03-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-compass"></use></svg></div>
+            <h2 id="card-03-name" class="name" style="font-size: 84px;">Confusion &amp; Disorientation</h2>
+            <div id="card-03-underline" class="underline"></div>
+            <p id="card-03-fact" class="fact">Difficulty with orientation, judgement, and daily tasks</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-04-psychological-host"
+        class="card-host clip"
+        data-card-id="card-04-psychological"
+        data-start="37.3000"
+        data-duration="12.8200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-04-psychological">
+          <div class="root">
+            <div id="card-04-icon" class="icon-wrap">
+              <svg viewBox="0 0 24 24"><use href="#icon-brain"></use></svg>
+              <div id="card-04-badge" class="icon-badge">
+                <svg viewBox="0 0 24 24"><use href="#icon-frown"></use></svg>
+              </div>
+            </div>
+            <h2 id="card-04-name" class="name" style="font-size: 84px;">Psychological Symptoms</h2>
+            <div id="card-04-underline" class="underline"></div>
+            <p id="card-04-fact" class="fact">Personality changes, depression, anxiety, paranoia, hallucinations</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-05-resistance-host"
+        class="card-host clip"
+        data-card-id="card-05-resistance"
+        data-start="51.8000"
+        data-duration="13.0200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-05-resistance">
+          <div class="root">
+            <div id="card-05-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-shield-alert"></use></svg></div>
+            <h2 id="card-05-name" class="name" style="font-size: 84px;">Resistance &amp; Aggression</h2>
+            <div id="card-05-underline" class="underline"></div>
+            <p id="card-05-fact" class="fact">Refusing help, verbal or physical aggression</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-06-agitation-host"
+        class="card-host clip"
+        data-card-id="card-06-agitation"
+        data-start="64.8200"
+        data-duration="5.0400"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-06-agitation">
+          <div class="root">
+            <div id="card-06-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-wind"></use></svg></div>
+            <h2 id="card-06-name" class="name">Agitation</h2>
+            <div id="card-06-underline" class="underline"></div>
+            <p id="card-06-fact" class="fact">Pacing, fidgeting, or verbal outbursts</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-07-anxiety-host"
+        class="card-host clip"
+        data-card-id="card-07-anxiety"
+        data-start="69.8600"
+        data-duration="6.9200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-07-anxiety">
+          <div class="root">
+            <div id="card-07-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-heart-pulse"></use></svg></div>
+            <h2 id="card-07-name" class="name">Anxiety</h2>
+            <div id="card-07-underline" class="underline"></div>
+            <p id="card-07-fact" class="fact">Repetitive behaviours, fast heartbeat, restlessness</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-08-wandering-host"
+        class="card-host clip"
+        data-card-id="card-08-wandering"
+        data-start="76.7800"
+        data-duration="6.9400"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-08-wandering">
+          <div class="root">
+            <div id="card-08-icon" class="icon-wrap"><svg viewBox="0 0 24 24"><use href="#icon-map-pin"></use></svg></div>
+            <h2 id="card-08-name" class="name">Wandering</h2>
+            <div id="card-08-underline" class="underline"></div>
+            <p id="card-08-fact" class="fact">Leaving familiar areas without a clear destination</p>
+          </div>
+        </div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          const FPS = 25;
+          const q = (t) => Math.round(t * FPS) / FPS;
+          const EASE = "power2.out";
+
+          const tl = window.gsap.timeline({ paused: true });
+
+          function enter(id, t, dur) {
+            tl.set('.card-host[data-card-id="' + id + '"]', { visibility: "visible" }, q(t));
+            tl.fromTo(
+              '.card-host[data-card-id="' + id + '"]',
+              { opacity: 0 },
+              { opacity: 1, duration: dur, ease: EASE },
+              q(t),
+            );
+          }
+          function exit(id, t, dur) {
+            tl.to(
+              '.card-host[data-card-id="' + id + '"]',
+              { opacity: 0, duration: dur, ease: "power2.in" },
+              q(t - dur),
+            );
+            tl.set('.card-host[data-card-id="' + id + '"]', { visibility: "hidden" }, q(t));
+          }
+          function growX(sel, t, dur, w) {
+            tl.fromTo(sel, { width: 0 }, { width: w, duration: dur, ease: EASE }, q(t));
+          }
+          function fadeIn(sel, t, dur, from, to) {
+            tl.fromTo(sel, Object.assign({ opacity: 0 }, from || {}), Object.assign({ opacity: 1, duration: dur, ease: EASE }, to || {}), q(t));
+          }
+
+          // The source video sits permanently full-screen and fully visible —
+          // every "hide the narrator" moment is achieved purely by an opaque
+          // indigo card covering the whole canvas, never by moving/hiding the
+          // video itself (GSAP-animating left/top/width/height on a layout box
+          // snaps to integer device pixels and stutters under seek-by-frame
+          // capture). Her visible portions are therefore always literally
+          // untouched pixels from the source.
+
+          // ============================================================
+          // 0.00 -> 2.70  Narrator open, untouched
+          // "Cognitive symptoms of dementia can include"
+          // ============================================================
+
+          // ============================================================
+          // 2.70 -> 11.92  Memory Loss
+          // ============================================================
+          enter("card-01-memory", 2.7, 0.4);
+          fadeIn("#card-01-icon", 2.9, 0.7, { scale: 0.6 }, { scale: 1 });
+          fadeIn("#card-01-name", 3.35, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-01-underline", 3.75, 0.5, 420);
+          fadeIn("#card-01-fact", 4.15, 0.5, { y: 10 }, { y: 0 });
+          exit("card-01-memory", 11.92, 0.4);
+
+          // ============================================================
+          // 11.92 -> 13.38  Narrator, untouched
+          // "Clients may also experience"
+          // ============================================================
+
+          // ============================================================
+          // 13.38 -> 22.08  Coordination & Motor Function
+          // ============================================================
+          enter("card-02-coordination", 13.38, 0.4);
+          fadeIn("#card-02-icon", 13.58, 0.7, { y: -50 }, { y: 0 });
+          fadeIn("#card-02-name", 14.03, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-02-underline", 14.43, 0.5, 640);
+          fadeIn("#card-02-fact", 14.83, 0.5, { y: 10 }, { y: 0 });
+          exit("card-02-coordination", 22.08, 0.4);
+
+          // ============================================================
+          // 22.08 -> 37.30  Confusion & Disorientation
+          // (covers both "confusion and disorientation" and the following
+          // "difficulty performing tasks, communicating or problem solving"
+          // — one continuous idea, no natural narrator return between them)
+          // ============================================================
+          enter("card-03-confusion", 22.08, 0.4);
+          fadeIn("#card-03-icon", 22.28, 0.7, { scale: 0.7, rotate: -15 }, { scale: 1, rotate: 0 });
+          fadeIn("#card-03-name", 22.73, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-03-underline", 23.13, 0.5, 620);
+          fadeIn("#card-03-fact", 23.53, 0.5, { y: 10 }, { y: 0 });
+          exit("card-03-confusion", 37.3, 0.4);
+
+          // ============================================================
+          // 37.30 -> 50.12  Psychological Symptoms
+          // ============================================================
+          enter("card-04-psychological", 37.3, 0.4);
+          fadeIn("#card-04-icon svg:first-child", 37.5, 0.7, { scale: 0.6 }, { scale: 1 });
+          fadeIn("#card-04-badge", 38.1, 0.4, { scale: 0.5 }, { scale: 1 });
+          fadeIn("#card-04-name", 38.5, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-04-underline", 38.9, 0.5, 560);
+          fadeIn("#card-04-fact", 39.3, 0.5, { y: 10 }, { y: 0 });
+          exit("card-04-psychological", 50.12, 0.4);
+
+          // ============================================================
+          // 50.12 -> 51.80  Narrator, untouched
+          // "Behaviorally, you may notice"
+          // ============================================================
+
+          // ============================================================
+          // 51.80 -> 64.82  Resistance & Aggression
+          // ============================================================
+          enter("card-05-resistance", 51.8, 0.4);
+          fadeIn("#card-05-icon", 52.0, 0.7, { scale: 0.6 }, { scale: 1 });
+          fadeIn("#card-05-name", 52.45, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-05-underline", 52.85, 0.5, 580);
+          fadeIn("#card-05-fact", 53.25, 0.5, { y: 10 }, { y: 0 });
+          exit("card-05-resistance", 64.82, 0.4);
+
+          // ============================================================
+          // 64.82 -> 69.86  Agitation
+          // ============================================================
+          enter("card-06-agitation", 64.82, 0.4);
+          fadeIn("#card-06-icon", 65.02, 0.6, { x: -40 }, { x: 0 });
+          fadeIn("#card-06-name", 65.42, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-06-underline", 65.82, 0.5, 340);
+          fadeIn("#card-06-fact", 66.22, 0.5, { y: 10 }, { y: 0 });
+          exit("card-06-agitation", 69.86, 0.4);
+
+          // ============================================================
+          // 69.86 -> 76.78  Anxiety
+          // ============================================================
+          enter("card-07-anxiety", 69.86, 0.4);
+          fadeIn("#card-07-icon", 70.06, 0.6, { scale: 0.7 }, { scale: 1 });
+          fadeIn("#card-07-name", 70.46, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-07-underline", 70.86, 0.5, 280);
+          fadeIn("#card-07-fact", 71.26, 0.5, { y: 10 }, { y: 0 });
+          exit("card-07-anxiety", 76.78, 0.4);
+
+          // ============================================================
+          // 76.78 -> 83.72  Wandering
+          // ============================================================
+          enter("card-08-wandering", 76.78, 0.4);
+          fadeIn("#card-08-icon", 76.98, 0.6, { y: 40 }, { y: 0 });
+          fadeIn("#card-08-name", 77.38, 0.5, { y: 20 }, { y: 0 });
+          growX("#card-08-underline", 77.78, 0.5, 400);
+          fadeIn("#card-08-fact", 78.18, 0.5, { y: 10 }, { y: 0 });
+          exit("card-08-wandering", 83.72, 0.4);
+
+          // ============================================================
+          // 83.72 -> 103.70  Narrator close, untouched
+          // "Remember, dementia is not a singular condition..."
+          // ============================================================
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["chapter-3-symptoms-of-dementia"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

@@ -130,9 +130,9 @@
         data-volume="1"
       ></audio>
 
-      <!-- Layer 2: card hosts. Fullscreen cards cover the whole canvas; split-screen
-           cards cover exactly one 960px half (the narrator's half is left fully
-           untouched — no card-host, no overlay, ever sits over her side). -->
+      <!-- Layer 2: card hosts. Every graphic card is full-screen (1920x1080),
+           narrator fully hidden behind it; wherever no card-host is active,
+           the video shows through untouched and full-frame. -->
 
       <div
         id="card-01-title-host"
@@ -239,6 +239,13 @@
               background: var(--cyan);
               margin: 20px auto 0;
             }
+            .card[data-card-id="card-02-alzheimers"] .fact {
+              margin: 22px 0 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+              max-width: 1100px;
+            }
           </style>
           <div class="root">
             <div id="card-02-icon" class="icon-wrap">
@@ -252,6 +259,7 @@
             <div class="text-group">
               <h2 id="card-02-name" class="name">Alzheimer's Disease</h2>
               <div id="card-02-underline" class="underline"></div>
+              <p id="card-02-fact" class="fact">The most common form — 60&ndash;80% of all cases</p>
             </div>
           </div>
         </div>
@@ -264,7 +272,7 @@
         data-start="64.5800"
         data-duration="7.7000"
         data-track-index="2"
-        style="left: 960px; top: 0; width: 960px; height: 1080px; visibility: hidden; opacity: 0"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
       >
         <div class="card" data-card-id="card-03-vascular">
           <style>
@@ -275,12 +283,12 @@
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              gap: 32px;
+              gap: 40px;
               background: var(--indigo);
             }
             .card[data-card-id="card-03-vascular"] .icon-wrap {
-              width: 190px;
-              height: 154px;
+              width: 260px;
+              height: 210px;
             }
             .card[data-card-id="card-03-vascular"] .icon-wrap svg {
               width: 100%;
@@ -296,17 +304,23 @@
             }
             .card[data-card-id="card-03-vascular"] .name {
               margin: 0;
-              font: 700 62px/1.15 "Inter", sans-serif;
+              font: 700 96px/1.1 "Inter", sans-serif;
               color: var(--white);
               text-align: center;
-              max-width: 720px;
             }
             .card[data-card-id="card-03-vascular"] .underline {
               width: 0;
-              height: 5px;
+              height: 6px;
               border-radius: 3px;
               background: var(--cyan);
-              margin: 18px auto 0;
+              margin: 20px auto 0;
+            }
+            .card[data-card-id="card-03-vascular"] .fact {
+              margin: 22px 0 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+              max-width: 1100px;
             }
           </style>
           <div class="root">
@@ -319,6 +333,7 @@
               </div>
               <h2 class="name">Vascular Dementia</h2>
               <div id="card-03-underline" class="underline"></div>
+              <p id="card-03-fact" class="fact">Often follows a stroke or blocked blood vessels</p>
             </div>
           </div>
         </div>
@@ -372,6 +387,13 @@
               background: var(--cyan);
               margin: 20px auto 0;
             }
+            .card[data-card-id="card-04-lewybody"] .fact {
+              margin: 22px 0 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+              max-width: 1100px;
+            }
           </style>
           <div class="root">
             <div id="card-04-icon" class="icon-wrap">
@@ -386,6 +408,7 @@
             <div class="text-group">
               <h2 id="card-04-name" class="name">Lewy Body Dementia</h2>
               <div id="card-04-underline" class="underline"></div>
+              <p id="card-04-fact" class="fact">Protein deposits cause fluctuating alertness &amp; movement changes</p>
             </div>
           </div>
         </div>
@@ -398,7 +421,7 @@
         data-start="83.4200"
         data-duration="10.0000"
         data-track-index="2"
-        style="left: 0; top: 0; width: 960px; height: 1080px; visibility: hidden; opacity: 0"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
       >
         <div class="card" data-card-id="card-05-frontotemporal">
           <style>
@@ -409,12 +432,12 @@
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              gap: 32px;
+              gap: 40px;
               background: var(--indigo);
             }
             .card[data-card-id="card-05-frontotemporal"] .icon-wrap {
-              width: 190px;
-              height: 154px;
+              width: 260px;
+              height: 210px;
             }
             .card[data-card-id="card-05-frontotemporal"] .icon-wrap svg {
               width: 100%;
@@ -429,17 +452,23 @@
             }
             .card[data-card-id="card-05-frontotemporal"] .name {
               margin: 0;
-              font: 700 56px/1.15 "Inter", sans-serif;
+              font: 700 96px/1.1 "Inter", sans-serif;
               color: var(--white);
               text-align: center;
-              max-width: 720px;
             }
             .card[data-card-id="card-05-frontotemporal"] .underline {
               width: 0;
-              height: 5px;
+              height: 6px;
               border-radius: 3px;
               background: var(--cyan);
-              margin: 18px auto 0;
+              margin: 20px auto 0;
+            }
+            .card[data-card-id="card-05-frontotemporal"] .fact {
+              margin: 22px 0 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+              max-width: 1100px;
             }
           </style>
           <div class="root">
@@ -452,6 +481,7 @@
               </div>
               <h2 class="name">Frontotemporal Dementia</h2>
               <div id="card-05-underline" class="underline"></div>
+              <p id="card-05-fact" class="fact">Often appears younger — affects personality &amp; language more than memory</p>
             </div>
           </div>
         </div>
@@ -510,6 +540,13 @@
               background: var(--cyan);
               margin: 20px auto 0;
             }
+            .card[data-card-id="card-06-mixed"] .fact {
+              margin: 22px 0 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+              max-width: 1100px;
+            }
           </style>
           <div class="root">
             <div class="icon-stack">
@@ -523,6 +560,181 @@
             <div class="text-group">
               <h2 id="card-06-name" class="name">Mixed Dementia</h2>
               <div id="card-06-underline" class="underline"></div>
+              <p id="card-06-fact" class="fact">Symptoms of more than one type, present together</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-07-takeaway-host"
+        class="card-host clip"
+        data-card-id="card-07-takeaway"
+        data-start="103.0000"
+        data-duration="8.4800"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-07-takeaway">
+          <style>
+            .card[data-card-id="card-07-takeaway"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-07-takeaway"] .content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 26px;
+              padding: 0 200px;
+            }
+            .card[data-card-id="card-07-takeaway"] .kicker {
+              margin: 0;
+              font: 700 34px/1 "Inter", sans-serif;
+              letter-spacing: 0.28em;
+              text-transform: uppercase;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-07-takeaway"] .quote {
+              margin: 0;
+              font: 700 82px/1.25 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              max-width: 1500px;
+            }
+            .card[data-card-id="card-07-takeaway"] .underline {
+              width: 0;
+              height: 6px;
+              border-radius: 3px;
+              background: var(--cyan);
+            }
+          </style>
+          <div class="root">
+            <div id="card-07-content" class="content">
+              <p class="kicker">The Key Takeaway</p>
+              <p class="quote">No two people will experience dementia in exactly the same way.</p>
+              <div id="card-07-underline" class="underline"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-08-care-host"
+        class="card-host clip"
+        data-card-id="card-08-care"
+        data-start="121.4400"
+        data-duration="4.8200"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-08-care">
+          <style>
+            .card[data-card-id="card-08-care"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 40px;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-08-care"] .kicker {
+              margin: 0;
+              font: 700 34px/1 "Inter", sans-serif;
+              letter-spacing: 0.28em;
+              text-transform: uppercase;
+              color: var(--cyan);
+            }
+            .card[data-card-id="card-08-care"] .triad {
+              display: flex;
+              align-items: center;
+              gap: 28px;
+            }
+            .card[data-card-id="card-08-care"] .word {
+              margin: 0;
+              font: 700 68px/1.1 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              white-space: nowrap;
+            }
+            .card[data-card-id="card-08-care"] .dot {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background: var(--cyan);
+              flex: none;
+            }
+          </style>
+          <div class="root">
+            <p class="kicker">Providing Care Requires</p>
+            <div class="triad">
+              <p id="card-08-word-1" class="word">Compassion</p>
+              <span id="card-08-dot-1" class="dot"></span>
+              <p id="card-08-word-2" class="word">Patience</p>
+              <span id="card-08-dot-2" class="dot"></span>
+              <p id="card-08-word-3" class="word">A Tailored Approach</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="card-09-umbrella-host"
+        class="card-host clip"
+        data-card-id="card-09-umbrella"
+        data-start="138.3200"
+        data-duration="7.1000"
+        data-track-index="2"
+        style="left: 0; top: 0; width: 1920px; height: 1080px; visibility: hidden; opacity: 0"
+      >
+        <div class="card" data-card-id="card-09-umbrella">
+          <style>
+            .card[data-card-id="card-09-umbrella"] .root {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: var(--indigo);
+            }
+            .card[data-card-id="card-09-umbrella"] .content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 24px;
+              padding: 0 220px;
+            }
+            .card[data-card-id="card-09-umbrella"] .headline {
+              margin: 0;
+              font: 700 88px/1.15 "Inter", sans-serif;
+              color: var(--white);
+              text-align: center;
+              max-width: 1400px;
+            }
+            .card[data-card-id="card-09-umbrella"] .underline {
+              width: 0;
+              height: 6px;
+              border-radius: 3px;
+              background: var(--cyan);
+            }
+            .card[data-card-id="card-09-umbrella"] .subline {
+              margin: 0;
+              font: 400 40px/1.3 "Inter", sans-serif;
+              color: var(--cyan);
+              text-align: center;
+            }
+          </style>
+          <div class="root">
+            <div id="card-09-content" class="content">
+              <h2 class="headline">An umbrella term for many diseases</h2>
+              <div id="card-09-underline" class="underline"></div>
+              <p class="subline">Alzheimer's is only one of them</p>
             </div>
           </div>
         </div>
@@ -602,17 +814,16 @@
           fadeIn("#card-02-icon", 46.18, 0.7, { scale: 0.6 }, { scale: 1 });
           fadeIn("#card-02-name", 46.63, 0.5);
           growX("#card-02-underline", 47.03, 0.5, 420);
+          fadeIn("#card-02-fact", 47.43, 0.5, { y: 10 }, { y: 0 });
           exit("card-02-alzheimers", 64.58, 0.4);
 
           // ============================================================
-          // 64.58 -> 72.28  Vascular — split-screen, narrator LEFT / graphic RIGHT
-          // (card-03's host is positioned over the right half only — see its
-          // style="left:960px;width:960px" below — so her left half is untouched)
+          // 64.58 -> 72.28  Vascular — full-screen graphic (icon+name slide in from the right)
           // ============================================================
           enter("card-03-vascular", 64.58, 0.4);
-          // slide in from the outer (right) edge, ease-out only
-          fadeIn("#card-03-group", 64.68, 0.65, { x: 70 }, { x: 0 });
-          growX("#card-03-underline", 65.23, 0.45, 300);
+          fadeIn("#card-03-group", 64.68, 0.65, { x: 130 }, { x: 0 });
+          growX("#card-03-underline", 65.53, 0.45, 420);
+          fadeIn("#card-03-fact", 65.93, 0.5, { y: 10 }, { y: 0 });
           exit("card-03-vascular", 72.28, 0.4);
 
           // ============================================================
@@ -622,17 +833,16 @@
           fadeIn("#card-04-icon", 72.38, 0.65, { y: -60 }, { y: 0 });
           fadeIn("#card-04-name", 72.93, 0.5);
           growX("#card-04-underline", 73.33, 0.5, 420);
+          fadeIn("#card-04-fact", 73.73, 0.5, { y: 10 }, { y: 0 });
           exit("card-04-lewybody", 83.42, 0.4);
 
           // ============================================================
-          // 83.42 -> 93.42  Frontotemporal — split-screen, narrator RIGHT / graphic LEFT
-          // (card-05's host covers the left half only — style="left:0;width:960px" —
-          // so her right half is untouched)
+          // 83.42 -> 93.42  Frontotemporal — full-screen graphic (icon+name slide in from the left)
           // ============================================================
           enter("card-05-frontotemporal", 83.42, 0.4);
-          // slide in from the outer (left) edge, ease-out only
-          fadeIn("#card-05-group", 83.52, 0.65, { x: -70 }, { x: 0 });
-          growX("#card-05-underline", 84.07, 0.45, 340);
+          fadeIn("#card-05-group", 83.52, 0.65, { x: -130 }, { x: 0 });
+          growX("#card-05-underline", 84.37, 0.45, 420);
+          fadeIn("#card-05-fact", 84.77, 0.5, { y: 10 }, { y: 0 });
           exit("card-05-frontotemporal", 93.42, 0.4);
 
           // ============================================================
@@ -643,11 +853,50 @@
           fadeIn("#card-06-icon-b", 93.87, 0.7, { scale: 0.85 }, { scale: 1 });
           fadeIn("#card-06-name", 94.27, 0.5);
           growX("#card-06-underline", 94.62, 0.5, 360);
+          fadeIn("#card-06-fact", 95.02, 0.5, { y: 10 }, { y: 0 });
           exit("card-06-mixed", 103.0, 0.4);
 
           // ============================================================
-          // 103.00 -> 151.00  Narrator full-screen, untouched (advice + wrap-up tail)
-          // (no card-host active — video shows through everywhere)
+          // 103.00 -> 111.48  "The key takeaway" — full-screen quote card
+          // ("Perhaps the most important takeaway... No two people will
+          // experience dementia in exactly the same way.")
+          // ============================================================
+          enter("card-07-takeaway", 103.0, 0.4);
+          fadeIn("#card-07-content", 103.1, 0.6, { y: 20 }, { y: 0 });
+          growX("#card-07-underline", 103.9, 0.5, 320);
+          exit("card-07-takeaway", 111.48, 0.4);
+
+          // ============================================================
+          // 111.48 -> 121.44  Narrator full-screen, untouched
+          // ============================================================
+
+          // ============================================================
+          // 121.44 -> 126.26  "Providing care requires..." — compassion / patience /
+          // a tailored approach triad, staggered on her actual word timing
+          // ============================================================
+          enter("card-08-care", 121.44, 0.4);
+          fadeIn("#card-08-word-1", 122.66, 0.4, { y: 14 }, { y: 0 }); // "compassion,"
+          fadeIn("#card-08-dot-1", 123.5, 0.3);
+          fadeIn("#card-08-word-2", 123.78, 0.4, { y: 14 }, { y: 0 }); // "patience,"
+          fadeIn("#card-08-dot-2", 124.6, 0.3);
+          fadeIn("#card-08-word-3", 124.78, 0.4, { y: 14 }, { y: 0 }); // "a tailored approach"
+          exit("card-08-care", 126.26, 0.4);
+
+          // ============================================================
+          // 126.26 -> 138.32  Narrator full-screen, untouched
+          // ============================================================
+
+          // ============================================================
+          // 138.32 -> 145.42  "An umbrella term for many diseases" — closing
+          // callback to the opening title card's language
+          // ============================================================
+          enter("card-09-umbrella", 138.32, 0.4);
+          fadeIn("#card-09-content", 138.42, 0.6, { y: 20 }, { y: 0 });
+          growX("#card-09-underline", 139.22, 0.5, 420);
+          exit("card-09-umbrella", 145.42, 0.4);
+
+          // ============================================================
+          // 145.42 -> 151.00  Narrator full-screen, untouched (closing line)
           // ============================================================
 
           window.__timelines = window.__timelines || {};

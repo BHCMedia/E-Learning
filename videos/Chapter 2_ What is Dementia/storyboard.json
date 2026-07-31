@@ -16,11 +16,11 @@
     "bounds": { "x": 0, "y": 0, "width": 1920, "height": 1080 }
   },
   "subtitles": { "enabled": false },
-  "notes": "Brief originally specified 6 dementia types incl. Early-Onset/Late-Onset with an exact opening/closing quote. Actual transcript (Whisper, word-level) only names 5 types (Alzheimer's, Vascular, Lewy Body, Frontotemporal, Mixed) and has ~57s of additional caregiving-advice content after Mixed Dementia that the brief didn't cover. User confirmed (2026-07-31): build exactly the 5 types spoken, alternate full-screen/split-screen across them, and treat everything else (intro + tail) as untouched full-screen narrator. All cut points below are the actual word-level timestamps where each name begins.",
+  "notes": "Revision 2 (2026-07-31): user reviewed the first render and asked for (1) a short supporting fact line under each of the 5 type names, pulled from the actual narration, (2) all 5 type cards full-screen (dropped the full-screen/split-screen alternation from the original brief), and (3) graphic coverage extended into the ~48s caregiving-advice tail that previously stayed narrator-only. Cards 07/08/09 below are new in this revision. Revision 1's note still applies: only 5 dementia types are named in the actual audio (no Early-Onset/Late-Onset), confirmed with the user.",
   "cards": [
     {
       "id": "card-01-title",
-      "intent": "Opening title card — fullscreen indigo, 'Chapter 2' + 'What is Dementia?' with drawing cyan underline, fade-up + slight scale-in. Plays before/under the start of her voiceover (audio starts at 0.0s with no lead-in silence to hold for, so this is a pure visual cutaway); cuts to her the instant she says the word 'Dementia' for the first time.",
+      "intent": "Opening title card — fullscreen indigo, 'Chapter 2' + 'What is Dementia?' with drawing cyan underline, fade-up + slight scale-in. Cuts to her the instant she says the word 'Dementia' for the first time.",
       "startSec": 0.0,
       "endSec": 5.0,
       "accentIndex": 0,
@@ -29,48 +29,75 @@
     },
     {
       "id": "card-02-alzheimers",
-      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says 'Alzheimer's disease is the most common form...'. Icon entry: scale from centre.",
+      "intent": "Full-screen graphic, narrator hidden. Icon entry: scale from centre. Cuts in as she says 'Alzheimer's disease is the most common form...'.",
       "startSec": 46.08,
       "endSec": 64.58,
       "accentIndex": 0,
       "zone": "fullscreen",
-      "contentHints": { "title": "Alzheimer's Disease" }
+      "contentHints": { "title": "Alzheimer's Disease", "fact": "The most common form — 60–80% of all cases" }
     },
     {
       "id": "card-03-vascular",
-      "intent": "Split-screen. Narrator LEFT half untouched; graphic RIGHT half, icon+name slide in from right edge. Cuts in exactly as she says 'Vascular dementia is the second most common type...'.",
+      "intent": "Full-screen graphic, narrator hidden. Icon+name slide in from the right. Cuts in as she says 'Vascular dementia is the second most common type...'.",
       "startSec": 64.58,
       "endSec": 72.28,
       "accentIndex": 0,
-      "zone": "side-panel",
-      "contentHints": { "title": "Vascular Dementia", "narratorSide": "left", "graphicSide": "right" }
+      "zone": "fullscreen",
+      "contentHints": { "title": "Vascular Dementia", "fact": "Often follows a stroke or blocked blood vessels" }
     },
     {
       "id": "card-04-lewybody",
-      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says 'Then there's Lewy body dementia...'. Icon entry: drop from top.",
+      "intent": "Full-screen graphic, narrator hidden. Icon entry: drop from top. Cuts in as she says 'Then there's Lewy body dementia...'.",
       "startSec": 72.28,
       "endSec": 83.42,
       "accentIndex": 0,
       "zone": "fullscreen",
-      "contentHints": { "title": "Lewy Body Dementia" }
+      "contentHints": { "title": "Lewy Body Dementia", "fact": "Protein deposits cause fluctuating alertness & movement changes" }
     },
     {
       "id": "card-05-frontotemporal",
-      "intent": "Split-screen. Narrator RIGHT half untouched; graphic LEFT half, icon+name slide in from left edge (side alternated from card-03). Cuts in exactly as she says 'Frontotemporal dementia often appears at a younger age...'.",
+      "intent": "Full-screen graphic, narrator hidden. Icon+name slide in from the left. Cuts in as she says 'Frontotemporal dementia often appears at a younger age...'.",
       "startSec": 83.42,
       "endSec": 93.42,
       "accentIndex": 0,
-      "zone": "side-panel",
-      "contentHints": { "title": "Frontotemporal Dementia", "narratorSide": "right", "graphicSide": "left" }
+      "zone": "fullscreen",
+      "contentHints": { "title": "Frontotemporal Dementia", "fact": "Often appears younger — affects personality & language more than memory" }
     },
     {
       "id": "card-06-mixed",
-      "intent": "Full-screen graphic, narrator hidden. Cuts in exactly as she says '...many people have mixed dementia...'. Two brain icons overlap/crossfade at centre.",
+      "intent": "Full-screen graphic, narrator hidden. Two brain icons overlap/crossfade at centre. Cuts in as she says '...many people have mixed dementia...'.",
       "startSec": 93.42,
       "endSec": 103.0,
       "accentIndex": 0,
       "zone": "fullscreen",
-      "contentHints": { "title": "Mixed Dementia" }
+      "contentHints": { "title": "Mixed Dementia", "fact": "Symptoms of more than one type, present together" }
+    },
+    {
+      "id": "card-07-takeaway",
+      "intent": "New in revision 2. Full-screen quote card covering 'Perhaps the most important takeaway... No two people will experience dementia in exactly the same way.' — the video's central message, given its own beat.",
+      "startSec": 103.0,
+      "endSec": 111.48,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "kicker": "The Key Takeaway", "quote": "No two people will experience dementia in exactly the same way." }
+    },
+    {
+      "id": "card-08-care",
+      "intent": "New in revision 2. Full-screen triad card covering 'Providing care requires compassion, patience, and a tailored approach.' Each word fades in staggered on its own word-level timestamp.",
+      "startSec": 121.44,
+      "endSec": 126.26,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "kicker": "Providing Care Requires", "words": ["Compassion", "Patience", "A Tailored Approach"] }
+    },
+    {
+      "id": "card-09-umbrella",
+      "intent": "New in revision 2. Full-screen closing statement covering 'To wrap up, remember that dementia is an umbrella term for many diseases. Alzheimer's is only one of them.' Deliberately echoes the opening title card's language as a bookend.",
+      "startSec": 138.32,
+      "endSec": 145.42,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": { "headline": "An umbrella term for many diseases", "subline": "Alzheimer's is only one of them" }
     }
   ]
 }
