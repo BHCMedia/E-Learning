@@ -1,0 +1,84 @@
+<div class="card" data-card-id="card-01">
+  <style>
+    .card[data-card-id="card-01"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 220px;
+      gap: 28px;
+      color: var(--text);
+      font-family: "Inter", ui-serif, serif;
+    }
+    .card[data-card-id="card-01"] .kicker {
+      align-self: flex-start;
+      padding: 12px 24px;
+      background: var(--accent-0);
+      color: #fff;
+      font: 700 20px/1 "Inter", sans-serif;
+      letter-spacing: 0.22em;
+      border-radius: 4px;
+    }
+    .card[data-card-id="card-01"] .title {
+      margin: 0;
+      font: 800 82px/1.15 "Inter", ui-serif, serif;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      max-width: 92%;
+    }
+    .card[data-card-id="card-01"] .detail {
+      margin: 0;
+      font: italic 400 34px/1.4 ui-serif, serif;
+      color: var(--accent-2);
+      max-width: 70%;
+    }
+    .card[data-card-id="card-01"] .rule {
+      width: 0;
+      height: 6px;
+      background: var(--accent-3);
+      border-radius: 3px;
+    }
+    .card[data-card-id="card-01"] .deco {
+      position: absolute;
+    }
+    .card[data-card-id="card-01"] .ring {
+      right: 140px;
+      top: 120px;
+      width: 180px;
+      height: 180px;
+      border: 6px solid var(--accent-2);
+      border-radius: 50%;
+      opacity: 0.55;
+    }
+    .card[data-card-id="card-01"] .dot {
+      right: 260px;
+      bottom: 160px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent-1);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+  </style>
+
+  <div class="root">
+    <span class="deco ring" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.6"></span>
+    <span class="deco dot" data-anim="scale-pop" data-anim-at="0.3" data-anim-duration="0.5"></span>
+
+    <span class="kicker" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.4">WORKFORCE TRAINING</span>
+
+    <h1 id="card-01-title" class="title" data-anim="kinetic-chars" data-anim-at="0.35" data-anim-duration="0.6" data-anim-stagger="0.012" data-anim-pattern="pop">
+      <span class="char">R</span><span class="char">i</span><span class="char">s</span><span class="char">k</span><span class="char">&nbsp;</span><span class="char">F</span><span class="char">a</span><span class="char">c</span><span class="char">t</span><span class="char">o</span><span class="char">r</span><span class="char">s</span><span class="char">:</span><br /><span class="char">E</span><span class="char">l</span><span class="char">d</span><span class="char">e</span><span class="char">r</span><span class="char">&nbsp;</span><span class="char">A</span><span class="char">b</span><span class="char">u</span><span class="char">s</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">P</span><span class="char">r</span><span class="char">e</span><span class="char">v</span><span class="char">e</span><span class="char">n</span><span class="char">t</span><span class="char">i</span><span class="char">o</span><span class="char">n</span>
+    </h1>
+
+    <div id="card-01-rule" class="rule" data-anim="grow-x" data-anim-at="1.1" data-anim-duration="0.5" data-anim-target-w="140"></div>
+
+    <p class="detail" data-anim="fade-in" data-anim-at="1.3" data-anim-duration="0.5">with Annie, Workforce Training Specialist</p>
+  </div>
+</div>

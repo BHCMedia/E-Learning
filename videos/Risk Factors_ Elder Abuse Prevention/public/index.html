@@ -1,0 +1,1549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Caveat";
+        src: url("fonts/Caveat-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Caveat";
+        src: url("fonts/Caveat-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-400-latin.woff2") format("woff2");
+        font-weight: 400;
+        font-display: block;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("fonts/Inter-700-latin.woff2") format("woff2");
+        font-weight: 700;
+        font-display: block;
+      }
+
+      :root {
+        /* themeId: mint — warm/compassionate palette */
+        --bg: #e8faf0;
+        --text: #1b4332;
+        --accent-0: #0077b6;
+        --accent-1: #d62828;
+        --accent-2: #2d6a4f;
+        --accent-3: #e76f51;
+        --accent-4: #7209b7;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #0a0c12;
+        font-family: "Inter", "Caveat", ui-sans-serif, system-ui, sans-serif;
+      }
+      #stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--bg);
+      }
+
+      .video-wrapper {
+        position: absolute;
+        overflow: hidden;
+        border-radius: 0;
+      }
+      .video-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #fefefe;
+      }
+
+      /* Persistent group holding the source-video "polaroid" — its opacity is
+         the only thing GSAP animates; the video stays in one place the whole
+         time it's on screen, so no position tweening is needed. */
+      #video-frame-group {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 616px;
+        opacity: 0;
+      }
+      .polaroid-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 616px;
+        background: #fefefe;
+        box-shadow: 0 20px 50px -14px rgba(0, 0, 0, 0.28);
+      }
+      .polaroid-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 570px;
+        height: 40px;
+        text-align: center;
+        font: 700 30px/1 "Caveat", ui-serif, cursive;
+        color: var(--text);
+      }
+      .washi {
+        position: absolute;
+        left: 860px;
+        top: 0px;
+        width: 200px;
+        height: 26px;
+        background: rgba(0, 119, 182, 0.35);
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent 0 8px,
+          rgba(255, 255, 255, 0.35) 8px 9px
+        );
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .card-host {
+        position: absolute;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .card-host .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .card-host .char {
+        display: inline-block;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="stage"
+      data-composition-id="talking-head-recut"
+      data-start="0"
+      data-duration="104.64"
+      data-fps="25"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- Source video, framed as a polaroid, sits in a persistent group whose
+           opacity is the only animated property (fades in after the hero open,
+           fades out before the hero close). The audio track below always plays
+           in full regardless of the video's visibility. -->
+      <div id="video-frame-group">
+        <div class="polaroid-card"></div>
+        <div class="video-wrapper" id="video-wrap" style="left: 14px; top: 14px; width: 1892px; height: 548px;">
+          <video
+            id="bg-video"
+            src="input-video.mp4"
+            muted
+            playsinline
+            data-start="0"
+            data-duration="104.64"
+            data-track-index="1"
+          ></video>
+        </div>
+        <div class="polaroid-caption">Annie &middot; Workforce Training Specialist</div>
+        <div class="washi"></div>
+      </div>
+
+      <!-- Preserve the source program audio while the visual video stays muted. -->
+      <audio
+        id="source-audio"
+        src="input-video.mp4"
+        data-start="0"
+        data-duration="104.64"
+        data-track-index="10"
+        data-volume="1"
+      ></audio>
+
+      <!-- Card 01 — hero open (fullscreen, video hidden behind) -->
+      <div class="card-host clip" id="host-card-01" data-card-id="card-01" data-start="0.00" data-duration="7.70" data-track-index="2"
+           style="left:0px;top:0px;width:1920px;height:1080px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-01">
+          <style>
+            .card[data-card-id="card-01"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: center;
+              padding: 0 220px;
+              gap: 28px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-01"] .kicker {
+              align-self: flex-start;
+              padding: 12px 24px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 20px/1 "Inter", sans-serif;
+              letter-spacing: 0.22em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-01"] .title {
+              margin: 0;
+              font: 800 82px/1.15 "Inter", ui-serif, serif;
+              color: var(--text);
+              letter-spacing: -0.01em;
+              max-width: 92%;
+            }
+            .card[data-card-id="card-01"] .detail {
+              margin: 0;
+              font: italic 400 34px/1.4 ui-serif, serif;
+              color: var(--accent-2);
+              max-width: 70%;
+            }
+            .card[data-card-id="card-01"] .rule {
+              width: 0;
+              height: 6px;
+              background: var(--accent-3);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-01"] .deco {
+              position: absolute;
+            }
+            .card[data-card-id="card-01"] .ring {
+              right: 140px;
+              top: 120px;
+              width: 180px;
+              height: 180px;
+              border: 6px solid var(--accent-2);
+              border-radius: 50%;
+              opacity: 0.55;
+            }
+            .card[data-card-id="card-01"] .dot {
+              right: 260px;
+              bottom: 160px;
+              width: 48px;
+              height: 48px;
+              background: var(--accent-1);
+              border-radius: 50%;
+              opacity: 0.7;
+            }
+          </style>
+
+          <div class="root">
+            <span class="deco ring" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.6"></span>
+            <span class="deco dot" data-anim="scale-pop" data-anim-at="0.3" data-anim-duration="0.5"></span>
+
+            <span class="kicker" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.4">WORKFORCE TRAINING</span>
+
+            <h1 id="card-01-title" class="title" data-anim="kinetic-chars" data-anim-at="0.35" data-anim-duration="0.6" data-anim-stagger="0.012" data-anim-pattern="pop">
+              <span class="char">R</span><span class="char">i</span><span class="char">s</span><span class="char">k</span><span class="char">&nbsp;</span><span class="char">F</span><span class="char">a</span><span class="char">c</span><span class="char">t</span><span class="char">o</span><span class="char">r</span><span class="char">s</span><span class="char">:</span><br /><span class="char">E</span><span class="char">l</span><span class="char">d</span><span class="char">e</span><span class="char">r</span><span class="char">&nbsp;</span><span class="char">A</span><span class="char">b</span><span class="char">u</span><span class="char">s</span><span class="char">e</span><span class="char">&nbsp;</span><span class="char">P</span><span class="char">r</span><span class="char">e</span><span class="char">v</span><span class="char">e</span><span class="char">n</span><span class="char">t</span><span class="char">i</span><span class="char">o</span><span class="char">n</span>
+            </h1>
+
+            <div id="card-01-rule" class="rule" data-anim="grow-x" data-anim-at="1.1" data-anim-duration="0.5" data-anim-target-w="140"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.3" data-anim-duration="0.5">with Annie, Workforce Training Specialist</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 02 — lower-third (stack: video top band, card bottom band) -->
+      <div class="card-host clip" id="host-card-02" data-card-id="card-02" data-start="7.70" data-duration="6.80" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-02">
+          <style>
+            .card[data-card-id="card-02"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              align-items: center;
+              padding: 48px 72px;
+              gap: 48px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-02"] .text-col {
+              flex: 1 1 auto;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+            .card[data-card-id="card-02"] .kicker {
+              align-self: flex-start;
+              padding: 9px 20px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 17px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-02"] .title {
+              margin: 0;
+              font: 800 58px/1.1 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 95%;
+            }
+            .card[data-card-id="card-02"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-0);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-02"] .detail {
+              margin: 0;
+              font: 30px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 92%;
+            }
+            .card[data-card-id="card-02"] .side {
+              flex: 0 0 340px;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+            }
+            .card[data-card-id="card-02"] .side-ring {
+              width: 220px;
+              height: 220px;
+              border: 10px solid var(--accent-0);
+              border-radius: 50%;
+              opacity: 0.28;
+            }
+            .card[data-card-id="card-02"] .side-glass {
+              position: absolute;
+              width: 96px;
+              height: 96px;
+              border-radius: 50%;
+              background: var(--accent-2);
+              opacity: 0.85;
+            }
+          </style>
+
+          <div class="root">
+            <div class="text-col">
+              <span class="kicker" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">WHY IT MATTERS</span>
+              <h2 id="card-02-title" class="title" data-anim="slide-in" data-anim-at="0.3" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="40">Spotting who's at risk, early</h2>
+              <div id="card-02-rule" class="rule" data-anim="grow-x" data-anim-at="0.75" data-anim-duration="0.45" data-anim-target-w="110"></div>
+              <p class="detail" data-anim="fade-in" data-anim-at="0.9" data-anim-duration="0.45">Identifying older adults at risk is one of the most important things we can do to prevent abuse before it starts.</p>
+            </div>
+            <div class="side">
+              <span class="side-ring" data-anim="scale-pop" data-anim-at="0.2" data-anim-duration="0.55"></span>
+              <span class="side-glass" data-anim="fade-in" data-anim-at="0.5" data-anim-duration="0.4"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-03" data-card-id="card-03" data-start="14.50" data-duration="6.80" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-03">
+          <style>
+            .card[data-card-id="card-03"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-03"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-03"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-03"] .category {
+              padding: 8px 18px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-03"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-03"] .kicker {
+              font: 700 17px/1 "Inter", sans-serif;
+              letter-spacing: 0.22em;
+              color: var(--accent-0);
+              opacity: 0.9;
+            }
+            .card[data-card-id="card-03"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 78%;
+            }
+            .card[data-card-id="card-03"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-0);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-03"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 76%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">01</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">PERSONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 01 / 12</span>
+            </div>
+
+            <span class="kicker" data-anim="fade-in" data-anim-at="0.3" data-anim-duration="0.3">RISK FACTOR</span>
+
+            <h2 id="card-03-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Mental illness or substance abuse</h2>
+
+            <div id="card-03-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Affecting either the older person, or the individual providing their care.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-04" data-card-id="card-04" data-start="21.30" data-duration="7.50" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-04">
+          <style>
+            .card[data-card-id="card-04"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-04"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-04"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-04"] .category {
+              padding: 8px 18px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-04"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-04"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 78%;
+            }
+            .card[data-card-id="card-04"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-0);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-04"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 76%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">02</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">PERSONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 02 / 12</span>
+            </div>
+
+            <h2 id="card-04-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Cognitive &amp; physical decline</h2>
+
+            <div id="card-04-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Dementia, or physical and mental decline from chronic illness or stroke, raises risk.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-05" data-card-id="card-05" data-start="28.80" data-duration="8.50" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-05">
+          <style>
+            .card[data-card-id="card-05"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-05"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-05"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-05"] .category {
+              padding: 8px 18px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-05"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-05"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 78%;
+            }
+            .card[data-card-id="card-05"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-0);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-05"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 76%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">03</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">PERSONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 03 / 12</span>
+            </div>
+
+            <h2 id="card-05-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Family history &amp; stress</h2>
+
+            <div id="card-05-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Transgenerational violence, ongoing family conflict, stress — even issues like gambling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-06" data-card-id="card-06" data-start="37.30" data-duration="7.40" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-06">
+          <style>
+            .card[data-card-id="card-06"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              align-items: center;
+              padding: 40px 72px 40px 96px;
+              gap: 40px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+              border-left: 14px solid var(--accent-1);
+            }
+            .card[data-card-id="card-06"] .icon {
+              flex: 0 0 auto;
+              width: 96px;
+              height: 96px;
+              border-radius: 50%;
+              background: var(--accent-1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font: 800 52px/1 "Inter", sans-serif;
+              color: #fff;
+            }
+            .card[data-card-id="card-06"] .text-col {
+              flex: 1 1 auto;
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+            .card[data-card-id="card-06"] .kicker {
+              align-self: flex-start;
+              padding: 8px 18px;
+              background: var(--accent-1);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-06"] .title {
+              margin: 4px 0 0;
+              font: 800 54px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 92%;
+            }
+            .card[data-card-id="card-06"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 88%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="icon" data-anim="scale-pop" data-anim-at="0.1" data-anim-duration="0.5">!</span>
+            <div class="text-col">
+              <span class="kicker" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.35">WARNING SIGN</span>
+              <h2 id="card-06-title" class="title" data-anim="slide-in" data-anim-at="0.3" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Left unchecked, it escalates</h2>
+              <p class="detail" data-anim="fade-in" data-anim-at="0.85" data-anim-duration="0.45">Personal and family pressures create environments where the potential for abuse can grow if unaddressed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-07" data-card-id="card-07" data-start="44.70" data-duration="7.60" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-07">
+          <style>
+            .card[data-card-id="card-07"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-07"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-2);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-07"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-07"] .category {
+              padding: 8px 18px;
+              background: var(--accent-2);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-07"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-2);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-07"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 78%;
+            }
+            .card[data-card-id="card-07"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-2);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-07"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 76%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">04</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">RELATIONSHIP</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 04 / 12</span>
+            </div>
+
+            <h2 id="card-07-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Dependence &amp; lost respect</h2>
+
+            <div id="card-07-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">A lack of respect for older people, or a deep dependence between carer and older person, raises risk.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-08" data-card-id="card-08" data-start="52.30" data-duration="7.00" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-08">
+          <style>
+            .card[data-card-id="card-08"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              align-items: center;
+              padding: 40px 72px 40px 96px;
+              gap: 40px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+              border-left: 14px solid var(--accent-1);
+            }
+            .card[data-card-id="card-08"] .icon {
+              flex: 0 0 auto;
+              width: 96px;
+              height: 96px;
+              border-radius: 50%;
+              background: var(--accent-1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font: 800 52px/1 "Inter", sans-serif;
+              color: #fff;
+            }
+            .card[data-card-id="card-08"] .text-col {
+              flex: 1 1 auto;
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+            }
+            .card[data-card-id="card-08"] .kicker {
+              align-self: flex-start;
+              padding: 8px 18px;
+              background: var(--accent-1);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-08"] .title {
+              margin: 4px 0 0;
+              font: 800 54px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 92%;
+            }
+            .card[data-card-id="card-08"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 88%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="icon" data-anim="scale-pop" data-anim-at="0.1" data-anim-duration="0.5">!</span>
+            <div class="text-col">
+              <span class="kicker" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.35">RED FLAG</span>
+              <h2 id="card-08-title" class="title" data-anim="slide-in" data-anim-at="0.3" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Any significant power imbalance</h2>
+              <p class="detail" data-anim="fade-in" data-anim-at="0.85" data-anim-duration="0.45">Care professionals must remain vigilant about power imbalance in the caring relationship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-09" data-card-id="card-09" data-start="59.30" data-duration="7.10" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-09">
+          <style>
+            .card[data-card-id="card-09"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-09"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-3);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-09"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-09"] .category {
+              padding: 8px 18px;
+              background: var(--accent-3);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-09"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-3);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-09"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 78%;
+            }
+            .card[data-card-id="card-09"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-3);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-09"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 76%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">05</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">SOCIAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 05 / 12</span>
+            </div>
+
+            <h2 id="card-09-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Isolation silences reporting</h2>
+
+            <div id="card-09-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Older people are often more socially isolated — making them less likely to report issues.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-10" data-card-id="card-10" data-start="66.40" data-duration="7.60" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-10">
+          <style>
+            .card[data-card-id="card-10"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-10"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-10"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-10"] .category {
+              padding: 8px 18px;
+              background: var(--accent-4);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-10"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-10"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 82%;
+            }
+            .card[data-card-id="card-10"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-4);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-10"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 78%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">06</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">ORGANIZATIONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 06 / 12</span>
+            </div>
+
+            <h2 id="card-10-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Staffing &amp; policy gaps</h2>
+
+            <div id="card-10-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Inadequate staffing, skill mix, gaps in knowledge, and unclear policies all raise the risk of incidents.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-11" data-card-id="card-11" data-start="74.00" data-duration="7.60" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-11">
+          <style>
+            .card[data-card-id="card-11"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-11"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-11"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-11"] .category {
+              padding: 8px 18px;
+              background: var(--accent-4);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-11"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-11"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 82%;
+            }
+            .card[data-card-id="card-11"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-4);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-11"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 78%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">07</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">ORGANIZATIONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 07 / 12</span>
+            </div>
+
+            <h2 id="card-11-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">When leadership looks away</h2>
+
+            <div id="card-11-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">A poor response to allegations, or weak management, can create a culture where abuse goes unnoticed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-12" data-card-id="card-12" data-start="81.60" data-duration="8.40" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-12">
+          <style>
+            .card[data-card-id="card-12"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-12"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-12"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-12"] .category {
+              padding: 8px 18px;
+              background: var(--accent-4);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-12"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-12"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 82%;
+            }
+            .card[data-card-id="card-12"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-4);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-12"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 78%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">08</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">ORGANIZATIONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 08 / 12</span>
+            </div>
+
+            <h2 id="card-12-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Unsupervised, unmentored staff</h2>
+
+            <div id="card-12-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Poor supervision of inexperienced staff can lead to unintentional neglect or harmful practices.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-13" data-card-id="card-13" data-start="90.00" data-duration="7.50" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-13">
+          <style>
+            .card[data-card-id="card-13"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 40px 72px;
+              gap: 14px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-13"] .bignum {
+              position: absolute;
+              right: 56px;
+              top: -30px;
+              font: 800 340px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              opacity: 0.09;
+              pointer-events: none;
+            }
+            .card[data-card-id="card-13"] .tagrow {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+            .card[data-card-id="card-13"] .category {
+              padding: 8px 18px;
+              background: var(--accent-4);
+              color: #fff;
+              font: 700 16px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-13"] .counter {
+              font: 700 20px/1 "Inter", sans-serif;
+              color: var(--accent-4);
+              letter-spacing: 0.08em;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-13"] .title {
+              margin: 4px 0 0;
+              font: 800 58px/1.12 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 82%;
+            }
+            .card[data-card-id="card-13"] .rule {
+              width: 0;
+              height: 5px;
+              background: var(--accent-4);
+              border-radius: 3px;
+            }
+            .card[data-card-id="card-13"] .detail {
+              margin: 0;
+              font: 29px/1.45 ui-serif, serif;
+              color: var(--text);
+              opacity: 0.82;
+              max-width: 78%;
+            }
+          </style>
+
+          <div class="root">
+            <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">09</span>
+
+            <div class="tagrow">
+              <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">ORGANIZATIONAL</span>
+              <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 09 / 12</span>
+            </div>
+
+            <h2 id="card-13-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Support systems matter</h2>
+
+            <div id="card-13-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+            <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Demanding clientele and high-stress environments need strong support to maintain the standard of care residents deserve.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-host clip" id="host-card-14" data-card-id="card-14" data-start="97.50" data-duration="4.80" data-track-index="2"
+           style="left:14px;top:576px;width:1892px;height:504px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-14">
+          <style>
+            .card[data-card-id="card-14"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              align-items: center;
+              padding: 40px 72px;
+              gap: 56px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+            }
+            .card[data-card-id="card-14"] .numblock {
+              flex: 0 0 auto;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 4px;
+            }
+            .card[data-card-id="card-14"] .num {
+              font: 800 168px/1 "Inter", sans-serif;
+              color: var(--accent-0);
+            }
+            .card[data-card-id="card-14"] .numlabel {
+              font: 700 18px/1.2 "Inter", sans-serif;
+              letter-spacing: 0.18em;
+              color: var(--accent-0);
+              text-align: center;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-14"] .text-col {
+              flex: 1 1 auto;
+              display: flex;
+              flex-direction: column;
+              gap: 14px;
+            }
+            .card[data-card-id="card-14"] .kicker {
+              align-self: flex-start;
+              padding: 9px 20px;
+              background: var(--accent-0);
+              color: #fff;
+              font: 700 17px/1 "Inter", sans-serif;
+              letter-spacing: 0.2em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-14"] .title {
+              margin: 0;
+              font: 800 52px/1.15 "Inter", ui-serif, serif;
+              color: var(--text);
+              max-width: 95%;
+            }
+            .card[data-card-id="card-14"] .cats {
+              display: flex;
+              gap: 22px;
+              flex-wrap: wrap;
+            }
+            .card[data-card-id="card-14"] .cat {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font: 600 22px/1 "Inter", sans-serif;
+              opacity: 0.85;
+            }
+            .card[data-card-id="card-14"] .dot {
+              width: 16px;
+              height: 16px;
+              border-radius: 50%;
+              display: inline-block;
+            }
+            .card[data-card-id="card-14"] .dot-0 { background: var(--accent-0); }
+            .card[data-card-id="card-14"] .dot-2 { background: var(--accent-2); }
+            .card[data-card-id="card-14"] .dot-3 { background: var(--accent-3); }
+            .card[data-card-id="card-14"] .dot-4 { background: var(--accent-4); }
+          </style>
+
+          <div class="root">
+            <div class="numblock">
+              <span id="card-14-num" class="num" data-anim="count-up" data-anim-at="0.2" data-anim-duration="0.9" data-anim-from="0" data-anim-to="4" data-anim-format=",d">0</span>
+              <span class="numlabel" data-anim="fade-in" data-anim-at="0.9" data-anim-duration="0.4">RISK CATEGORIES</span>
+            </div>
+            <div class="text-col">
+              <span class="kicker" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.35">THE TAKEAWAY</span>
+              <h2 id="card-14-title" class="title" data-anim="slide-in" data-anim-at="0.25" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">4 categories. One goal: prevention.</h2>
+              <div class="cats" data-anim="fade-in" data-anim-at="1.1" data-anim-duration="0.45">
+                <span class="cat"><span class="dot dot-0"></span>Personal</span>
+                <span class="cat"><span class="dot dot-2"></span>Relationship</span>
+                <span class="cat"><span class="dot dot-3"></span>Social</span>
+                <span class="cat"><span class="dot dot-4"></span>Organizational</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 15 — hero close (fullscreen, video hidden behind) -->
+      <div class="card-host clip" id="host-card-15" data-card-id="card-15" data-start="102.30" data-duration="2.34" data-track-index="2"
+           style="left:0px;top:0px;width:1920px;height:1080px;visibility:hidden;opacity:0;">
+        <div class="card" data-card-id="card-15">
+          <style>
+            .card[data-card-id="card-15"] .root {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden;
+              box-sizing: border-box;
+              background: var(--bg);
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              padding: 0 220px;
+              gap: 22px;
+              color: var(--text);
+              font-family: "Inter", ui-serif, serif;
+              text-align: center;
+            }
+            .card[data-card-id="card-15"] .kicker {
+              padding: 12px 24px;
+              background: var(--accent-2);
+              color: #fff;
+              font: 700 20px/1 "Inter", sans-serif;
+              letter-spacing: 0.22em;
+              border-radius: 4px;
+            }
+            .card[data-card-id="card-15"] .title {
+              margin: 0;
+              font: 800 76px/1.1 "Inter", ui-serif, serif;
+              color: var(--text);
+            }
+            .card[data-card-id="card-15"] .detail {
+              margin: 0;
+              font: italic 400 38px/1.3 ui-serif, serif;
+              color: var(--accent-2);
+            }
+            .card[data-card-id="card-15"] .ring {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              width: 760px;
+              height: 760px;
+              border: 3px solid var(--accent-0);
+              border-radius: 50%;
+              opacity: 0.14;
+            }
+          </style>
+
+          <div class="root">
+            <span class="ring" data-anim="scale-pop" data-anim-at="0.05" data-anim-duration="0.7"></span>
+            <span class="kicker" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.4">THANK YOU</span>
+            <h1 id="card-15-title" class="title" data-anim="slide-in" data-anim-at="0.35" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="30">Thank you for your commitment</h1>
+            <p class="detail" data-anim="fade-in" data-anim-at="0.85" data-anim-duration="0.5">to safety and respect.</p>
+          </div>
+        </div>
+      </div>
+
+      <script src="vendor/gsap.min.js"></script>
+      <script>
+        (function () {
+          window.__fmt = function (v, fmt) {
+            if (typeof fmt === "string" && /^\.[0-9]+f$/.test(fmt)) {
+              return Number(v).toFixed(Number(fmt.slice(1, -1)));
+            }
+            if (fmt === ",d") return Math.round(v).toLocaleString();
+            return String(Math.round(v));
+          };
+
+          var FPS = 25;
+          function Q(t) {
+            return Math.round(t * FPS) / FPS;
+          }
+
+          var tl = window.gsap.timeline({ paused: true });
+
+          // ── Video frame group: fade in after hero open, fade out before hero close ──
+          tl.fromTo("#video-frame-group", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" }, Q(7.0));
+          tl.to("#video-frame-group", { opacity: 0, duration: 0.6, ease: "power2.in" }, Q(101.6));
+
+          // ── Card enter/exit helper ──
+          function enterExit(id, start, end) {
+            var sel = '.card-host[data-card-id="' + id + '"]';
+            tl.set(sel, { visibility: "visible" }, Q(start));
+            tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, Q(start));
+            tl.to(sel, { opacity: 0, duration: 0.35, ease: "power2.in" }, Q(end - 0.35));
+            tl.set(sel, { visibility: "hidden" }, Q(end));
+          }
+
+          enterExit("card-01", 0.0, 7.7);
+          enterExit("card-02", 7.7, 14.5);
+          enterExit("card-03", 14.5, 21.3);
+          enterExit("card-04", 21.3, 28.8);
+          enterExit("card-05", 28.8, 37.3);
+          enterExit("card-06", 37.3, 44.7);
+          enterExit("card-07", 44.7, 52.3);
+          enterExit("card-08", 52.3, 59.3);
+          enterExit("card-09", 59.3, 66.4);
+          enterExit("card-10", 66.4, 74.0);
+          enterExit("card-11", 74.0, 81.6);
+          enterExit("card-12", 81.6, 90.0);
+          enterExit("card-13", 90.0, 97.5);
+          enterExit("card-14", 97.5, 102.3);
+          enterExit("card-15", 102.3, 104.64);
+
+          // ── Card-01 internal anims (start 0.00) ──
+          tl.fromTo('.card[data-card-id="card-01"] .ring', { opacity: 0 }, { opacity: 0.55, duration: 0.6, ease: "power2.out" }, Q(0.1));
+          tl.fromTo('.card[data-card-id="card-01"] .dot', { opacity: 0, scale: 0.6 }, { opacity: 0.7, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, Q(0.3));
+          tl.fromTo('.card[data-card-id="card-01"] .kicker', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, Q(0.1));
+          tl.from('.card[data-card-id="card-01"] #card-01-title .char', { opacity: 0, y: 8, scale: 0.8, duration: 0.6, ease: "power2.out", stagger: 0.012 }, Q(0.35));
+          tl.fromTo('.card[data-card-id="card-01"] #card-01-rule', { width: 0 }, { width: 140, duration: 0.5, ease: "power2.out" }, Q(1.1));
+          tl.fromTo('.card[data-card-id="card-01"] .detail', { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, Q(1.3));
+
+          // ── Card-02 internal anims (start 7.70) ──
+          tl.fromTo('.card[data-card-id="card-02"] .kicker', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, Q(7.8));
+          tl.fromTo('.card[data-card-id="card-02"] #card-02-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, Q(8.0));
+          tl.fromTo('.card[data-card-id="card-02"] #card-02-rule', { width: 0 }, { width: 110, duration: 0.45, ease: "power2.out" }, Q(8.45));
+          tl.fromTo('.card[data-card-id="card-02"] .detail', { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, Q(8.6));
+          tl.fromTo('.card[data-card-id="card-02"] .side-ring', { opacity: 0, scale: 0.6 }, { opacity: 0.28, scale: 1, duration: 0.55, ease: "back.out(1.4)" }, Q(7.9));
+          tl.fromTo('.card[data-card-id="card-02"] .side-glass', { opacity: 0 }, { opacity: 0.85, duration: 0.4, ease: "power2.out" }, Q(8.2));
+
+          // ── Reusable pattern for the 9 numbered "risk factor" cards ──
+          function riskFactorCard(id, start) {
+            var root = '.card[data-card-id="' + id + '"] ';
+            tl.fromTo(root + ".bignum", { opacity: 0 }, { opacity: 0.09, duration: 0.7, ease: "power2.out" }, Q(start + 0.05));
+            tl.fromTo(root + ".category", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, Q(start + 0.1));
+            tl.fromTo(root + ".counter", { opacity: 0 }, { opacity: 0.85, duration: 0.35, ease: "power2.out" }, Q(start + 0.2));
+            tl.fromTo(root + ".title", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, Q(start + 0.4));
+            tl.fromTo(root + ".rule", { width: 0 }, { width: 100, duration: 0.45, ease: "power2.out" }, Q(start + 0.85));
+            tl.fromTo(root + ".detail", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, Q(start + 1.0));
+          }
+          riskFactorCard("card-03", 14.5);
+          riskFactorCard("card-04", 21.3);
+          riskFactorCard("card-05", 28.8);
+          riskFactorCard("card-07", 44.7);
+          riskFactorCard("card-09", 59.3);
+          riskFactorCard("card-10", 66.4);
+          riskFactorCard("card-11", 74.0);
+          riskFactorCard("card-12", 81.6);
+          riskFactorCard("card-13", 90.0);
+
+          // ── Reusable pattern for the 2 "warning sign" cards ──
+          function warningCard(id, start) {
+            var root = '.card[data-card-id="' + id + '"] ';
+            tl.fromTo(root + ".icon", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.6)" }, Q(start + 0.1));
+            tl.fromTo(root + ".kicker", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, Q(start + 0.05));
+            tl.fromTo(root + ".title", { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, Q(start + 0.3));
+            tl.fromTo(root + ".detail", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, Q(start + 0.85));
+          }
+          warningCard("card-06", 37.3);
+          warningCard("card-08", 52.3);
+
+          // ── Card-14 internal anims (takeaway, start 97.50) ──
+          (function () {
+            var o = { v: 0 };
+            var el = document.getElementById("card-14-num");
+            tl.to(o, {
+              v: 4,
+              duration: 0.9,
+              ease: "power2.out",
+              onUpdate: function () {
+                if (el) el.textContent = window.__fmt(o.v, ",d");
+              },
+            }, Q(97.7));
+          })();
+          tl.fromTo('.card[data-card-id="card-14"] .numlabel', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, Q(98.4));
+          tl.fromTo('.card[data-card-id="card-14"] .kicker', { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" }, Q(97.55));
+          tl.fromTo('.card[data-card-id="card-14"] #card-14-title', { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, Q(97.75));
+          tl.fromTo('.card[data-card-id="card-14"] .cats', { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power2.out" }, Q(98.6));
+
+          // ── Card-15 internal anims (hero close, start 102.30) ──
+          tl.fromTo('.card[data-card-id="card-15"] .ring', { opacity: 0, scale: 0.6 }, { opacity: 0.14, scale: 1, duration: 0.7, ease: "power2.out" }, Q(102.35));
+          tl.fromTo('.card[data-card-id="card-15"] .kicker', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, Q(102.4));
+          tl.fromTo('.card[data-card-id="card-15"] #card-15-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, Q(102.65));
+          tl.fromTo('.card[data-card-id="card-15"] .detail', { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, Q(103.15));
+
+          window.__timelines = window.__timelines || {};
+          window.__timelines["talking-head-recut"] = tl;
+        })();
+      </script>
+    </div>
+  </body>
+</html>

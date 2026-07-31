@@ -1,0 +1,1497 @@
+[
+  {
+    "text": "Hello",
+    "start": 0.26,
+    "end": 0.34
+  },
+  {
+    "text": "everyone,",
+    "start": 0.34,
+    "end": 0.97
+  },
+  {
+    "text": "I'm",
+    "start": 1.08,
+    "end": 1.21
+  },
+  {
+    "text": "Annie,",
+    "start": 1.21,
+    "end": 1.72
+  },
+  {
+    "text": "your",
+    "start": 1.72,
+    "end": 1.92
+  },
+  {
+    "text": "workforce",
+    "start": 1.92,
+    "end": 2.35
+  },
+  {
+    "text": "training",
+    "start": 2.39,
+    "end": 2.71
+  },
+  {
+    "text": "specialist.",
+    "start": 2.77,
+    "end": 3.44
+  },
+  {
+    "text": "We've",
+    "start": 3.56,
+    "end": 3.76
+  },
+  {
+    "text": "already",
+    "start": 3.76,
+    "end": 4.07
+  },
+  {
+    "text": "covered",
+    "start": 4.21,
+    "end": 4.27
+  },
+  {
+    "text": "how",
+    "start": 4.32,
+    "end": 4.56
+  },
+  {
+    "text": "to",
+    "start": 4.56,
+    "end": 4.63
+  },
+  {
+    "text": "define",
+    "start": 4.64,
+    "end": 5.12
+  },
+  {
+    "text": "elder",
+    "start": 5.38,
+    "end": 5.45
+  },
+  {
+    "text": "abuse.",
+    "start": 5.45,
+    "end": 5.98
+  },
+  {
+    "text": "Now",
+    "start": 5.98,
+    "end": 6.09
+  },
+  {
+    "text": "let's",
+    "start": 6.27,
+    "end": 6.51
+  },
+  {
+    "text": "talk",
+    "start": 6.51,
+    "end": 6.78
+  },
+  {
+    "text": "about",
+    "start": 6.78,
+    "end": 7.11
+  },
+  {
+    "text": "prevention.",
+    "start": 7.11,
+    "end": 7.98
+  },
+  {
+    "text": "Identifying",
+    "start": 7.98,
+    "end": 8.35
+  },
+  {
+    "text": "older",
+    "start": 8.74,
+    "end": 9.04
+  },
+  {
+    "text": "adults",
+    "start": 9.04,
+    "end": 9.39
+  },
+  {
+    "text": "who",
+    "start": 9.44,
+    "end": 9.62
+  },
+  {
+    "text": "are",
+    "start": 9.64,
+    "end": 9.84
+  },
+  {
+    "text": "at",
+    "start": 9.84,
+    "end": 9.93
+  },
+  {
+    "text": "risk",
+    "start": 10.04,
+    "end": 10.27
+  },
+  {
+    "text": "is",
+    "start": 10.32,
+    "end": 10.4
+  },
+  {
+    "text": "one",
+    "start": 10.4,
+    "end": 10.56
+  },
+  {
+    "text": "of",
+    "start": 10.58,
+    "end": 10.66
+  },
+  {
+    "text": "the",
+    "start": 10.66,
+    "end": 10.82
+  },
+  {
+    "text": "most",
+    "start": 10.82,
+    "end": 11.03
+  },
+  {
+    "text": "important",
+    "start": 11.03,
+    "end": 11.51
+  },
+  {
+    "text": "things",
+    "start": 11.51,
+    "end": 11.84
+  },
+  {
+    "text": "we",
+    "start": 11.84,
+    "end": 11.93
+  },
+  {
+    "text": "can",
+    "start": 11.93,
+    "end": 12.1
+  },
+  {
+    "text": "do",
+    "start": 12.1,
+    "end": 12.2
+  },
+  {
+    "text": "to",
+    "start": 12.2,
+    "end": 12.29
+  },
+  {
+    "text": "prevent",
+    "start": 12.29,
+    "end": 12.64
+  },
+  {
+    "text": "abuse",
+    "start": 12.78,
+    "end": 12.91
+  },
+  {
+    "text": "from",
+    "start": 12.95,
+    "end": 13.16
+  },
+  {
+    "text": "happening",
+    "start": 13.16,
+    "end": 13.64
+  },
+  {
+    "text": "in",
+    "start": 13.64,
+    "end": 13.75
+  },
+  {
+    "text": "the",
+    "start": 13.75,
+    "end": 13.86
+  },
+  {
+    "text": "first",
+    "start": 13.86,
+    "end": 14.18
+  },
+  {
+    "text": "place.",
+    "start": 14.18,
+    "end": 14.63
+  },
+  {
+    "text": "These",
+    "start": 14.74,
+    "end": 15.03
+  },
+  {
+    "text": "include",
+    "start": 15.3,
+    "end": 15.45
+  },
+  {
+    "text": "mental",
+    "start": 15.45,
+    "end": 15.8
+  },
+  {
+    "text": "illness",
+    "start": 15.8,
+    "end": 16.2
+  },
+  {
+    "text": "or",
+    "start": 16.21,
+    "end": 16.32
+  },
+  {
+    "text": "substance",
+    "start": 16.32,
+    "end": 16.76
+  },
+  {
+    "text": "abuse",
+    "start": 16.84,
+    "end": 17.12
+  },
+  {
+    "text": "issues",
+    "start": 17.26,
+    "end": 17.45
+  },
+  {
+    "text": "affecting",
+    "start": 17.49,
+    "end": 18.02
+  },
+  {
+    "text": "either",
+    "start": 18.02,
+    "end": 18.33
+  },
+  {
+    "text": "the",
+    "start": 18.36,
+    "end": 18.54
+  },
+  {
+    "text": "older",
+    "start": 18.66,
+    "end": 18.82
+  },
+  {
+    "text": "person",
+    "start": 18.83,
+    "end": 19.28
+  },
+  {
+    "text": "or",
+    "start": 19.28,
+    "end": 19.51
+  },
+  {
+    "text": "the",
+    "start": 19.53,
+    "end": 19.67
+  },
+  {
+    "text": "individual",
+    "start": 19.68,
+    "end": 20.18
+  },
+  {
+    "text": "providing",
+    "start": 20.5,
+    "end": 20.76
+  },
+  {
+    "text": "their",
+    "start": 20.76,
+    "end": 21.05
+  },
+  {
+    "text": "care.",
+    "start": 21.05,
+    "end": 21.45
+  },
+  {
+    "text": "We",
+    "start": 21.45,
+    "end": 21.55
+  },
+  {
+    "text": "also",
+    "start": 21.56,
+    "end": 21.79
+  },
+  {
+    "text": "see",
+    "start": 21.79,
+    "end": 21.96
+  },
+  {
+    "text": "higher",
+    "start": 21.96,
+    "end": 22.31
+  },
+  {
+    "text": "risk",
+    "start": 22.31,
+    "end": 22.54
+  },
+  {
+    "text": "where",
+    "start": 22.54,
+    "end": 22.83
+  },
+  {
+    "text": "there",
+    "start": 22.83,
+    "end": 23.12
+  },
+  {
+    "text": "is",
+    "start": 23.12,
+    "end": 23.23
+  },
+  {
+    "text": "cognitive",
+    "start": 23.23,
+    "end": 23.7
+  },
+  {
+    "text": "impairment",
+    "start": 23.86,
+    "end": 24.31
+  },
+  {
+    "text": "such",
+    "start": 24.42,
+    "end": 24.61
+  },
+  {
+    "text": "as",
+    "start": 24.61,
+    "end": 24.71
+  },
+  {
+    "text": "dementia",
+    "start": 24.71,
+    "end": 25.52
+  },
+  {
+    "text": "or",
+    "start": 25.54,
+    "end": 25.64
+  },
+  {
+    "text": "physical",
+    "start": 25.78,
+    "end": 26.14
+  },
+  {
+    "text": "and",
+    "start": 26.14,
+    "end": 26.32
+  },
+  {
+    "text": "mental",
+    "start": 26.32,
+    "end": 26.68
+  },
+  {
+    "text": "decline",
+    "start": 26.69,
+    "end": 27.12
+  },
+  {
+    "text": "due",
+    "start": 27.12,
+    "end": 27.24
+  },
+  {
+    "text": "to",
+    "start": 27.3,
+    "end": 27.42
+  },
+  {
+    "text": "chronic",
+    "start": 27.42,
+    "end": 27.85
+  },
+  {
+    "text": "illness",
+    "start": 27.85,
+    "end": 28.23
+  },
+  {
+    "text": "or",
+    "start": 28.29,
+    "end": 28.4
+  },
+  {
+    "text": "stroke.",
+    "start": 28.4,
+    "end": 28.95
+  },
+  {
+    "text": "Other",
+    "start": 29.14,
+    "end": 29.23
+  },
+  {
+    "text": "significant",
+    "start": 29.27,
+    "end": 29.92
+  },
+  {
+    "text": "factors",
+    "start": 29.99,
+    "end": 30.48
+  },
+  {
+    "text": "include",
+    "start": 30.74,
+    "end": 30.95
+  },
+  {
+    "text": "a",
+    "start": 30.95,
+    "end": 31
+  },
+  {
+    "text": "history",
+    "start": 31.04,
+    "end": 31.43
+  },
+  {
+    "text": "of",
+    "start": 31.43,
+    "end": 31.63
+  },
+  {
+    "text": "transgenerational",
+    "start": 31.63,
+    "end": 32.75
+  },
+  {
+    "text": "violence,",
+    "start": 32.75,
+    "end": 33.42
+  },
+  {
+    "text": "ongoing",
+    "start": 33.42,
+    "end": 33.77
+  },
+  {
+    "text": "family",
+    "start": 34.1,
+    "end": 34.28
+  },
+  {
+    "text": "conflict,",
+    "start": 34.29,
+    "end": 35.04
+  },
+  {
+    "text": "stress,",
+    "start": 35.04,
+    "end": 35.8
+  },
+  {
+    "text": "and",
+    "start": 35.8,
+    "end": 35.98
+  },
+  {
+    "text": "even",
+    "start": 35.98,
+    "end": 36.23
+  },
+  {
+    "text": "issues",
+    "start": 36.23,
+    "end": 36.56
+  },
+  {
+    "text": "like",
+    "start": 36.56,
+    "end": 36.82
+  },
+  {
+    "text": "gambling.",
+    "start": 36.82,
+    "end": 37.42
+  },
+  {
+    "text": "These",
+    "start": 37.42,
+    "end": 37.52
+  },
+  {
+    "text": "personal",
+    "start": 37.71,
+    "end": 38.16
+  },
+  {
+    "text": "and",
+    "start": 38.16,
+    "end": 38.29
+  },
+  {
+    "text": "family",
+    "start": 38.33,
+    "end": 38.64
+  },
+  {
+    "text": "related",
+    "start": 38.78,
+    "end": 39.07
+  },
+  {
+    "text": "pressures",
+    "start": 39.07,
+    "end": 39.59
+  },
+  {
+    "text": "create",
+    "start": 39.59,
+    "end": 39.85
+  },
+  {
+    "text": "environments",
+    "start": 40.18,
+    "end": 40.62
+  },
+  {
+    "text": "where",
+    "start": 40.62,
+    "end": 40.96
+  },
+  {
+    "text": "the",
+    "start": 40.96,
+    "end": 41.12
+  },
+  {
+    "text": "potential",
+    "start": 41.12,
+    "end": 41.52
+  },
+  {
+    "text": "for",
+    "start": 41.52,
+    "end": 41.78
+  },
+  {
+    "text": "abuse",
+    "start": 41.78,
+    "end": 42.04
+  },
+  {
+    "text": "can",
+    "start": 42.09,
+    "end": 42.25
+  },
+  {
+    "text": "unfortunately",
+    "start": 42.25,
+    "end": 43.12
+  },
+  {
+    "text": "escalate",
+    "start": 43.12,
+    "end": 43.6
+  },
+  {
+    "text": "if",
+    "start": 43.74,
+    "end": 43.79
+  },
+  {
+    "text": "left",
+    "start": 43.79,
+    "end": 44.06
+  },
+  {
+    "text": "unchecked.",
+    "start": 44.06,
+    "end": 44.82
+  },
+  {
+    "text": "A",
+    "start": 44.85,
+    "end": 44.92
+  },
+  {
+    "text": "lack",
+    "start": 45.14,
+    "end": 45.19
+  },
+  {
+    "text": "of",
+    "start": 45.19,
+    "end": 45.32
+  },
+  {
+    "text": "respect",
+    "start": 45.32,
+    "end": 45.79
+  },
+  {
+    "text": "for",
+    "start": 45.79,
+    "end": 45.99
+  },
+  {
+    "text": "older",
+    "start": 45.99,
+    "end": 46.32
+  },
+  {
+    "text": "people",
+    "start": 46.32,
+    "end": 46.8
+  },
+  {
+    "text": "or",
+    "start": 46.82,
+    "end": 46.91
+  },
+  {
+    "text": "a",
+    "start": 46.91,
+    "end": 46.96
+  },
+  {
+    "text": "deep",
+    "start": 47.06,
+    "end": 47.2
+  },
+  {
+    "text": "dependence",
+    "start": 47.2,
+    "end": 47.75
+  },
+  {
+    "text": "between",
+    "start": 47.95,
+    "end": 48.2
+  },
+  {
+    "text": "the",
+    "start": 48.2,
+    "end": 48.37
+  },
+  {
+    "text": "carer",
+    "start": 48.37,
+    "end": 48.65
+  },
+  {
+    "text": "and",
+    "start": 48.65,
+    "end": 48.82
+  },
+  {
+    "text": "the",
+    "start": 48.82,
+    "end": 48.88
+  },
+  {
+    "text": "older",
+    "start": 49.02,
+    "end": 49.28
+  },
+  {
+    "text": "person",
+    "start": 49.28,
+    "end": 49.63
+  },
+  {
+    "text": "can",
+    "start": 49.63,
+    "end": 49.8
+  },
+  {
+    "text": "further",
+    "start": 49.8,
+    "end": 50.21
+  },
+  {
+    "text": "increase",
+    "start": 50.42,
+    "end": 50.8
+  },
+  {
+    "text": "the",
+    "start": 50.8,
+    "end": 50.87
+  },
+  {
+    "text": "risk",
+    "start": 50.98,
+    "end": 51.2
+  },
+  {
+    "text": "of",
+    "start": 51.2,
+    "end": 51.36
+  },
+  {
+    "text": "abuse",
+    "start": 51.36,
+    "end": 51.61
+  },
+  {
+    "text": "occurring.",
+    "start": 51.94,
+    "end": 52.46
+  },
+  {
+    "text": "Any",
+    "start": 52.46,
+    "end": 52.64
+  },
+  {
+    "text": "significant",
+    "start": 52.83,
+    "end": 53.37
+  },
+  {
+    "text": "power",
+    "start": 53.37,
+    "end": 53.69
+  },
+  {
+    "text": "imbalance",
+    "start": 53.69,
+    "end": 54.28
+  },
+  {
+    "text": "in",
+    "start": 54.28,
+    "end": 54.39
+  },
+  {
+    "text": "that",
+    "start": 54.45,
+    "end": 54.67
+  },
+  {
+    "text": "relationship",
+    "start": 54.67,
+    "end": 55.46
+  },
+  {
+    "text": "is",
+    "start": 55.47,
+    "end": 55.59
+  },
+  {
+    "text": "a",
+    "start": 55.59,
+    "end": 55.65
+  },
+  {
+    "text": "red",
+    "start": 55.65,
+    "end": 55.75
+  },
+  {
+    "text": "flag",
+    "start": 55.86,
+    "end": 56.09
+  },
+  {
+    "text": "that",
+    "start": 56.15,
+    "end": 56.36
+  },
+  {
+    "text": "we,",
+    "start": 56.36,
+    "end": 56.56
+  },
+  {
+    "text": "as",
+    "start": 56.58,
+    "end": 56.68
+  },
+  {
+    "text": "care",
+    "start": 56.82,
+    "end": 56.93
+  },
+  {
+    "text": "professionals,",
+    "start": 56.93,
+    "end": 57.86
+  },
+  {
+    "text": "must",
+    "start": 57.86,
+    "end": 58.11
+  },
+  {
+    "text": "remain",
+    "start": 58.11,
+    "end": 58.48
+  },
+  {
+    "text": "vigilant",
+    "start": 58.48,
+    "end": 58.97
+  },
+  {
+    "text": "about.",
+    "start": 58.98,
+    "end": 59.47
+  },
+  {
+    "text": "Additionally,",
+    "start": 59.47,
+    "end": 60.33
+  },
+  {
+    "text": "older",
+    "start": 60.35,
+    "end": 60.63
+  },
+  {
+    "text": "people",
+    "start": 60.75,
+    "end": 60.97
+  },
+  {
+    "text": "are",
+    "start": 61.03,
+    "end": 61.19
+  },
+  {
+    "text": "often",
+    "start": 61.2,
+    "end": 61.6
+  },
+  {
+    "text": "more",
+    "start": 61.6,
+    "end": 61.84
+  },
+  {
+    "text": "socially",
+    "start": 61.84,
+    "end": 62.3
+  },
+  {
+    "text": "isolated",
+    "start": 62.58,
+    "end": 62.76
+  },
+  {
+    "text": "than",
+    "start": 62.76,
+    "end": 62.98
+  },
+  {
+    "text": "other",
+    "start": 62.98,
+    "end": 63.25
+  },
+  {
+    "text": "groups",
+    "start": 63.25,
+    "end": 63.58
+  },
+  {
+    "text": "in",
+    "start": 63.58,
+    "end": 63.68
+  },
+  {
+    "text": "our",
+    "start": 63.69,
+    "end": 63.85
+  },
+  {
+    "text": "community,",
+    "start": 63.85,
+    "end": 64.4
+  },
+  {
+    "text": "making",
+    "start": 64.54,
+    "end": 64.79
+  },
+  {
+    "text": "them",
+    "start": 64.79,
+    "end": 64.96
+  },
+  {
+    "text": "less",
+    "start": 65.01,
+    "end": 65.23
+  },
+  {
+    "text": "likely",
+    "start": 65.23,
+    "end": 65.55
+  },
+  {
+    "text": "to",
+    "start": 65.55,
+    "end": 65.64
+  },
+  {
+    "text": "report",
+    "start": 65.94,
+    "end": 66
+  },
+  {
+    "text": "issues.",
+    "start": 66,
+    "end": 66.56
+  },
+  {
+    "text": "Inadequate",
+    "start": 67.12,
+    "end": 67.26
+  },
+  {
+    "text": "staffing",
+    "start": 67.38,
+    "end": 67.81
+  },
+  {
+    "text": "and",
+    "start": 67.82,
+    "end": 68.03
+  },
+  {
+    "text": "skill",
+    "start": 68.03,
+    "end": 68.38
+  },
+  {
+    "text": "mix,",
+    "start": 68.38,
+    "end": 68.73
+  },
+  {
+    "text": "gaps",
+    "start": 68.73,
+    "end": 69.01
+  },
+  {
+    "text": "in",
+    "start": 69.01,
+    "end": 69.15
+  },
+  {
+    "text": "staff",
+    "start": 69.15,
+    "end": 69.47
+  },
+  {
+    "text": "knowledge,",
+    "start": 69.51,
+    "end": 70.32
+  },
+  {
+    "text": "and",
+    "start": 70.32,
+    "end": 70.42
+  },
+  {
+    "text": "a",
+    "start": 70.47,
+    "end": 70.54
+  },
+  {
+    "text": "lack",
+    "start": 70.74,
+    "end": 70.77
+  },
+  {
+    "text": "of",
+    "start": 70.77,
+    "end": 70.88
+  },
+  {
+    "text": "clear",
+    "start": 70.88,
+    "end": 71.19
+  },
+  {
+    "text": "policies",
+    "start": 71.32,
+    "end": 71.68
+  },
+  {
+    "text": "and",
+    "start": 71.68,
+    "end": 71.83
+  },
+  {
+    "text": "guidelines",
+    "start": 72.1,
+    "end": 72.45
+  },
+  {
+    "text": "all",
+    "start": 72.45,
+    "end": 72.63
+  },
+  {
+    "text": "raise",
+    "start": 72.63,
+    "end": 72.81
+  },
+  {
+    "text": "the",
+    "start": 72.99,
+    "end": 73.11
+  },
+  {
+    "text": "risk",
+    "start": 73.11,
+    "end": 73.35
+  },
+  {
+    "text": "of",
+    "start": 73.35,
+    "end": 73.47
+  },
+  {
+    "text": "incidents.",
+    "start": 73.47,
+    "end": 74.19
+  },
+  {
+    "text": "Similarly,",
+    "start": 74.23,
+    "end": 74.87
+  },
+  {
+    "text": "an",
+    "start": 74.87,
+    "end": 74.97
+  },
+  {
+    "text": "inadequate",
+    "start": 75.04,
+    "end": 75.6
+  },
+  {
+    "text": "response",
+    "start": 75.6,
+    "end": 76.09
+  },
+  {
+    "text": "to",
+    "start": 76.09,
+    "end": 76.21
+  },
+  {
+    "text": "allegations",
+    "start": 76.21,
+    "end": 76.96
+  },
+  {
+    "text": "of",
+    "start": 76.98,
+    "end": 77.08
+  },
+  {
+    "text": "abuse",
+    "start": 77.22,
+    "end": 77.38
+  },
+  {
+    "text": "or",
+    "start": 77.38,
+    "end": 77.48
+  },
+  {
+    "text": "poor",
+    "start": 77.53,
+    "end": 77.74
+  },
+  {
+    "text": "management",
+    "start": 77.74,
+    "end": 78.35
+  },
+  {
+    "text": "and",
+    "start": 78.35,
+    "end": 78.53
+  },
+  {
+    "text": "leadership",
+    "start": 78.53,
+    "end": 79.04
+  },
+  {
+    "text": "can",
+    "start": 79.18,
+    "end": 79.31
+  },
+  {
+    "text": "create",
+    "start": 79.35,
+    "end": 79.67
+  },
+  {
+    "text": "a",
+    "start": 79.73,
+    "end": 79.75
+  },
+  {
+    "text": "culture",
+    "start": 79.75,
+    "end": 80.18
+  },
+  {
+    "text": "where",
+    "start": 80.18,
+    "end": 80.46
+  },
+  {
+    "text": "abuse",
+    "start": 80.58,
+    "end": 80.78
+  },
+  {
+    "text": "goes",
+    "start": 80.78,
+    "end": 81.02
+  },
+  {
+    "text": "unnoticed.",
+    "start": 81.02,
+    "end": 81.77
+  },
+  {
+    "text": "Poor",
+    "start": 81.77,
+    "end": 82.66
+  },
+  {
+    "text": "supervision",
+    "start": 82.66,
+    "end": 83
+  },
+  {
+    "text": "of",
+    "start": 83,
+    "end": 83.15
+  },
+  {
+    "text": "inexperienced",
+    "start": 83.15,
+    "end": 84.12
+  },
+  {
+    "text": "staff,",
+    "start": 84.18,
+    "end": 84.72
+  },
+  {
+    "text": "especially",
+    "start": 84.72,
+    "end": 85.32
+  },
+  {
+    "text": "without",
+    "start": 85.32,
+    "end": 85.69
+  },
+  {
+    "text": "proper",
+    "start": 86.02,
+    "end": 86.1
+  },
+  {
+    "text": "mentorship,",
+    "start": 86.1,
+    "end": 86.72
+  },
+  {
+    "text": "can",
+    "start": 86.77,
+    "end": 86.8
+  },
+  {
+    "text": "also",
+    "start": 86.98,
+    "end": 87.16
+  },
+  {
+    "text": "lead",
+    "start": 87.16,
+    "end": 87.39
+  },
+  {
+    "text": "to",
+    "start": 87.41,
+    "end": 87.53
+  },
+  {
+    "text": "unintentional",
+    "start": 87.53,
+    "end": 88.35
+  },
+  {
+    "text": "neglect",
+    "start": 88.35,
+    "end": 88.79
+  },
+  {
+    "text": "or",
+    "start": 88.79,
+    "end": 88.8
+  },
+  {
+    "text": "harmful",
+    "start": 88.94,
+    "end": 89.35
+  },
+  {
+    "text": "practices.",
+    "start": 89.35,
+    "end": 90.16
+  },
+  {
+    "text": "A",
+    "start": 90.16,
+    "end": 90.22
+  },
+  {
+    "text": "demanding",
+    "start": 90.34,
+    "end": 90.78
+  },
+  {
+    "text": "clientele",
+    "start": 90.78,
+    "end": 91.35
+  },
+  {
+    "text": "and",
+    "start": 91.36,
+    "end": 91.52
+  },
+  {
+    "text": "high",
+    "start": 91.52,
+    "end": 91.76
+  },
+  {
+    "text": "stress",
+    "start": 91.76,
+    "end": 92.04
+  },
+  {
+    "text": "environments",
+    "start": 92.34,
+    "end": 92.79
+  },
+  {
+    "text": "require",
+    "start": 92.79,
+    "end": 93.04
+  },
+  {
+    "text": "strong",
+    "start": 93.23,
+    "end": 93.55
+  },
+  {
+    "text": "support",
+    "start": 93.55,
+    "end": 93.96
+  },
+  {
+    "text": "systems",
+    "start": 93.96,
+    "end": 94.36
+  },
+  {
+    "text": "to",
+    "start": 94.36,
+    "end": 94.48
+  },
+  {
+    "text": "maintain",
+    "start": 94.48,
+    "end": 94.95
+  },
+  {
+    "text": "the",
+    "start": 94.95,
+    "end": 95.12
+  },
+  {
+    "text": "high",
+    "start": 95.12,
+    "end": 95.31
+  },
+  {
+    "text": "standards",
+    "start": 95.7,
+    "end": 95.88
+  },
+  {
+    "text": "of",
+    "start": 95.89,
+    "end": 95.99
+  },
+  {
+    "text": "care",
+    "start": 95.99,
+    "end": 96.32
+  },
+  {
+    "text": "our",
+    "start": 96.32,
+    "end": 96.55
+  },
+  {
+    "text": "residents",
+    "start": 96.57,
+    "end": 97.04
+  },
+  {
+    "text": "deserve.",
+    "start": 97.3,
+    "end": 97.67
+  },
+  {
+    "text": "That's",
+    "start": 97.67,
+    "end": 98.01
+  },
+  {
+    "text": "why",
+    "start": 98.19,
+    "end": 98.23
+  },
+  {
+    "text": "recognizing",
+    "start": 98.23,
+    "end": 98.93
+  },
+  {
+    "text": "these",
+    "start": 98.93,
+    "end": 99.12
+  },
+  {
+    "text": "factors",
+    "start": 99.26,
+    "end": 99.68
+  },
+  {
+    "text": "early",
+    "start": 99.73,
+    "end": 100.01
+  },
+  {
+    "text": "is",
+    "start": 100.01,
+    "end": 100.13
+  },
+  {
+    "text": "such",
+    "start": 100.13,
+    "end": 100.33
+  },
+  {
+    "text": "a",
+    "start": 100.37,
+    "end": 100.44
+  },
+  {
+    "text": "critical",
+    "start": 100.66,
+    "end": 100.95
+  },
+  {
+    "text": "part",
+    "start": 100.95,
+    "end": 101.11
+  },
+  {
+    "text": "of",
+    "start": 101.22,
+    "end": 101.31
+  },
+  {
+    "text": "prevention.",
+    "start": 101.36,
+    "end": 102.19
+  },
+  {
+    "text": "Thank",
+    "start": 102.5,
+    "end": 102.51
+  },
+  {
+    "text": "you",
+    "start": 102.51,
+    "end": 102.67
+  },
+  {
+    "text": "for",
+    "start": 102.67,
+    "end": 102.83
+  },
+  {
+    "text": "your",
+    "start": 102.83,
+    "end": 103.05
+  },
+  {
+    "text": "commitment",
+    "start": 103.05,
+    "end": 103.59
+  },
+  {
+    "text": "to",
+    "start": 103.6,
+    "end": 103.71
+  },
+  {
+    "text": "safety",
+    "start": 103.71,
+    "end": 103.96
+  },
+  {
+    "text": "and",
+    "start": 104.05,
+    "end": 104.2
+  },
+  {
+    "text": "respect.",
+    "start": 104.2,
+    "end": 104.64
+  }
+]

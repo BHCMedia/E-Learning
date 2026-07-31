@@ -1,0 +1,89 @@
+<div class="card" data-card-id="card-03">
+  <style>
+    .card[data-card-id="card-03"] .root {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 72px;
+      gap: 14px;
+      color: var(--text);
+      font-family: "Inter", ui-serif, serif;
+    }
+    .card[data-card-id="card-03"] .bignum {
+      position: absolute;
+      right: 56px;
+      top: -30px;
+      font: 800 340px/1 "Inter", sans-serif;
+      color: var(--accent-0);
+      opacity: 0.09;
+      pointer-events: none;
+    }
+    .card[data-card-id="card-03"] .tagrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card[data-card-id="card-03"] .category {
+      padding: 8px 18px;
+      background: var(--accent-0);
+      color: #fff;
+      font: 700 16px/1 "Inter", sans-serif;
+      letter-spacing: 0.2em;
+      border-radius: 4px;
+    }
+    .card[data-card-id="card-03"] .counter {
+      font: 700 20px/1 "Inter", sans-serif;
+      color: var(--accent-0);
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+    .card[data-card-id="card-03"] .kicker {
+      font: 700 17px/1 "Inter", sans-serif;
+      letter-spacing: 0.22em;
+      color: var(--accent-0);
+      opacity: 0.9;
+    }
+    .card[data-card-id="card-03"] .title {
+      margin: 4px 0 0;
+      font: 800 58px/1.12 "Inter", ui-serif, serif;
+      color: var(--text);
+      max-width: 78%;
+    }
+    .card[data-card-id="card-03"] .rule {
+      width: 0;
+      height: 5px;
+      background: var(--accent-0);
+      border-radius: 3px;
+    }
+    .card[data-card-id="card-03"] .detail {
+      margin: 0;
+      font: 29px/1.45 ui-serif, serif;
+      color: var(--text);
+      opacity: 0.82;
+      max-width: 76%;
+    }
+  </style>
+
+  <div class="root">
+    <span class="bignum" data-anim="fade-in" data-anim-at="0.05" data-anim-duration="0.7">01</span>
+
+    <div class="tagrow">
+      <span class="category" data-anim="fade-in" data-anim-at="0.1" data-anim-duration="0.35">PERSONAL</span>
+      <span class="counter" data-anim="fade-in" data-anim-at="0.2" data-anim-duration="0.35">RISK FACTOR &middot; 01 / 12</span>
+    </div>
+
+    <span class="kicker" data-anim="fade-in" data-anim-at="0.3" data-anim-duration="0.3">RISK FACTOR</span>
+
+    <h2 id="card-03-title" class="title" data-anim="slide-in" data-anim-at="0.4" data-anim-duration="0.5" data-anim-from="bottom" data-anim-distance="36">Mental illness or substance abuse</h2>
+
+    <div id="card-03-rule" class="rule" data-anim="grow-x" data-anim-at="0.85" data-anim-duration="0.45" data-anim-target-w="100"></div>
+
+    <p class="detail" data-anim="fade-in" data-anim-at="1.0" data-anim-duration="0.45">Affecting either the older person, or the individual providing their care.</p>
+  </div>
+</div>

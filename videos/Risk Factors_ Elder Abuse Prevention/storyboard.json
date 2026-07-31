@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 3,
+  "composition": {
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": 104.64,
+    "layout": "landscape",
+    "themeId": "mint",
+    "seed": 7
+  },
+  "videoTrack": {
+    "sourcePath": "input-video.mp4",
+    "startSec": 0,
+    "endSec": 104.64,
+    "bounds": { "x": 14, "y": 14, "width": 1892, "height": 548 }
+  },
+  "subtitles": { "enabled": false },
+  "cards": [
+    {
+      "id": "card-01",
+      "intent": "Hero open — video hidden, big title card introduces the topic and Annie",
+      "startSec": 0.0,
+      "endSec": 7.7,
+      "accentIndex": 0,
+      "zone": "fullscreen",
+      "contentHints": {
+        "kicker": "WORKFORCE TRAINING",
+        "title": "Risk Factors: Elder Abuse Prevention",
+        "detail": "with Annie, Workforce Training Specialist"
+      }
+    },
+    {
+      "id": "card-02",
+      "intent": "Why identifying at-risk older adults matters — transition to stack layout, video appears top band",
+      "startSec": 7.7,
+      "endSec": 14.5,
+      "accentIndex": 0,
+      "zone": "lower-third",
+      "contentHints": {
+        "kicker": "WHY IT MATTERS",
+        "title": "Spotting who's at risk, early",
+        "detail": "Identifying older adults at risk is one of the most important things we can do to prevent abuse before it starts."
+      }
+    },
+    {
+      "id": "card-03",
+      "intent": "Personal risk factor 1 of 3 — mental illness or substance abuse",
+      "startSec": 14.5,
+      "endSec": 21.3,
+      "accentIndex": 0,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "PERSONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "01 / 12",
+        "title": "Mental illness or substance abuse",
+        "detail": "Affecting either the older person, or the individual providing their care."
+      }
+    },
+    {
+      "id": "card-04",
+      "intent": "Personal risk factor 2 of 3 — cognitive and physical decline",
+      "startSec": 21.3,
+      "endSec": 28.8,
+      "accentIndex": 0,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "PERSONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "02 / 12",
+        "title": "Cognitive & physical decline",
+        "detail": "Dementia, or physical and mental decline from chronic illness or stroke, raises risk."
+      }
+    },
+    {
+      "id": "card-05",
+      "intent": "Personal risk factor 3 of 3 — family history and stress",
+      "startSec": 28.8,
+      "endSec": 37.3,
+      "accentIndex": 0,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "PERSONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "03 / 12",
+        "title": "Family history & stress",
+        "detail": "Transgenerational violence, ongoing family conflict, stress — even issues like gambling."
+      }
+    },
+    {
+      "id": "card-06",
+      "intent": "Warning sign — unchecked pressure escalates into abuse potential",
+      "startSec": 37.3,
+      "endSec": 44.7,
+      "accentIndex": 1,
+      "zone": "lower-third",
+      "contentHints": {
+        "kicker": "WARNING SIGN",
+        "title": "Left unchecked, it escalates",
+        "detail": "Personal and family pressures create environments where the potential for abuse can grow if unaddressed."
+      }
+    },
+    {
+      "id": "card-07",
+      "intent": "Relationship risk factor 1 of 2 — dependence and lost respect",
+      "startSec": 44.7,
+      "endSec": 52.3,
+      "accentIndex": 2,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "RELATIONSHIP",
+        "kicker": "RISK FACTOR",
+        "counter": "04 / 12",
+        "title": "Dependence & lost respect",
+        "detail": "A lack of respect for older people, or a deep dependence between carer and older person, raises risk."
+      }
+    },
+    {
+      "id": "card-08",
+      "intent": "Warning sign — power imbalance is a red flag",
+      "startSec": 52.3,
+      "endSec": 59.3,
+      "accentIndex": 1,
+      "zone": "lower-third",
+      "contentHints": {
+        "kicker": "RED FLAG",
+        "title": "Any significant power imbalance",
+        "detail": "Care professionals must remain vigilant about power imbalance in the caring relationship."
+      }
+    },
+    {
+      "id": "card-09",
+      "intent": "Social risk factor — isolation reduces reporting",
+      "startSec": 59.3,
+      "endSec": 66.4,
+      "accentIndex": 3,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "SOCIAL",
+        "kicker": "RISK FACTOR",
+        "counter": "05 / 12",
+        "title": "Isolation silences reporting",
+        "detail": "Older people are often more socially isolated — making them less likely to report issues."
+      }
+    },
+    {
+      "id": "card-10",
+      "intent": "Organizational risk factor 1 of 4 — staffing and policy gaps",
+      "startSec": 66.4,
+      "endSec": 74.0,
+      "accentIndex": 4,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "ORGANIZATIONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "06 / 12",
+        "title": "Staffing & policy gaps",
+        "detail": "Inadequate staffing, skill mix, gaps in knowledge, and unclear policies all raise the risk of incidents."
+      }
+    },
+    {
+      "id": "card-11",
+      "intent": "Organizational risk factor 2 of 4 — poor response, management culture",
+      "startSec": 74.0,
+      "endSec": 81.6,
+      "accentIndex": 4,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "ORGANIZATIONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "07 / 12",
+        "title": "When leadership looks away",
+        "detail": "A poor response to allegations, or weak management, can create a culture where abuse goes unnoticed."
+      }
+    },
+    {
+      "id": "card-12",
+      "intent": "Organizational risk factor 3 of 4 — poor supervision and mentorship",
+      "startSec": 81.6,
+      "endSec": 90.0,
+      "accentIndex": 4,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "ORGANIZATIONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "08 / 12",
+        "title": "Unsupervised, unmentored staff",
+        "detail": "Poor supervision of inexperienced staff can lead to unintentional neglect or harmful practices."
+      }
+    },
+    {
+      "id": "card-13",
+      "intent": "Organizational risk factor 4 of 4 — demanding environments need support systems",
+      "startSec": 90.0,
+      "endSec": 97.5,
+      "accentIndex": 4,
+      "zone": "lower-third",
+      "contentHints": {
+        "category": "ORGANIZATIONAL",
+        "kicker": "RISK FACTOR",
+        "counter": "09 / 12",
+        "title": "Support systems matter",
+        "detail": "Demanding clientele and high-stress environments need strong support to maintain the standard of care residents deserve."
+      }
+    },
+    {
+      "id": "card-14",
+      "intent": "Takeaway — count-up the 4 categories, ties everything together",
+      "startSec": 97.5,
+      "endSec": 102.3,
+      "accentIndex": 0,
+      "zone": "lower-third",
+      "contentHints": {
+        "kicker": "THE TAKEAWAY",
+        "title": "4 categories. One goal: prevention.",
+        "detail": "Personal · Relationship · Social · Organizational — recognizing these factors early is a critical part of prevention.",
+        "countUp": { "from": 0, "to": 4, "label": "risk categories" }
+      }
+    },
+    {
+      "id": "card-15",
+      "intent": "Hero close — video hidden, warm closing thank-you card",
+      "startSec": 102.3,
+      "endSec": 104.64,
+      "accentIndex": 2,
+      "zone": "fullscreen",
+      "contentHints": {
+        "kicker": "THANK YOU",
+        "title": "Thank you for your commitment",
+        "detail": "to safety and respect."
+      }
+    }
+  ]
+}
