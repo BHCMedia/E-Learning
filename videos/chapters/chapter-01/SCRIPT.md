@@ -1,0 +1,17 @@
+# Chapter 1 Script — Dementia Care Introduction
+
+## Status
+
+**Approved**
+
+Use this narration verbatim.
+
+Do not rewrite, shorten, expand or paraphrase it.
+
+## Narration
+
+Welcome to Dementia Care.
+
+This module is designed for staff in both residential aged care and home care environments, specifically those providing care for clients living with dementia. It aims to give healthcare staff, regardless of experience level, a comprehensive understanding of dementia, its various symptoms, and strategies for effectively managing behavioural changes.
+
+By the end of this training, you will be able to: explain what dementia is; recognise symptoms of dementia in clients; understand common psychological and behavioural symptoms; manage behavioural changes; and support individuals living with dementia.

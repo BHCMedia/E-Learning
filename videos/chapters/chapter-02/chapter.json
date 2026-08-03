@@ -1,0 +1,31 @@
+{
+  "chapter_number": 2,
+  "slug": "chapter-02",
+  "title": "What is Dementia?",
+  "script_status": "draft_requires_approval",
+  "target_duration_seconds": {
+    "minimum": 40,
+    "maximum": 50
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "design_file": "../../DESIGN.md",
+  "voice_file": "../../VOICE.md",
+  "script_file": "SCRIPT.md",
+  "storyboard_file": "STORYBOARD.md",
+  "narration_output": "audio/narration.wav",
+  "transcript_output": "transcript.json",
+  "caption_output": "captions/chapter-02-what-is-dementia.vtt",
+  "render_output": "renders/chapter-02-what-is-dementia.mp4",
+  "restrictions": {
+    "logos": false,
+    "avatar": false,
+    "filmed_footage": false,
+    "stock_footage": false,
+    "reuse_old_chapter2": false,
+    "organisation_neutral": true
+  }
+}

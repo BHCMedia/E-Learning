@@ -1,0 +1,30 @@
+{
+  "chapter_number": 1,
+  "slug": "chapter-01",
+  "title": "Dementia Care Introduction",
+  "script_status": "approved",
+  "target_duration_seconds": {
+    "minimum": 45,
+    "maximum": 55
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "design_file": "../../DESIGN.md",
+  "voice_file": "../../VOICE.md",
+  "script_file": "SCRIPT.md",
+  "storyboard_file": "STORYBOARD.md",
+  "narration_output": "audio/narration.wav",
+  "transcript_output": "transcript.json",
+  "caption_output": "captions/chapter-01-introduction.vtt",
+  "render_output": "renders/chapter-01-introduction.mp4",
+  "restrictions": {
+    "logos": false,
+    "avatar": false,
+    "filmed_footage": false,
+    "stock_footage": false,
+    "organisation_neutral": true
+  }
+}

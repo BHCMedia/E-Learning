@@ -1,0 +1,37 @@
+{
+  "chapter_number": 7,
+  "slug": "chapter-07",
+  "title": "Managing Specific Behaviours",
+  "script_status": "drafting_required",
+  "target_duration_seconds": {
+    "minimum": 300,
+    "maximum": 420
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "design_file": "../../DESIGN.md",
+  "voice_file": "../../VOICE.md",
+  "course_plan": "../../COURSE_PLAN.md",
+  "script_file": "SCRIPT.md",
+  "storyboard_file": "STORYBOARD.md",
+  "narration_output": "audio/narration.wav",
+  "transcript_output": "transcript.json",
+  "caption_output": "captions/chapter-07-managing-specific-behaviours.vtt",
+  "render_output": "renders/chapter-07-managing-specific-behaviours.mp4",
+  "sections": [
+    "Restlessness and agitation",
+    "Aggression",
+    "Hallucinations and delusions"
+  ],
+  "single_final_render": true,
+  "restrictions": {
+    "logos": false,
+    "avatar": false,
+    "filmed_footage": false,
+    "stock_footage": false,
+    "organisation_neutral": true
+  }
+}

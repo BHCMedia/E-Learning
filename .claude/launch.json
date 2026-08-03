@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "chapter-01-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "hyperframes@0.7.83", "preview", "videos/chapters/chapter-01", "--no-open"],
+      "port": 3002
+    }
+  ]
+}
